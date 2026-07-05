@@ -1,0 +1,8 @@
+{
+"ricette":
+    [
+        {"nome":"Solo RUM","ingredienti":["RUM"]},
+        {"nome":"Solo Vodka","ingredienti":["Vodka"]},
+        {"nome":"RUM e Vodka","ingredienti":["RUM","Vodka"]}
+    ]
+}
