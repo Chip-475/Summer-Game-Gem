@@ -26,15 +26,24 @@ public class cocktail : MonoBehaviour
     private ricetta ordineNow;
     private List<string> selected = new List<string>();
 
+    [Header("dialoghi")]
+    public dialoghiManager dialoghiManager;
+
+    void Awake()
+    {
+        TextAsset file = Resources.Load<TextAsset>("ricette");
+        ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
+    }
+
     void Start()
     {
-        TextAsset file = Resources.Load<TextAsset>("Ricette");
-        ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
-       /* foreach (ricetta r in ricettaFile.ricette)
-        {
-            Debug.Log(r.nome + " " + string.Join(",", r.ingredienti));
-        }*/
-        nuovoOrdine();
+       // TextAsset file = Resources.Load<TextAsset>("ricette");
+        //ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
+        /* foreach (ricetta r in ricettaFile.ricette)
+         {
+             Debug.Log(r.nome + " " + string.Join(",", r.ingredienti));
+         }*/
+        //nuovoOrdine();
     }
     // ricettaJson ric = JsonUtility.FromJson<ricettaJson>(ricette.json); 
 
@@ -48,11 +57,16 @@ public class cocktail : MonoBehaviour
         ordineNow = ricettaFile.ricette[index];
         testOrdine.text = "Il cliente vuole " + string.Join(",", ordineNow.ingredienti);
     }
-    /*  dialoghi
+    // dialoghi
     public void impostaOrdine(string nomeRicetta)
     {
         selected.Clear();
         aggTextSelect();
+        Debug.Log("Sto cercando la ricetta: [" + nomeRicetta + "]");
+        foreach (ricetta r in ricettaFile.ricette)
+        {
+            Debug.Log("Ricetta disponibile: [" + r.nome + "]");
+        }
         ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
         if (ricetta == null)
         {
@@ -62,7 +76,7 @@ public class cocktail : MonoBehaviour
         ordineNow = ricetta;
         testOrdine.text = "Il cliente vuole" + string.Join(",", ordineNow.nome);
     }
-    */
+
     public void AddIngredienti(string ingre)
     {
         selected.Add(ingre);
@@ -78,12 +92,18 @@ public class cocktail : MonoBehaviour
 
     public void confermaOrdine()
     {
+        if(ordineNow==null)
+        {
+            Debug.Log("nessun ordine");
+            return;
+        }
         List<string> copiaSel = new List<string>(selected);
         List<string> copiaOra = new List<string>(ordineNow.ingredienti);
         if (copiaOra.Count != copiaSel.Count)
         {
             Debug.Log("male");
-            nuovoOrdine();
+            //nuovoOrdine();
+            dialoghiManager.prossBattuta();
             return;
         }
         copiaOra.Sort();
@@ -93,12 +113,14 @@ public class cocktail : MonoBehaviour
             if (copiaSel[i] != copiaOra[i])
             {
                 Debug.Log("Hai fatto male il drink cazzo");
-                nuovoOrdine();
+                //nuovoOrdine();
+                dialoghiManager.prossBattuta();
                 return; 
             }
         }
         Debug.Log("bravo lo hai fatto giusto");
-        nuovoOrdine();
+        //nuovoOrdine();
+        dialoghiManager.prossBattuta();
     }
 
 }

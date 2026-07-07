@@ -1,0 +1,32 @@
+{
+  "conversazioni": [
+    {
+      "nomeCliente": "Pippo",
+      "battuta": [
+        {
+          "personaggio": "Pippo",
+          "testo": "Buonasera. La solita se non ti dispiace ovvero solo RUM",
+          "comando": "ordina",
+          "parametroComando": "Solo RUM"
+        },
+        {
+          "personaggio": "Mara",
+          "testo": "Arrivo subito",
+          "comando": "nessuno",
+          "parametroComando": ""
+        }
+      ]
+    },
+    {
+      "nomeCliente": "Sara",
+      "battuta": [
+        {
+          "personaggio": "Sara",
+          "testo": "Scusa ho pochissimo tempo me lo fai un shottino di vodka?",
+          "comando": "ordina",
+          "parametroComando": "Solo Vodka" 
+        }
+      ]
+    }
+  ]
+}
