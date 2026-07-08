@@ -58,7 +58,7 @@ public class cocktail : MonoBehaviour
         testOrdine.text = "Il cliente vuole " + string.Join(",", ordineNow.ingredienti);
     }
     // dialoghi
-    public void impostaOrdine(string nomeRicetta)
+    public void impostaOrdine(string nomeRicetta,string testo)
     {
         selected.Clear();
         aggTextSelect();
@@ -74,7 +74,7 @@ public class cocktail : MonoBehaviour
             return;
         }
         ordineNow = ricetta;
-        testOrdine.text = "Il cliente vuole" + string.Join(",", ordineNow.nome);
+        testOrdine.text = testo;
     }
 
     public void AddIngredienti(string ingre)
@@ -95,6 +95,7 @@ public class cocktail : MonoBehaviour
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
+            dialoghiManager.prossBattuta();
             return;
         }
         List<string> copiaSel = new List<string>(selected);

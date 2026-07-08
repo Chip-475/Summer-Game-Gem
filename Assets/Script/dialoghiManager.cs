@@ -43,6 +43,10 @@ public class dialoghiManager : MonoBehaviour
         if(indiceNPC>=datiNpc.conversazioni.Count)
         {
             Debug.Log("Npc finitio ora ce leo");
+            indiceNPC = 0;
+            indice = 0;
+            Debug.Log("ho resettato l'indice");
+            mostraBattuta();
             return;
         }
         convAttuale=datiNpc.conversazioni[indiceNPC];
@@ -56,7 +60,7 @@ public class dialoghiManager : MonoBehaviour
         battuta b = convAttuale.battuta[indice];
         //testoPers.text = b.personaggio;
         testoBattuta.text = b.personaggio+"\n"+b.testo;    
-        if (b.comando == "ordina") barScript.impostaOrdine(b.parametroComando);
+        if (b.comando == "ordina") barScript.impostaOrdine(b.parametroComando,b.personaggio+"\n"+b.testo);
     }
     public void prossBattuta()
     {
