@@ -5,8 +5,9 @@
       "battuta": [
         {
           "personaggio": "Pippo",
-          "testo": "Buonasera. La solita se non ti dispiace ovvero solo RUM",
-          "comando": "ordina",
+          "testo": "",
+          "usaGenerica": "saluto",
+          "comando": "nessuno",
           "parametroComando": "Solo RUM"
         },
         {

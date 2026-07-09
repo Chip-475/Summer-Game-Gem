@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.UI;
+using Unity.Collections.LowLevel.Unsafe;
+using System.Runtime.CompilerServices;
 public class dialoghiManager : MonoBehaviour
 {
     [System.Serializable] 
@@ -9,6 +11,7 @@ public class dialoghiManager : MonoBehaviour
     {
         public string personaggio;
         public string testo;
+        public string usaGenerica;
         public string comando;
         public string parametroComando;
     }
@@ -23,6 +26,18 @@ public class dialoghiManager : MonoBehaviour
     {
         public List<conversazione> conversazioni;
     }
+    [System.Serializable]
+    public class battutaGenerica
+    {
+        public string categoria;
+        public string testo;
+    }
+    [System.Serializable]
+    public class genericheJson
+    {
+        public List<battutaGenerica> battuteGeneriche;
+    }
+    private genericheJson battGeneriche;
     private npc datiNpc;
     private conversazione convAttuale;
     private int indice = 0;
@@ -30,11 +45,14 @@ public class dialoghiManager : MonoBehaviour
     //public TMP_Text testoPers;
     public TMP_Text testoBattuta;
     public cocktail barScript;
-
+    public Button bottoneAvanti;
+    
     void Start()
     {
         TextAsset file = Resources.Load<TextAsset>("dialoghiNPC");
         datiNpc = JsonUtility.FromJson<npc>(file.text);
+        TextAsset fileGenerico = Resources.Load<TextAsset>("battuteGeneriche");
+        battGeneriche = JsonUtility.FromJson<genericheJson>(fileGenerico.text);
         caricaNPC();
     }
 
@@ -59,8 +77,30 @@ public class dialoghiManager : MonoBehaviour
     {
         battuta b = convAttuale.battuta[indice];
         //testoPers.text = b.personaggio;
-        testoBattuta.text = b.personaggio+"\n"+b.testo;    
-        if (b.comando == "ordina") barScript.impostaOrdine(b.parametroComando,b.personaggio+"\n"+b.testo);
+        if (!string.IsNullOrEmpty(b.usaGenerica)) testoBattuta.text = pescaBattGenerica(b.usaGenerica);
+        testoBattuta.text = b.personaggio+"\n"+b.testo;
+        if (b.comando == "ordina")
+        {
+            barScript.impostaOrdine(b.parametroComando, b.personaggio + "\n" + b.testo);
+            bottoneAvanti.interactable = true;
+        }
+        else bottoneAvanti.interactable=false;
+
+    }
+    private string pescaBattGenerica(string categoria)
+    {
+        List<string> possibili = new List<string>();
+        foreach(battutaGenerica bg in battGeneriche.battuteGeneriche)
+        {
+            if(bg.categoria==categoria)possibili.Add(bg.testo);
+
+        }
+        /*if (possibili.Count == 0)
+        {
+            Debug
+        }*/
+        int indice = RandomRange(0, possibili.Count);
+        return possibili[indice];
     }
     public void prossBattuta()
     {

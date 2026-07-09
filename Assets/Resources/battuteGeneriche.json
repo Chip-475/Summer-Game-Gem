@@ -1,0 +1,56 @@
+{
+  "battuteGeneriche": [
+    {
+      "categoria": "saluto",
+      "testo": "Buonasera Mara,che caldo oggi eh?"
+    },
+    {
+      "categoria": "saluto",
+      "testo": "Ciao Mara, serata difficle oggi?"
+    },
+    {
+      "categoria": "saluto",
+      "testo": "Ehi, come va sta sera?"
+    },
+
+    {
+      "categoria": "chiacchiera",
+      "testo": "Sai con questa afa non si respira proprio"
+    },
+    {
+      "categoria": "chiacchiera",
+      "testo": "Il traffico sta sera era pazzesco"
+    },
+    {
+      "categoria": "chiacchiera",
+      "testo": "Hai visto quante persone in giro sta sera?"
+    },
+
+    {
+      "categoria": "reazionePositiva",
+      "testo": "Ah perfetto come sempre"
+    },
+    {
+      "categoria": "reazionePositiva",
+      "testo": "Proprio quello che ci voleva, grazie"
+    },
+
+    {
+      "categoria": "reazioneNegativa",
+      "testo": "Mh, non è proprio quello che avevo detto"
+    },
+    {
+      "categoria": "reazioneNegativa",
+      "testo": "Proprio male questo drink"
+    },
+
+    {
+      "categoria": "addio",
+      "testo": "Grazie alla prossima",
+    },
+    {
+      "categoria": "addio",
+      "testo": "Ci vediamo, buona serata"
+    }
+  ]
+}
