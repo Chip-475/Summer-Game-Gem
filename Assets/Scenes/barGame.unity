@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108, y: -9}
+  m_AnchoredPosition: {x: -9, y: -3}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &13172878
@@ -665,8 +665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -603, y: 54}
-  m_SizeDelta: {x: 500, y: 250}
+  m_AnchoredPosition: {x: -544.3906, y: 18.2626}
+  m_SizeDelta: {x: 617.2188, y: 321.4749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592273787
 MonoBehaviour:
@@ -1696,7 +1696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialoghiManager
   testoBattuta: {fileID: 13172878}
   barScript: {fileID: 649502214}
-  bottoneAvanti: {fileID: 0}
+  bottoneAvanti: {fileID: 1878003808}
+  delayNPC: 2
 --- !u!1 &1389216697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49, y: -196}
+  m_AnchoredPosition: {x: 229, y: -196}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878003808
@@ -2132,7 +2133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1878003809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1285810245}
+        m_TargetAssemblyTypeName: dialoghiManager, Assembly-CSharp
+        m_MethodName: prossBattuta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1878003809
 MonoBehaviour:
   m_ObjectHideFlags: 0

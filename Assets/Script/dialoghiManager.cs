@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
-using Unity.Collections.LowLevel.Unsafe;
-using System.Runtime.CompilerServices;
+using System.Collections;
 public class dialoghiManager : MonoBehaviour
 {
     [System.Serializable] 
@@ -46,6 +45,7 @@ public class dialoghiManager : MonoBehaviour
     public TMP_Text testoBattuta;
     public cocktail barScript;
     public Button bottoneAvanti;
+    public float delayNPC = 1.5f;
     
     void Start()
     {
@@ -58,16 +58,19 @@ public class dialoghiManager : MonoBehaviour
 
     public void caricaNPC()
     {
-        if(indiceNPC>=datiNpc.conversazioni.Count)
+        if (indiceNPC >= datiNpc.conversazioni.Count)
         {
             Debug.Log("Npc finitio ora ce leo");
             indiceNPC = 0;
-            indice = 0;
             Debug.Log("ho resettato l'indice");
-            mostraBattuta();
-            return;
         }
-        convAttuale=datiNpc.conversazioni[indiceNPC];
+        StartCoroutine(caricaDelay());
+    }
+
+    private IEnumerator caricaDelay()
+    {
+        yield return new WaitForSeconds(delayNPC);
+        convAttuale = datiNpc.conversazioni[indiceNPC];
         indice = 0;
         indiceNPC++;
         mostraBattuta();
@@ -76,15 +79,23 @@ public class dialoghiManager : MonoBehaviour
     private void mostraBattuta()
     {
         battuta b = convAttuale.battuta[indice];
+        string testoFin = b.testo;
+        //Debug.Log(testoFin);
         //testoPers.text = b.personaggio;
-        if (!string.IsNullOrEmpty(b.usaGenerica)) testoBattuta.text = pescaBattGenerica(b.usaGenerica);
-        testoBattuta.text = b.personaggio+"\n"+b.testo;
+        if (!string.IsNullOrEmpty(b.usaGenerica)) testoFin = pescaBattGenerica(b.usaGenerica);
+        testoBattuta.text = b.personaggio+"\n"+testoFin;
+        //Debug.Log(testoFin);
         if (b.comando == "ordina")
         {
-            barScript.impostaOrdine(b.parametroComando, b.personaggio + "\n" + b.testo);
-            bottoneAvanti.interactable = true;
+            barScript.impostaOrdine(b.parametroComando, b.personaggio + "\n" + testoFin);
+            bottoneAvanti.interactable = false;
+           //Debug.Log(testoFin);
         }
-        else bottoneAvanti.interactable=false;
+        else
+        {
+            bottoneAvanti.interactable = true;
+            //Debug.Log(testoFin);
+        }
 
     }
     private string pescaBattGenerica(string categoria)
@@ -99,7 +110,7 @@ public class dialoghiManager : MonoBehaviour
         {
             Debug
         }*/
-        int indice = RandomRange(0, possibili.Count);
+        int indice = Random.Range(0, possibili.Count);
         return possibili[indice];
     }
     public void prossBattuta()
@@ -110,7 +121,7 @@ public class dialoghiManager : MonoBehaviour
             caricaNPC();
             return;
         }
-        mostraBattuta();
+        StartCoroutine(caricaDelay());
     }
 
 }

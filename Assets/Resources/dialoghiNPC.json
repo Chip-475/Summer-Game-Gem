@@ -8,6 +8,13 @@
           "testo": "",
           "usaGenerica": "saluto",
           "comando": "nessuno",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Pippo",
+          "testo": "Comunque, la solita se non ti dispiac, ovvero solo RUM",
+          "usaGenerica": "",
+          "comando": "ordina",
           "parametroComando": "Solo RUM"
         },
         {
@@ -23,9 +30,16 @@
       "battuta": [
         {
           "personaggio": "Sara",
+          "testo": "",
+          "usaGenerica": "chiacchiera",
+          "comando": "nessuno",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Sara",
           "testo": "Scusa ho pochissimo tempo me lo fai un shottino di vodka?",
           "comando": "ordina",
-          "parametroComando": "Solo Vodka" 
+          "parametroComando": "Solo Vodka"
         }
       ]
     }
