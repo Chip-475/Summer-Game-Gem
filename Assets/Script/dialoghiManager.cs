@@ -58,6 +58,7 @@ public class dialoghiManager : MonoBehaviour
 
     public void caricaNPC()
     {
+        bottoneAvanti.interactable = false;
         if (indiceNPC >= datiNpc.conversazioni.Count)
         {
             Debug.Log("Npc finitio ora ce leo");
@@ -70,6 +71,11 @@ public class dialoghiManager : MonoBehaviour
     private IEnumerator caricaDelay()
     {
         yield return new WaitForSeconds(delayNPC);
+        if (indiceNPC >= datiNpc.conversazioni.Count)
+        {
+            Debug.Log("indiceNpc troppo grande");
+            indiceNPC = 0;
+        }
         convAttuale = datiNpc.conversazioni[indiceNPC];
         indice = 0;
         indiceNPC++;
@@ -115,12 +121,9 @@ public class dialoghiManager : MonoBehaviour
     }
     public void prossBattuta()
     {
+        bottoneAvanti.interactable=false;
         indice++;
-        if(indice>=convAttuale.battuta.Count)
-        {
-            caricaNPC();
-            return;
-        }
+        if (indice >= convAttuale.battuta.Count) return;
         StartCoroutine(caricaDelay());
     }
 
