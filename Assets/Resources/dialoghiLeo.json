@@ -1,0 +1,34 @@
+{
+  "battuta": [
+    {
+      "personaggio": "Leo",
+      "testo": "Ehi mi fai il solito?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Non... non può essere qui.. Tu sei morto.",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Lo so cosa sono Mara. Ma sono ancora io. Dai il drink",
+      "comando": "ordina",
+      "parametroComando": "Solo RUM"
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Buono come sempre. Non è stata colpa tua, Mara. Basta portartelo dietro",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Fatti un favore: vivi un pò. Per me",
+      "comando": "nessuno",
+      "parametroComando": ""
+    }
+  ]
+}

@@ -1697,7 +1697,7 @@ MonoBehaviour:
   testoBattuta: {fileID: 13172878}
   barScript: {fileID: 649502214}
   bottoneAvanti: {fileID: 1878003808}
-  delayNPC: 2
+  delayNPC: 1
 --- !u!1 &1389216697
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,6 +36,14 @@ public class dialoghiManager : MonoBehaviour
     {
         public List<battutaGenerica> battuteGeneriche;
     }
+
+    [System.Serializable]
+    public class dialogoLeoJson
+    {
+        public List<battuta> battuta;
+    }
+    private dialogoLeoJson datiLeo;
+    private bool inDialogo = false;  //scena speciale o no
     private genericheJson battGeneriche;
     private npc datiNpc;
     private conversazione convAttuale;
@@ -62,10 +70,42 @@ public class dialoghiManager : MonoBehaviour
         if (indiceNPC >= datiNpc.conversazioni.Count)
         {
             Debug.Log("Npc finitio ora ce leo");
-            indiceNPC = 0;
-            Debug.Log("ho resettato l'indice");
+            caricaLeo();
+            return;
+            //indiceNPC = 0;
+            //Debug.Log("ho resettato l'indice");
         }
         StartCoroutine(caricaDelay());
+    }
+
+    public void caricaLeo()
+    {
+        TextAsset file = Resources.Load<TextAsset>("dialoghiLeo");
+        datiLeo = JsonUtility.FromJson<dialogoLeoJson>(file.text);
+        inDialogo = true;
+        indice = 0;
+        StartCoroutine(caricaLeoDelay());
+    }
+    private  IEnumerator caricaLeoDelay()
+    {
+        yield return new WaitForSeconds(delayNPC);
+        battuta b = datiLeo.battuta[indice];
+        testoBattuta.text = b.personaggio + "\n" + b.testo;
+        if(b.comando=="ordina")
+        {
+            barScript.impostaOrdine(b.parametroComando,b.personaggio+"\n"+b.testo);
+            bottoneAvanti.interactable=false;
+        }
+        else if(b.comando=="fine")
+        {
+            bottoneAvanti.interactable = false;
+            Debug.Log("Fine gioco");
+            //scena di fine game
+        }
+        else
+        {
+            bottoneAvanti.interactable = true;
+        }
     }
 
     private IEnumerator caricaDelay()
@@ -81,7 +121,6 @@ public class dialoghiManager : MonoBehaviour
         indiceNPC++;
         mostraBattuta();
     }
-
     private void mostraBattuta()
     {
         battuta b = convAttuale.battuta[indice];
@@ -122,9 +161,25 @@ public class dialoghiManager : MonoBehaviour
     public void prossBattuta()
     {
         bottoneAvanti.interactable=false;
+        if(inDialogo)
+        {
+            indice++;
+            if (indice >= datiLeo.battuta.Count) return;
+            StartCoroutine(prossimaBattutaDelay());
+            return;
+        }
         indice++;
-        if (indice >= convAttuale.battuta.Count) return;
-        StartCoroutine(caricaDelay());
+        if (indice >= convAttuale.battuta.Count)
+        {
+            caricaNPC();
+            return;
+        }
+        StartCoroutine(prossimaBattutaDelay());
+    }
+    private IEnumerator prossimaBattutaDelay()
+    {
+        yield return new WaitForSeconds(delayNPC);
+        mostraBattuta();
     }
 
 }
