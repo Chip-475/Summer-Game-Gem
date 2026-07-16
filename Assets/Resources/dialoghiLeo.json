@@ -8,25 +8,25 @@
     },
     {
       "personaggio": "Mara",
-      "testo": "Non... non può essere qui.. Tu sei morto.",
+      "testo": "Non... non puï¿½ essere qui.. Tu sei morto.",
       "comando": "nessuno",
       "parametroComando": ""
     },
     {
       "personaggio": "Leo",
-      "testo": "Lo so cosa sono Mara. Ma sono ancora io. Dai il drink",
+      "testo": "Lo so cosa sono Mara. Ma sono ancora io. Dai il drink e lo sai che voglio il RUM",
       "comando": "ordina",
       "parametroComando": "Solo RUM"
     },
     {
       "personaggio": "Leo",
-      "testo": "Buono come sempre. Non è stata colpa tua, Mara. Basta portartelo dietro",
+      "testo": "Buono come sempre. Non ï¿½ stata colpa tua, Mara. Basta portartelo dietro",
       "comando": "nessuno",
       "parametroComando": ""
     },
     {
       "personaggio": "Leo",
-      "testo": "Fatti un favore: vivi un pò. Per me",
+      "testo": "Fatti un favore: vivi un pï¿½. Per me",
       "comando": "nessuno",
       "parametroComando": ""
     }

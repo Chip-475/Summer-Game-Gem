@@ -89,23 +89,8 @@ public class dialoghiManager : MonoBehaviour
     private  IEnumerator caricaLeoDelay()
     {
         yield return new WaitForSeconds(delayNPC);
-        battuta b = datiLeo.battuta[indice];
-        testoBattuta.text = b.personaggio + "\n" + b.testo;
-        if(b.comando=="ordina")
-        {
-            barScript.impostaOrdine(b.parametroComando,b.personaggio+"\n"+b.testo);
-            bottoneAvanti.interactable=false;
-        }
-        else if(b.comando=="fine")
-        {
-            bottoneAvanti.interactable = false;
-            Debug.Log("Fine gioco");
-            //scena di fine game
-        }
-        else
-        {
-            bottoneAvanti.interactable = true;
-        }
+        mostraBattutaLeo();
+        
     }
 
     private IEnumerator caricaDelay()
@@ -158,10 +143,29 @@ public class dialoghiManager : MonoBehaviour
         int indice = Random.Range(0, possibili.Count);
         return possibili[indice];
     }
+
+    private void mostraBattutaLeo() 
+    {
+        battuta b = datiLeo.battuta[indice];
+        testoBattuta.text = b.personaggio + "\n" + b.testo;
+        if (b.comando == "ordina")
+        {
+            barScript.impostaOrdine(b.parametroComando, b.personaggio + "\n" + b.testo);
+            bottoneAvanti.interactable = false;
+        }
+        else if (b.comando == "fine")
+        {
+            bottoneAvanti.interactable = false;
+            Debug.Log("Fine gioco");
+            //scena di fine gioco
+        }
+        else bottoneAvanti.interactable = true;
+    }
+
     public void prossBattuta()
     {
         bottoneAvanti.interactable=false;
-        if(inDialogo)
+        if(inDialogo) 
         {
             indice++;
             if (indice >= datiLeo.battuta.Count) return;
@@ -179,7 +183,8 @@ public class dialoghiManager : MonoBehaviour
     private IEnumerator prossimaBattutaDelay()
     {
         yield return new WaitForSeconds(delayNPC);
-        mostraBattuta();
+        if (inDialogo) mostraBattutaLeo();
+        else mostraBattuta();
     }
 
 }
