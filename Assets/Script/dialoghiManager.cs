@@ -46,14 +46,16 @@ public class dialoghiManager : MonoBehaviour
     private bool inDialogo = false;  //scena speciale o no
     private genericheJson battGeneriche;
     private npc datiNpc;
-    private conversazione convAttuale;
-    private int indice = 0;
-    private int indiceNPC = 0;//per capire a quale npc sta guardando
+    private conversazione convAttuale; // i dati del cliente che sta parlando ora
+    private int indice = 0; // a che battuta della conv attuale
+    private int indiceNPC = 0;//per capire a quale npc st0 guardando
     //public TMP_Text testoPers;
     public TMP_Text testoBattuta;
     public cocktail barScript;
     public Button bottoneAvanti;
-    public float delayNPC = 1.5f;
+    public float delayNPC;
+    public float delayDopoNpc;
+
     
     void Start()
     {
@@ -157,6 +159,7 @@ public class dialoghiManager : MonoBehaviour
         {
             bottoneAvanti.interactable = false;
             Debug.Log("Fine gioco");
+            testoBattuta.text = "Fine gioco";//provvisorio
             //scena di fine gioco
         }
         else bottoneAvanti.interactable = true;
@@ -168,7 +171,13 @@ public class dialoghiManager : MonoBehaviour
         if(inDialogo) 
         {
             indice++;
-            if (indice >= datiLeo.battuta.Count) return;
+            Debug.Log(indice + " " + datiLeo.battuta.Count);
+            if (indice >= datiLeo.battuta.Count)
+            {
+                inDialogo = false;
+                indiceNPC = 0;
+                return;
+            }
             StartCoroutine(prossimaBattutaDelay());
             return;
         }
