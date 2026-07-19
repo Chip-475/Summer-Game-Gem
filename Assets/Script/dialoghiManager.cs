@@ -176,6 +176,7 @@ public class dialoghiManager : MonoBehaviour
             {
                 inDialogo = false;
                 indiceNPC = 0;
+                caricaNPC();
                 return;
             }
             StartCoroutine(prossimaBattutaDelay());

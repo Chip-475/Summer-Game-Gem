@@ -122,6 +122,7 @@ public class cocktail : MonoBehaviour
         Debug.Log("bravo lo hai fatto giusto");
         //nuovoOrdine();
         dialoghiManager.prossBattuta();
+        Debug.Log("fine");
     }
 
 }
