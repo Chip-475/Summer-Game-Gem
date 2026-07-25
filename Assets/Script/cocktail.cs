@@ -104,7 +104,7 @@ public class cocktail : MonoBehaviour
         {
             Debug.Log("male");
             //nuovoOrdine();
-            dialoghiManager.prossBattuta();
+            dialoghiManager.prossBattuta(false);
             return;
         }
         copiaOra.Sort();
@@ -115,13 +115,13 @@ public class cocktail : MonoBehaviour
             {
                 Debug.Log("Hai fatto male il drink cazzo");
                 //nuovoOrdine();
-                dialoghiManager.prossBattuta();
+                dialoghiManager.prossBattuta(false);
                 return; 
             }
         }
         Debug.Log("bravo lo hai fatto giusto");
         //nuovoOrdine();
-        dialoghiManager.prossBattuta();
+        dialoghiManager.prossBattuta(true);
         Debug.Log("fine");
     }
 

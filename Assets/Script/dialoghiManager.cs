@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using NUnit.Framework;
 public class dialoghiManager : MonoBehaviour
 {
     [System.Serializable] 
@@ -54,8 +55,7 @@ public class dialoghiManager : MonoBehaviour
     public cocktail barScript;
     public Button bottoneAvanti;
     public float delayNPC;
-    public float delayDopoNpc;
-
+    public float delay;
     
     void Start()
     {
@@ -90,7 +90,8 @@ public class dialoghiManager : MonoBehaviour
     }
     private  IEnumerator caricaLeoDelay()
     {
-        yield return new WaitForSeconds(delayNPC);
+        testoBattuta.text = "";
+        yield return new WaitForSeconds(delay);
         mostraBattutaLeo();
         
     }
@@ -98,6 +99,8 @@ public class dialoghiManager : MonoBehaviour
     private IEnumerator caricaDelay()
     {
         yield return new WaitForSeconds(delayNPC);
+        testoBattuta.text="";
+        yield return new WaitForSeconds(delay);
         if (indiceNPC >= datiNpc.conversazioni.Count)
         {
             Debug.Log("indiceNpc troppo grande");
@@ -165,9 +168,17 @@ public class dialoghiManager : MonoBehaviour
         else bottoneAvanti.interactable = true;
     }
 
-    public void prossBattuta()
+    public void prossBattuta(bool? drinkCorretto=null)
     {
         bottoneAvanti.interactable=false;
+        if(drinkCorretto.HasValue)
+        {
+            string categoria;
+            if (drinkCorretto == true) categoria = "reazione_positiva";
+            else categoria = "reazione_negativa";
+            string reazione = pescaBattGenerica(categoria);
+            testoBattuta.text = reazione;
+        }
         if(inDialogo) 
         {
             indice++;
