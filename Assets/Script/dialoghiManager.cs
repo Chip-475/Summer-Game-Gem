@@ -90,6 +90,7 @@ public class dialoghiManager : MonoBehaviour
     }
     private  IEnumerator caricaLeoDelay()
     {
+        yield return new WaitForSeconds(delayNPC);
         testoBattuta.text = "";
         yield return new WaitForSeconds(delay);
         mostraBattutaLeo();
@@ -141,10 +142,11 @@ public class dialoghiManager : MonoBehaviour
             if(bg.categoria==categoria)possibili.Add(bg.testo);
 
         }
-        /*if (possibili.Count == 0)
+        if (possibili.Count == 0)
         {
-            Debug
-        }*/
+            Debug.Log("Nessuna battuta");
+            return "";
+        }
         int indice = Random.Range(0, possibili.Count);
         return possibili[indice];
     }
@@ -174,8 +176,8 @@ public class dialoghiManager : MonoBehaviour
         if(drinkCorretto.HasValue)
         {
             string categoria;
-            if (drinkCorretto == true) categoria = "reazione_positiva";
-            else categoria = "reazione_negativa";
+            if (drinkCorretto == true) categoria = "reazionePositiva";
+            else categoria = "reazioneNegativa";
             string reazione = pescaBattGenerica(categoria);
             testoBattuta.text = reazione;
         }
@@ -208,4 +210,8 @@ public class dialoghiManager : MonoBehaviour
         else mostraBattuta();
     }
 
+    public void prossBattutaBotttone()
+    {
+        prossBattuta();
+    }
 }
