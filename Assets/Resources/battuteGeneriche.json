@@ -12,6 +12,14 @@
       "categoria": "saluto",
       "testo": "Ehi, come va sta sera?"
     },
+    {
+      "categoria": "saluto",
+      "testo": "Buonasera! che afa bestiale sta oggi"
+    },
+    {
+      "categoria": "saluto",
+      "testo": "Ciao, finalmente un posto fresco dove sedersi e bere qualcosa di buono"
+    },
 
     {
       "categoria": "chiacchiera",
@@ -25,6 +33,15 @@
       "categoria": "chiacchiera",
       "testo": "Hai visto quante persone in giro sta sera?"
     },
+    {
+      "categoria": "chiacchiera",
+      "testo": "Non vedo l'ora che arrivi il weekend"
+    },
+    {
+      "categoria": "chiacchiera",
+      "testo": "Questa giornata non sembra finire mai"
+    },
+
 
     {
       "categoria": "reazionePositiva",
@@ -33,6 +50,14 @@
     {
       "categoria": "reazionePositiva",
       "testo": "Proprio quello che ci voleva, grazie"
+    },
+    {
+      "categoria": "reazionePositiva",
+      "testo": "Sei un artista complimenti"
+    },
+    {
+      "categoria": "reazionePositiva",
+      "testo": "Non delude mai questo posto"
     },
 
     {
@@ -43,6 +68,15 @@
       "categoria": "reazioneNegativa",
       "testo": "Proprio male questo drink"
     },
+    {
+      "categoria": "reazioneNegativa",
+      "testo": "Non fa niente, capita"
+    },
+    {
+      "categoria": "reazioneNegativa",
+      "testo": "Meglio se ci riprovi la prossima volta"
+    },
+
 
     {
       "categoria": "addio",
@@ -50,7 +84,11 @@
     },
     {
       "categoria": "addio",
-      "testo": "Ci vediamo, buona serata"
+      "testo": "Ci vediamo, arrivederci"
+    },
+    {
+      "categoria": "addio",
+      "testo": "Alla prossima, tienici il posto eh"
     }
   ]
 }

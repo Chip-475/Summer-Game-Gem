@@ -61,11 +61,22 @@ public class dialoghiManager : MonoBehaviour
     {
         TextAsset file = Resources.Load<TextAsset>("dialoghiNPC");
         datiNpc = JsonUtility.FromJson<npc>(file.text);
+        mescolaClienti();
         TextAsset fileGenerico = Resources.Load<TextAsset>("battuteGeneriche");
         battGeneriche = JsonUtility.FromJson<genericheJson>(fileGenerico.text);
         caricaNPC();
     }
 
+    private void mescolaClienti()
+    {
+        for(int i=datiNpc.conversazioni.Count-1;i>0;i--)
+        {
+            int j = Random.Range(0, i + 1);
+            conversazione temp = datiNpc.conversazioni[i];
+            datiNpc.conversazioni[i] = datiNpc.conversazioni[j];
+            datiNpc.conversazioni[j] = temp;
+        }
+    }
     public void caricaNPC()
     {
         bottoneAvanti.interactable = false;
@@ -173,7 +184,7 @@ public class dialoghiManager : MonoBehaviour
     public void prossBattuta(bool? drinkCorretto=null)
     {
         bottoneAvanti.interactable=false;
-        if(drinkCorretto.HasValue)
+        if(drinkCorretto.HasValue&&!inDialogo)
         {
             string categoria;
             if (drinkCorretto == true) categoria = "reazionePositiva";
