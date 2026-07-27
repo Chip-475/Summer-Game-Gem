@@ -16,12 +16,6 @@
           "usaGenerica": "",
           "comando": "ordina",
           "parametroComando": "Solo RUM"
-        },
-        {
-          "personaggio": "Mara",
-          "testo": "Arrivo subito",
-          "comando": "nessuno",
-          "parametroComando": ""
         }
       ]
     },
