@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8246d007939b014f9d6dcc12b022d47
+guid: afe2eaf691fd4134a881fb363c0df435
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: scaffale
+  - name: scaffale v2
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 110
       height: 130
-    spriteID: 1577f4ade0283974e86874bec7633aea
+    spriteID: 3d9273922e34f4c468e4550e6281eb37
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,17 +153,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 542048529
+      value0: 255657449
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: scaffale
+    name: scaffale v2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: scaffale
+    - name: scaffale v2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 110
         height: 130
-      spriteId: 1577f4ade0283974e86874bec7633aea
+      spriteId: 3d9273922e34f4c468e4550e6281eb37
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
