@@ -12,6 +12,13 @@
         },
         {
           "personaggio": "Pippo",
+          "testo": "",
+          "usaGenerica": "chiacchiera",
+          "comando": "nessuno",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Pippo",
           "testo": "Comunque, la solita se non ti dispiace, ovvero solo RUM",
           "usaGenerica": "",
           "comando": "ordina",
@@ -25,6 +32,13 @@
         {
           "personaggio": "Sara",
           "testo": "",
+          "usaGenerica": "saluto",
+          "comando": "nessuno",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Sara",
+          "testo": "",
           "usaGenerica": "chiacchiera",
           "comando": "nessuno",
           "parametroComando": ""
@@ -34,6 +48,56 @@
           "testo": "Scusa ho pochissimo tempo me lo fai un shottino di vodka?",
           "comando": "ordina",
           "parametroComando": "Solo Vodka"
+        }
+      ]
+    },
+    {
+      "nomeCliente": "Marco",
+      "battuta": [
+        {
+          "personaggio": "Marco",
+          "testo": "",
+          "usaGenerica": "saluto",
+          "comando": "",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Marco",
+          "testo": "",
+          "usaGenerica": "chiacchiera",
+          "comando": "",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Marco",
+          "testo": "Mi fai un Gin tonic? Ho voglia di qualcosa di fresco",
+          "comando": "ordina",
+          "parametroComando": "Gin Tonic"
+        }
+      ]
+    },
+    {
+      "nomeCliente": "Giulia",
+      "battuta": [
+        {
+          "personaggio": "Giulia",
+          "testo": "",
+          "usaGenerica": "saluto",
+          "comando": "",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Giulia",
+          "testo": "",
+          "usaGenerica": "chiacchiera",
+          "comando": "",
+          "parametroComando": ""
+        },
+        {
+          "personaggio": "Giulia",
+          "testo": "Un vodka lemon per favore, mi serve qualcosa di dolce sta sera",
+          "comando": "ordina",
+          "parametroComando": "Vodka Lemon" 
         }
       ]
     }

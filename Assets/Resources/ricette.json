@@ -1,8 +1,36 @@
 {
 "ricette":
     [
-        {"nome":"Solo RUM","ingredienti":["RUM"]},
-        {"nome":"Solo Vodka","ingredienti":["Vodka"]},
-        {"nome":"RUM e Vodka","ingredienti":["RUM","Vodka"]}
-    ]
+      {
+        "nome": "Solo RUM",
+        "ingredienti": [ "RUM" ]
+      },
+
+      {
+        "nome": "Solo Vodka",
+        "ingredienti": [ "Vodka" ]
+      },
+
+      {
+        "nome": "RUM e Vodka",
+        "ingredienti": [ "RUM", "Vodka" ]
+      },
+
+      {
+        "nome": "Gin Tonic",
+        "ingredienti": [ "Gin", "Tonica" ]
+      },
+      {
+        "nome": "Vodka Lemon",
+        "ingredienti": [ "Vodka", "Limone" ]
+      },
+      {
+        "nome": "RUM e Cola",
+        "ingredienti": [ "RUM", "Cola" ]
+      },
+      {
+        "nome": "Long Island",
+        "ingredienti": ["RUM","Vodka","Gin","Cola"]
+      }
+]
 }
