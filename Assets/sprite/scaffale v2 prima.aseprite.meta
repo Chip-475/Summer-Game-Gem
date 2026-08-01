@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0d6eedea33156f4fb2f711aca010632
+guid: afe2eaf691fd4134a881fb363c0df435
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 110
       height: 130
-    spriteID: 5e1111ce9719a1b48ab38dfe38728260
+    spriteID: 3d9273922e34f4c468e4550e6281eb37
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,7 +163,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: scaffale v2
+    - name: scaffale v2 prima
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 110
         height: 130
-      spriteId: 5e1111ce9719a1b48ab38dfe38728260
+      spriteId: 3d9273922e34f4c468e4550e6281eb37
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

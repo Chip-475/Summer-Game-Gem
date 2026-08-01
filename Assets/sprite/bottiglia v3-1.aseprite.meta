@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0d6eedea33156f4fb2f711aca010632
+guid: 4778cc02d562668489be959456f92ea9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: scaffale v2
+  - name: bottiglia v3-1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.45454544, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 110
-      height: 130
-    spriteID: 5e1111ce9719a1b48ab38dfe38728260
+      width: 22
+      height: 58
+    spriteID: 2c447fad439314546a9f2e137cdecb6b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 255657449
+      value0: 2424727334
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: scaffale v2
+    name: bottiglia v3-1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: scaffale v2
+    - name: bottiglia v3-1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 5
         y: 0
-        width: 110
-        height: 130
-      spriteId: 5e1111ce9719a1b48ab38dfe38728260
+        width: 22
+        height: 58
+      spriteId: 2c447fad439314546a9f2e137cdecb6b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 110, y: 130}
-  previousTextureSize: {x: 128, y: 256}
+  canvasSize: {x: 30, y: 60}
+  previousTextureSize: {x: 64, y: 128}
