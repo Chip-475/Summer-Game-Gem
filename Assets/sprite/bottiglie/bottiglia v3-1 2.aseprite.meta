@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e750bf0e0385af2488dd91d2846e8050
+guid: 3cd76545f2e8e1b44a6c28982652ce8f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bottiglia gin v1
+  - name: bottiglia v3-1 2
     originalName: 
-    pivot: {x: 0.5294118, y: 0}
+    pivot: {x: 0.45454544, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 17
-      height: 30
-    spriteID: 949474a0605140f4fa750c329af83fc9
+      width: 22
+      height: 58
+    spriteID: 4abcd42e8a82e84408f1ee40bb58dafe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2347687024
+      value0: 3156929420
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: bottiglia gin v1
+    name: bottiglia v3-1 2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bottiglia gin v1
+    - name: bottiglia v3-1 2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 6
+        x: 5
         y: 0
-        width: 17
-        height: 30
-      spriteId: 949474a0605140f4fa750c329af83fc9
+        width: 22
+        height: 58
+      spriteId: 4abcd42e8a82e84408f1ee40bb58dafe
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 30, y: 30}
-  previousTextureSize: {x: 32, y: 64}
+  canvasSize: {x: 30, y: 60}
+  previousTextureSize: {x: 64, y: 128}
