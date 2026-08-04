@@ -189,8 +189,7 @@ public class dialoghiManager : MonoBehaviour
             string categoria;
             if (drinkCorretto == true) categoria = "reazionePositiva";
             else categoria = "reazioneNegativa";
-            string reazione = pescaBattGenerica(categoria);
-            testoBattuta.text = reazione;
+            testoBattuta.text = pescaBattGenerica(categoria);
         }
         if(inDialogo) 
         {
