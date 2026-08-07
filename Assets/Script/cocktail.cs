@@ -33,7 +33,17 @@ public class cocktail : MonoBehaviour
     void Awake()
     {
         TextAsset file = Resources.Load<TextAsset>("ricette");
+        if (file == null)
+        {
+            Debug.Log("file non trovato");
+            return;
+        }
         ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
+        if (ricettaFile == null)
+        {
+            Debug.Log("ricette non trovate");
+            return;
+        }
     }
 
     void Start()
@@ -63,18 +73,25 @@ public class cocktail : MonoBehaviour
     {
         selected.Clear();
         aggTextSelect();
-        Debug.Log("Sto cercando la ricetta: [" + nomeRicetta + "]");
+        ricetta ricTrovata = null;
+        //Debug.Log("Sto cercando la ricetta: [" + nomeRicetta + "]");
         foreach (ricetta r in ricettaFile.ricette)
         {
-            Debug.Log("Ricetta disponibile: [" + r.nome + "]");
+            bool nome = r.nome.Trim().Equals(nomeRicetta.Trim(),System.StringComparison.OrdinalIgnoreCase);
+            if (nome)
+            {
+                ricTrovata = r;
+                break;
+            }
+            //Debug.Log("Ricetta disponibile: [" + r.nome + "]");
         }
-        ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
-        if (ricetta == null)
+        //ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
+        if (ricTrovata == null)
         {
             Debug.Log("ricetta sbagliata");
             return;
         }
-        ordineNow = ricetta;
+        ordineNow = ricTrovata;
         testOrdine.text = testo;
     }
 
