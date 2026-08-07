@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class cocktail : MonoBehaviour
 {
@@ -125,4 +126,10 @@ public class cocktail : MonoBehaviour
         //Debug.Log("fine");
     }
 
+    public void apriScena(string nome)
+    {
+        if(Time.timeScale==0)Time.timeScale=1;
+        else Time.timeScale=0;
+        SceneManager.LoadScene(nome);
+    }
 }
