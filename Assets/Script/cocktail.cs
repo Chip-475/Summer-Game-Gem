@@ -71,6 +71,7 @@ public class cocktail : MonoBehaviour
     // dialoghi
     public void impostaOrdine(string nomeRicetta,string testo)
     {
+        Debug.Log("imposta Ordine su " + GetInstanceID());
         selected.Clear();
         aggTextSelect();
         ricetta ricTrovata = null;
@@ -78,6 +79,7 @@ public class cocktail : MonoBehaviour
         foreach (ricetta r in ricettaFile.ricette)
         {
             bool nome = r.nome.Trim().Equals(nomeRicetta.Trim(),System.StringComparison.OrdinalIgnoreCase);
+            Debug.Log(r.nome);
             if (nome)
             {
                 ricTrovata = r;
@@ -85,12 +87,14 @@ public class cocktail : MonoBehaviour
             }
             //Debug.Log("Ricetta disponibile: [" + r.nome + "]");
         }
+        Debug.Log("Suca");
         //ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
         if (ricTrovata == null)
         {
             Debug.Log("ricetta sbagliata");
             return;
         }
+        Debug.Log(ricTrovata.nome);
         ordineNow = ricTrovata;
         testOrdine.text = testo;
     }
@@ -110,6 +114,7 @@ public class cocktail : MonoBehaviour
 
     public void confermaOrdine()
     {
+        Debug.Log("conferma ordine su " + GetInstanceID());
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
@@ -148,5 +153,11 @@ public class cocktail : MonoBehaviour
         if(Time.timeScale==0)Time.timeScale=1;
         else Time.timeScale=0;
         SceneManager.LoadScene(nome);
+    }
+
+    public void rifai()
+    {
+        selected.Clear();
+        aggTextSelect();
     }
 }
