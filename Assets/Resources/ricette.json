@@ -1,36 +1,99 @@
 {
-"ricette":
-    [
-      {
-        "nome": "Solo RUM",
-        "ingredienti": [ "RUM" ]
-      },
+  "ricette": [
+    {
+      "nome": "Solo RUM",
+      "ingredienti": [ "RUM" ]
+    },
 
-      {
-        "nome": "Solo Vodka",
-        "ingredienti": [ "Vodka" ]
-      },
+    {
+      "nome": "Solo Vodka",
+      "ingredienti": [ "Vodka" ]
+    },
 
-      {
-        "nome": "RUM e Vodka",
-        "ingredienti": [ "RUM", "Vodka" ]
-      },
+    {
+      "nome": "RUM e Vodka",
+      "ingredienti": [ "RUM", "Vodka" ]
+    },
 
-      {
-        "nome": "Gin Tonic",
-        "ingredienti": [ "Gin", "Tonica" ]
-      },
-      {
-        "nome": "Vodka Lemon",
-        "ingredienti": [ "Vodka", "Limone" ]
-      },
-      {
-        "nome": "RUM e Cola",
-        "ingredienti": [ "RUM", "Cola" ]
-      },
-      {
-        "nome": "Long Island",
-        "ingredienti": ["RUM","Vodka","Gin","Cola"]
-      }
-]
+    {
+      "nome": "Gin Tonic",
+      "ingredienti": [ "Gin", "Tonica" ]
+    },
+    {
+      "nome": "Vodka Lemon",
+      "ingredienti": [ "Vodka", "Limone" ]
+    },
+    {
+      "nome": "RUM & Cola",
+      "ingredienti": [ "RUM", "Cola" ]
+    },
+    {
+      "nome": "Long Island",
+      "ingredienti": [ "RUM", "Vodka", "Gin", "Cola" ]
+    },
+    {
+      "nome": "RUM Sour",
+      "ingredienti": [ "RUM", "Limone" ]
+    },
+    {
+      "nome": "Vodka tonic",
+      "ingredienti": [ "Vodka", "Tonica" ]
+    },
+    {
+      "nome": "Triple Mix",
+      "ingredienti": [ "RUM", "Vodka", "Gin" ]
+    },
+    //con jack
+    {
+      "nome": "Jack & cola",
+      "ingredienti": [ "Jack Daniel's", "Cola" ]
+    },
+    {
+      "nome": "Tennessee Lemon",
+      "ingredienti": [ "Jack Daniel's", "Lemon" ]
+    },
+    {
+      "nome": "Smoky Jack",
+      "ingredienti": [ "Jack Daniel's", "RUM" ]
+    },
+    //jager
+    {
+      "nome": "jäger tonic",
+      "ingredienti": ["Jägermeister", "Tonica" ]
+    },
+    {
+      "nome": "jäger bomb",
+      "ingredienti": [ "Jägermeister", "Energy drink" ]
+    },
+    {
+      "nome": "Herbal mix",
+      "ingredienti": [ "Jägermeister", "RUM" ]
+    },
+    //disaronno
+    {
+      "nome": "Disaronno sour",
+      "ingredienti": [ "Disaronno", "Limone" ]
+    },
+    {
+      "nome": "Amaretto cola",
+      "ingredienti": [ "Disaronno", "Cola" ]
+    },
+    {
+      "nome": "Sweet vodka",
+      "ingredienti": [ "Disaronno", "Vodka" ]
+    },
+    //altri
+    {
+      "nome": "Tequila Sunrise",
+      "ingredienti": [ "Tequila", "Arancia" ]
+    },
+    {
+      "nome": "Margarita",
+      "ingredienti": [ "Tequila", "Triple sec" ]
+    },
+    {
+      "nome": "Whiskey ginger",
+      "ingredienti": ["Whiskey","Ginger ale"]
+    }
+  ]
 }

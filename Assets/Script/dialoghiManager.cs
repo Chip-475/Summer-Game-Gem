@@ -56,7 +56,7 @@ public class dialoghiManager : MonoBehaviour
     public Button bottoneAvanti;
     public float delayNPC;
     public float delay;
-    
+    private bool feed=false;
     void Start()
     {
         TextAsset file = Resources.Load<TextAsset>("dialoghiNPC");
@@ -184,13 +184,18 @@ public class dialoghiManager : MonoBehaviour
     public void prossBattuta(bool? drinkCorretto=null)
     {
         bottoneAvanti.interactable=false;
-        if(drinkCorretto.HasValue&&!inDialogo)
+        if(drinkCorretto.HasValue&&!inDialogo&&!feed)
         {
             string categoria;
             if (drinkCorretto == true) categoria = "reazionePositiva";
             else categoria = "reazioneNegativa";
-            testoBattuta.text = pescaBattGenerica(categoria);
+            feed = true;
+            string t= pescaBattGenerica(categoria);
+            Debug.Log("battuta" + t);
+            testoBattuta.text = t;
+            return;
         }
+        if(feed)feed=false;
         if(inDialogo) 
         {
             indice++;

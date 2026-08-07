@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class cocktail : MonoBehaviour
 {
@@ -32,7 +33,17 @@ public class cocktail : MonoBehaviour
     void Awake()
     {
         TextAsset file = Resources.Load<TextAsset>("ricette");
+        if (file == null)
+        {
+            Debug.Log("file non trovato");
+            return;
+        }
         ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
+        if (ricettaFile == null)
+        {
+            Debug.Log("ricette non trovate");
+            return;
+        }
     }
 
     void Start()
@@ -60,20 +71,31 @@ public class cocktail : MonoBehaviour
     // dialoghi
     public void impostaOrdine(string nomeRicetta,string testo)
     {
+        Debug.Log("imposta Ordine su " + GetInstanceID());
         selected.Clear();
         aggTextSelect();
-        Debug.Log("Sto cercando la ricetta: [" + nomeRicetta + "]");
+        ricetta ricTrovata = null;
+        //Debug.Log("Sto cercando la ricetta: [" + nomeRicetta + "]");
         foreach (ricetta r in ricettaFile.ricette)
         {
-            Debug.Log("Ricetta disponibile: [" + r.nome + "]");
+            bool nome = r.nome.Trim().Equals(nomeRicetta.Trim(),System.StringComparison.OrdinalIgnoreCase);
+            Debug.Log(r.nome);
+            if (nome)
+            {
+                ricTrovata = r;
+                break;
+            }
+            //Debug.Log("Ricetta disponibile: [" + r.nome + "]");
         }
-        ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
-        if (ricetta == null)
+        Debug.Log("Suca");
+        //ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
+        if (ricTrovata == null)
         {
             Debug.Log("ricetta sbagliata");
             return;
         }
-        ordineNow = ricetta;
+        Debug.Log(ricTrovata.nome);
+        ordineNow = ricTrovata;
         testOrdine.text = testo;
     }
 
@@ -92,6 +114,7 @@ public class cocktail : MonoBehaviour
 
     public void confermaOrdine()
     {
+        Debug.Log("conferma ordine su " + GetInstanceID());
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
@@ -125,4 +148,16 @@ public class cocktail : MonoBehaviour
         //Debug.Log("fine");
     }
 
+    public void apriScena(string nome)
+    {
+        if(Time.timeScale==0)Time.timeScale=1;
+        else Time.timeScale=0;
+        SceneManager.LoadScene(nome);
+    }
+
+    public void rifai()
+    {
+        selected.Clear();
+        aggTextSelect();
+    }
 }
