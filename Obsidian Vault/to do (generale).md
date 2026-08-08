@@ -17,9 +17,9 @@ bottiglie nuove
 -  [ ] tequila
 -  [ ] whisky
 -  [ ] triple sec
--  [ ] ginger ale
--  [ ] arancia
--  [ ] energy drink
+-  [x] ginger ale
+-  [x] arancia
+-  [x] energy drink
 e dopo play testing COMPLETO vedendo se la grafica anche con altri schermi come viene
 
 scritto il 19/07/2026 
