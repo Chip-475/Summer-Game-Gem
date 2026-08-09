@@ -6,7 +6,7 @@
 -  [ ] npc-
 -  [ ] Leo-
 -  [ ] scena iniziale con l'incidente (studiare come fare)-
--  [ ] ultima parte della grafica con le bottiglie-
+-  [ ] ultima parte della grafica con le bottiglie e sfondo con schermata iniziale-
 		SCRIPT
 -  [ ] implementare il sistema di monete e "rating" dei clienti-
 -  [ ] implementare ricettario e shop(collegato con il sistema di monete)-
@@ -14,8 +14,8 @@
 
 
 bottiglie nuove 
--  [ ] tequila
--  [ ] whisky
+-  [x] tequila
+-  [x] whisky
 -  [ ] triple sec
 -  [x] ginger ale
 -  [x] arancia
