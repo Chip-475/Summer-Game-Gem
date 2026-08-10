@@ -114,7 +114,7 @@ public class cocktail : MonoBehaviour
 
     public void confermaOrdine()
     {
-        Debug.Log("conferma ordine su " + GetInstanceID());
+        //Debug.Log("conferma ordine su " + GetInstanceID());
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
@@ -144,6 +144,17 @@ public class cocktail : MonoBehaviour
         }
         Debug.Log("bravo lo hai fatto giusto");
         //nuovoOrdine();
+        foreach(string ingrediente in ordineNow.ingredienti)
+        {
+            if(gameData.prezziUsati.ContainsKey(ingrediente))
+            {
+                int consumo = gameData.prezziUsati[ingrediente];
+                gameData.bottiglie[ingrediente] -= consumo;
+                if (gameData.bottiglie[ingrediente] < 0) gameData.bottiglie[ingrediente] = 0;
+                Debug.Log("Consumato: " + ingrediente + "rimane " + gameData.bottiglie[ingrediente]);
+            }
+        }
+        gameData.monete += 5;
         dialoghiManager.prossBattuta(true);
         //Debug.Log("fine");
     }
