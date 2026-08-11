@@ -38,13 +38,22 @@ public class cocktail : MonoBehaviour
             Debug.Log("file non trovato");
             return;
         }
-        ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
-        if (ricettaFile == null)
+        try
         {
-            Debug.Log("ricette non trovate");
-            return;
+            ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
+            if (ricettaFile == null)
+            {
+                Debug.LogError("ERRORE: JSON è NULL dopo il parsing!");
+                return;
+            }
+            Debug.Log("Ricette caricate: " + ricettaFile.ricette.Count);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("ERRORE nel parsing JSON: " + e.Message);
         }
     }
+
 
     void Start()
     {
@@ -103,6 +112,16 @@ public class cocktail : MonoBehaviour
     {
         selected.Add(ingre);
         aggTextSelect();
+        foreach(string ingrediente in ordineNow.ingredienti)
+        {
+            if (gameData.prezziUsati.ContainsKey(ingrediente))
+            {
+                int consumo = gameData.prezziUsati[ingrediente];
+                gameData.bottiglie[ingrediente] -= consumo;
+                if (gameData.bottiglie[ingrediente] < 0) gameData.bottiglie[ingrediente] = 0;
+                Debug.Log("Consumato: " + ingrediente + "rimane " + gameData.bottiglie[ingrediente]);
+            }
+        }
         Debug.Log(ingre);
     }
 
@@ -144,22 +163,12 @@ public class cocktail : MonoBehaviour
         }
         Debug.Log("bravo lo hai fatto giusto");
         //nuovoOrdine();
-        foreach(string ingrediente in ordineNow.ingredienti)
-        {
-            if(gameData.prezziUsati.ContainsKey(ingrediente))
-            {
-                int consumo = gameData.prezziUsati[ingrediente];
-                gameData.bottiglie[ingrediente] -= consumo;
-                if (gameData.bottiglie[ingrediente] < 0) gameData.bottiglie[ingrediente] = 0;
-                Debug.Log("Consumato: " + ingrediente + "rimane " + gameData.bottiglie[ingrediente]);
-            }
-        }
         gameData.monete += 5;
         dialoghiManager.prossBattuta(true);
         //Debug.Log("fine");
     }
 
-    public void apriScena(string nome)
+    public static void apriScena(string nome)
     {
         if(Time.timeScale==0)Time.timeScale=1;
         else Time.timeScale=0;
