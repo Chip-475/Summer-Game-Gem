@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 public class scaffale : MonoBehaviour
 {
-    [SerializeField] private TMP_Text[] textLivello=new TMP_Text[9];
-    [SerializeField] private Button[] bottoniBottoglia = new Button[9];
-    [SerializeField] private Image[] immaginiBottiglie = new Image[9]; // da allegare i bottoni
+    [SerializeField] private TMP_Text[] textLivello=new TMP_Text[10];
+    [SerializeField] private Button[] bottoniBottoglia = new Button[10];
+    [SerializeField] private Image[] immaginiBottiglie = new Image[10]; // da allegare i bottoni
 
     private string[] nomiBottiglie = new string[14]
     {
@@ -19,16 +19,17 @@ public class scaffale : MonoBehaviour
     {
         for(int i=0;i<9;i++)
         {
-            bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(i));
+            int indice = i;
+            bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
         }
         aggLivelli();
     }
     void Update()
     {
-        aggLivelli();
+        
     }
 
-    private void aggLivelli()
+    public void aggLivelli()
     {
         for(int i=0;i<9;i++)
         {

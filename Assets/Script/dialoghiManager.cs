@@ -193,6 +193,7 @@ public class dialoghiManager : MonoBehaviour
             string t= pescaBattGenerica(categoria);
             Debug.Log("battuta" + t);
             testoBattuta.text = t;
+            bottoneAvanti.interactable = true;
             return;
         }
         if(feed)feed=false;

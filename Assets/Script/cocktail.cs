@@ -30,14 +30,20 @@ public class cocktail : MonoBehaviour
     [Header("dialoghi")]
     public dialoghiManager dialoghiManager;
 
+    public scaffale scaff;
     void Awake()
     {
+        //Debug.Log("Cartella Asset/Resourse ce ? " + System.IO.Directory.Exists("Assets/Resources"));
+        //Debug.Log("file ricette json " + System.IO.File.Exists("Assets/Resources/ricette.json"));
         TextAsset file = Resources.Load<TextAsset>("ricette");
         if (file == null)
         {
             Debug.Log("file non trovato");
             return;
         }
+        //Debug.Log("Primo carattere: " + ((int)file.text[0]));
+        //Debug.Log("Lunghezza " + file.text.Length);
+        //Debug.Log("Contenuto " + file.text);
         try
         {
             ricettaFile = JsonUtility.FromJson<ricettaJson>(file.text);
@@ -68,9 +74,10 @@ public class cocktail : MonoBehaviour
     // ricettaJson ric = JsonUtility.FromJson<ricettaJson>(ricette.json); 
 
     //da completare...
-
+    
     public void nuovoOrdine()
     {
+        //funzione vecchia
         selected.Clear();
         aggTextSelect();
         int index = Random.Range(0, ricettaFile.ricette.Count);
@@ -80,7 +87,7 @@ public class cocktail : MonoBehaviour
     // dialoghi
     public void impostaOrdine(string nomeRicetta,string testo)
     {
-        Debug.Log("imposta Ordine su " + GetInstanceID());
+        //Debug.Log("imposta Ordine su " + GetInstanceID());
         selected.Clear();
         aggTextSelect();
         ricetta ricTrovata = null;
@@ -96,7 +103,7 @@ public class cocktail : MonoBehaviour
             }
             //Debug.Log("Ricetta disponibile: [" + r.nome + "]");
         }
-        Debug.Log("Suca");
+        //Debug.Log("Suca");
         //ricetta ricetta=ricettaFile.ricette.Find(r=>r.nome == nomeRicetta);
         if (ricTrovata == null)
         {
@@ -112,17 +119,14 @@ public class cocktail : MonoBehaviour
     {
         selected.Add(ingre);
         aggTextSelect();
-        foreach(string ingrediente in ordineNow.ingredienti)
+        if (gameData.prezziUsati.ContainsKey(ingre))
         {
-            if (gameData.prezziUsati.ContainsKey(ingrediente))
-            {
-                int consumo = gameData.prezziUsati[ingrediente];
-                gameData.bottiglie[ingrediente] -= consumo;
-                if (gameData.bottiglie[ingrediente] < 0) gameData.bottiglie[ingrediente] = 0;
-                Debug.Log("Consumato: " + ingrediente + "rimane " + gameData.bottiglie[ingrediente]);
-            }
+            int consumo = gameData.prezziUsati[ingre];
+            gameData.bottiglie[ingre] -= consumo;
+            if (gameData.bottiglie[ingre] < 0) gameData.bottiglie[ingre] = 0;
+            Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+            scaff.aggLivelli();
         }
-        Debug.Log(ingre);
     }
 
     private void aggTextSelect()
