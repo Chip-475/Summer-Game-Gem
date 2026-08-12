@@ -687,7 +687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 488, y: -50}
+  m_AnchoredPosition: {x: 790, y: -57}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &138149108
@@ -2629,6 +2629,7 @@ MonoBehaviour:
   testOrdine: {fileID: 13172878}
   testoSelect: {fileID: 1087244819}
   dialoghiManager: {fileID: 1285810245}
+  scaff: {fileID: 2031641307}
 --- !u!1 &657246876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,7 +4278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 820, y: 613}
+  m_AnchoredPosition: {x: 820, y: 616}
   m_SizeDelta: {x: 70, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078768873
@@ -7101,7 +7102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 817, y: -56}
+  m_AnchoredPosition: {x: 487, y: -61}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2085642525

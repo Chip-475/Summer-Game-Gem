@@ -119,17 +119,13 @@ public class cocktail : MonoBehaviour
     {
         selected.Add(ingre);
         aggTextSelect();
-        foreach(string ingrediente in ordineNow.ingredienti)
+        if (gameData.prezziUsati.ContainsKey(ingre))
         {
-            //Debug.Log("dentro il ciclo");
-            if (gameData.prezziUsati.ContainsKey(ingrediente))
-            {
-                int consumo = gameData.prezziUsati[ingrediente];
-                gameData.bottiglie[ingrediente] -= consumo;
-                if (gameData.bottiglie[ingrediente] < 0) gameData.bottiglie[ingrediente] = 0;
-                Debug.Log("Consumato: " + ingrediente + "rimane " + gameData.bottiglie[ingrediente]);
-                scaff.aggLivelli();
-            }
+            int consumo = gameData.prezziUsati[ingre];
+            gameData.bottiglie[ingre] -= consumo;
+            if (gameData.bottiglie[ingre] < 0) gameData.bottiglie[ingre] = 0;
+            Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+            scaff.aggLivelli();
         }
     }
 
