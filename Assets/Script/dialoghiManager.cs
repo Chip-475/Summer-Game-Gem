@@ -184,7 +184,7 @@ public class dialoghiManager : MonoBehaviour
     public void prossBattuta(bool? drinkCorretto=null)
     {
         bottoneAvanti.interactable=false;
-        if(drinkCorretto.HasValue&&!inDialogo&&!feed)
+        if(drinkCorretto.HasValue&&!inDialogo)
         {
             string categoria;
             if (drinkCorretto == true) categoria = "reazionePositiva";
@@ -195,7 +195,7 @@ public class dialoghiManager : MonoBehaviour
             testoBattuta.text = t;
             return;
         }
-        if(feed)feed=false;
+        //if(feed)feed=false;
         if(inDialogo) 
         {
             indice++;

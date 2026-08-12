@@ -43,7 +43,7 @@
       "nome": "Triple Mix",
       "ingredienti": [ "RUM", "Vodka", "Gin" ]
     },
-    //con jack
+    
     {
       "nome": "Jack & cola",
       "ingredienti": [ "Jack Daniel's", "Cola" ]
@@ -56,20 +56,20 @@
       "nome": "Smoky Jack",
       "ingredienti": [ "Jack Daniel's", "RUM" ]
     },
-    //jager
+    
     {
-      "nome": "j√§ger tonic",
-      "ingredienti": ["J√§germeister", "Tonica" ]
+      "nome": "j‰ger tonic",
+      "ingredienti": [ "J‰germeister", "Tonica" ]
     },
     {
-      "nome": "j√§ger bomb",
-      "ingredienti": [ "J√§germeister", "Energy drink" ]
+      "nome": "j‰ger bomb",
+      "ingredienti": [ "J‰germeister", "Energy drink" ]
     },
     {
       "nome": "Herbal mix",
-      "ingredienti": [ "J√§germeister", "RUM" ]
+      "ingredienti": [ "J‰germeister", "RUM" ]
     },
-    //disaronno
+    
     {
       "nome": "Disaronno sour",
       "ingredienti": [ "Disaronno", "Limone" ]
@@ -82,7 +82,7 @@
       "nome": "Sweet vodka",
       "ingredienti": [ "Disaronno", "Vodka" ]
     },
-    //altri
+    
     {
       "nome": "Tequila Sunrise",
       "ingredienti": [ "Tequila", "Arancia" ]
@@ -93,7 +93,7 @@
     },
     {
       "nome": "Whiskey ginger",
-      "ingredienti": ["Whiskey","Ginger ale"]
+      "ingredienti": [ "Whiskey", "Ginger ale" ]
     }
   ]
 }
