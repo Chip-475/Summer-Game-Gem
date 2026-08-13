@@ -6449,7 +6449,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1285810245}
         m_TargetAssemblyTypeName: dialoghiManager, Assembly-CSharp
-        m_MethodName: prossBattutaBotttone
+        m_MethodName: battutaBottone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
