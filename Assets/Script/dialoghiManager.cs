@@ -193,7 +193,7 @@ public class dialoghiManager : MonoBehaviour
             string t= pescaBattGenerica(categoria);
             Debug.Log("battuta" + t);
             testoBattuta.text = t;
-            bottoneAvanti.interactable = true;
+            StartCoroutine(avanzaFeed());
             return;
         }
         if(feed)feed=false;
@@ -219,6 +219,13 @@ public class dialoghiManager : MonoBehaviour
         }
         StartCoroutine(prossimaBattutaDelay());
     }
+    private IEnumerator avanzaFeed()
+    {
+        yield return new WaitForSeconds(delayNPC);
+        indice++;
+        if (indice >= convAttuale.battuta.Count) caricaNPC();
+        else mostraBattuta();
+    }
     private IEnumerator prossimaBattutaDelay()
     {
         yield return new WaitForSeconds(delayNPC);
@@ -226,8 +233,4 @@ public class dialoghiManager : MonoBehaviour
         else mostraBattuta();
     }
 
-    public void prossBattutaBotttone()
-    {
-        prossBattuta();
-    }
 }

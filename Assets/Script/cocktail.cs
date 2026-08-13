@@ -176,7 +176,7 @@ public class cocktail : MonoBehaviour
     {
         if(Time.timeScale==0)Time.timeScale=1;
         else Time.timeScale=0;
-        SceneManager.LoadScene(nome);
+        //SceneManager.LoadScene(nome);
     }
 
     public void rifai()
