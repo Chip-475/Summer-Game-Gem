@@ -223,14 +223,31 @@ public class dialoghiManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayNPC);
         indice++;
-        if (indice >= convAttuale.battuta.Count) caricaNPC();
-        else mostraBattuta();
+        if (inDialogo)
+        {
+            if (indice >= datiLeo.battuta.Count)
+            {
+                inDialogo = false;
+                indiceNPC = 0;
+                caricaNPC();
+            }
+            else mostraBattutaLeo();
+        }
+        else
+        {
+            if (indice >= convAttuale.battuta.Count) caricaNPC();
+            else mostraBattuta();
+        }
     }
     private IEnumerator prossimaBattutaDelay()
     {
         yield return new WaitForSeconds(delayNPC);
         if (inDialogo) mostraBattutaLeo();
         else mostraBattuta();
+    }
+    public void battutaBottone()
+    {
+        prossBattuta();
     }
 
 }
