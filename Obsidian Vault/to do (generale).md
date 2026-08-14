@@ -1,5 +1,5 @@
 ## IMPORTANTE:
--  [x] completare definitivamente il sistema di dialogo (quindi mettendo le battute rimanenti e vedere se ci sono cose da sistemare a causa di questo) ---!!!in parte aggiungere i dialoghi con la nuova parte---!!!!
+-  [x] completare definitivamente il sistema di dialogo (quindi mettendo le battute rimanenti e vedere se ci sono cose da sistemare a causa di questo) sistemato bene!!!
 	   GRAFICA
 -  [x] scaffale per i liquori e bibite-
 -  [x] bottiglie e bibite iniziali-
@@ -27,3 +27,4 @@ scritto il 19/07/2026
 **N.B PER OGNI MODIFICA DEVO METTERE LA DATA**
  scritto le aggiunte il 4/08/2026-
  scritto le aggiunte il 6/08/2026*
+ scritto le aggiunte il 14/082026!
