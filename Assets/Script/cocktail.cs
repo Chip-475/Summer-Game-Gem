@@ -31,6 +31,8 @@ public class cocktail : MonoBehaviour
     public dialoghiManager dialoghiManager;
 
     public scaffale scaff;
+
+    public Button conferma;
     void Awake()
     {
         //Debug.Log("Cartella Asset/Resourse ce ? " + System.IO.Directory.Exists("Assets/Resources"));
@@ -113,6 +115,7 @@ public class cocktail : MonoBehaviour
         Debug.Log(ricTrovata.nome);
         ordineNow = ricTrovata;
         testOrdine.text = testo;
+        //conferma.interactable = true;
     }
 
     public void AddIngredienti(string ingre)
@@ -138,6 +141,8 @@ public class cocktail : MonoBehaviour
     public void confermaOrdine()
     {
         //Debug.Log("conferma ordine su " + GetInstanceID());
+       // if (conferma.interactable == false) return;
+        //conferma.interactable = false;
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
@@ -174,8 +179,8 @@ public class cocktail : MonoBehaviour
 
     public static void apriScena(string nome)
     {
-        if(Time.timeScale==0)Time.timeScale=1;
-        else Time.timeScale=0;
+       // if(Time.timeScale==0)Time.timeScale=1;
+        //else Time.timeScale=0;
         //SceneManager.LoadScene(nome);
     }
 

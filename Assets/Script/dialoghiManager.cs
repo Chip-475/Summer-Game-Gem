@@ -183,36 +183,21 @@ public class dialoghiManager : MonoBehaviour
 
     public void prossBattuta(bool? drinkCorretto=null)
     {
-        bottoneAvanti.interactable=false;
-        if(drinkCorretto.HasValue&&!inDialogo&&!feed)
+        if(drinkCorretto.HasValue)
         {
             string categoria;
             if (drinkCorretto == true) categoria = "reazionePositiva";
             else categoria = "reazioneNegativa";
-            feed = true;
             string t= pescaBattGenerica(categoria);
             Debug.Log("battuta" + t);
             testoBattuta.text = t;
             StartCoroutine(avanzaFeed());
             return;
         }
-        if(feed)feed=false;
-        if(inDialogo) 
-        {
-            indice++;
-            Debug.Log(indice + " " + datiLeo.battuta.Count);
-            if (indice >= datiLeo.battuta.Count)
-            {
-                inDialogo = false;
-                indiceNPC = 0;
-                caricaNPC();
-                return;
-            }
-            StartCoroutine(prossimaBattutaDelay());
-            return;
-        }
+        bottoneAvanti.interactable = false;
         indice++;
-        if (indice >= convAttuale.battuta.Count)
+        //if(feed)feed=false;
+        if(indice>=convAttuale.battuta.Count)
         {
             caricaNPC();
             return;
@@ -223,21 +208,8 @@ public class dialoghiManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayNPC);
         indice++;
-        if (inDialogo)
-        {
-            if (indice >= datiLeo.battuta.Count)
-            {
-                inDialogo = false;
-                indiceNPC = 0;
-                caricaNPC();
-            }
-            else mostraBattutaLeo();
-        }
-        else
-        {
-            if (indice >= convAttuale.battuta.Count) caricaNPC();
-            else mostraBattuta();
-        }
+        if (indice >= convAttuale.battuta.Count) caricaNPC();
+        else mostraBattuta();
     }
     private IEnumerator prossimaBattutaDelay()
     {
