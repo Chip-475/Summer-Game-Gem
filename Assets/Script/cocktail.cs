@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Data.SqlTypes;
 
 public class cocktail : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class cocktail : MonoBehaviour
     [Header("UI per ordinare")]
     public TMP_Text testOrdine;
     public TMP_Text testoSelect;
+    public TMP_Text monete;
 
     private ricetta ordineNow;
     private List<string> selected = new List<string>();
@@ -60,6 +62,7 @@ public class cocktail : MonoBehaviour
         {
             Debug.LogError("ERRORE nel parsing JSON: " + e.Message);
         }
+        monete.text = "Monete " + gameData.monete + "€";
     }
 
 
@@ -115,7 +118,7 @@ public class cocktail : MonoBehaviour
         Debug.Log(ricTrovata.nome);
         ordineNow = ricTrovata;
         testOrdine.text = testo;
-        //conferma.interactable = true;
+        conferma.interactable = true;
     }
 
     public void AddIngredienti(string ingre)
@@ -141,12 +144,12 @@ public class cocktail : MonoBehaviour
     public void confermaOrdine()
     {
         //Debug.Log("conferma ordine su " + GetInstanceID());
-       // if (conferma.interactable == false) return;
-        //conferma.interactable = false;
+        if (conferma.interactable == false) return;
+        conferma.interactable = false;
         if(ordineNow==null)
         {
             Debug.Log("nessun ordine");
-            dialoghiManager.prossBattuta();
+            //dialoghiManager.prossBattuta();
             return;
         }
         List<string> copiaSel = new List<string>(selected);
@@ -167,13 +170,19 @@ public class cocktail : MonoBehaviour
                 Debug.Log("Hai fatto male il drink cazzo");
                 //nuovoOrdine();
                 dialoghiManager.prossBattuta(false);
+                gameData.monete += 2;
+                monete.text = "Monete " + gameData.monete + "€";
                 return; 
             }
         }
         Debug.Log("bravo lo hai fatto giusto");
         //nuovoOrdine();
         gameData.monete += 5;
+        monete.text="Monete "+gameData.monete+"€";
         dialoghiManager.prossBattuta(true);
+        selected.Clear();
+        aggTextSelect();
+        ordineNow= null;
         //Debug.Log("fine");
     }
 

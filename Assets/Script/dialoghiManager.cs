@@ -196,10 +196,12 @@ public class dialoghiManager : MonoBehaviour
         }
         bottoneAvanti.interactable = false;
         indice++;
-        //if(feed)feed=false;
-        if(indice>=convAttuale.battuta.Count)
+        int cont;
+        if (inDialogo) cont = datiLeo.battuta.Count;
+        else cont = convAttuale.battuta.Count;
+        if (indice >= cont)
         {
-            caricaNPC();
+            if(!inDialogo)caricaNPC();
             return;
         }
         StartCoroutine(prossimaBattutaDelay());
@@ -208,8 +210,15 @@ public class dialoghiManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayNPC);
         indice++;
-        if (indice >= convAttuale.battuta.Count) caricaNPC();
-        else mostraBattuta();
+        int cont;
+        if (inDialogo) cont = datiLeo.battuta.Count;
+        else cont = convAttuale.battuta.Count;
+        if (indice >= cont) caricaNPC();
+        else
+        {
+            if (inDialogo) mostraBattutaLeo();
+            else mostraBattuta();
+        }
     }
     private IEnumerator prossimaBattutaDelay()
     {
