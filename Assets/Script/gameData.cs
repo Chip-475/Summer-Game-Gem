@@ -5,6 +5,13 @@ public class gameData : MonoBehaviour
 {
     [Header("Soldi")]
     public static int monete = 100;
+
+    public static string[] scaffaleAttivo = new string[9]
+    {
+        "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
+        "Jägermeister","Jack Daniel's","Disaronno"
+    };
+
     [Header("Inventario Bottiglie")]
     public static Dictionary<string, int> bottiglie = new Dictionary<string, int>
     {
@@ -43,5 +50,13 @@ public class gameData : MonoBehaviour
         {"Disaronno",7},
         {"Limone",13}
     };
+
+    //scambio della bottiglia dello scaffale
+    public static void scambiaBottiglia(int posizione,string nomeBottiglia)
+    {
+        string vecchiaBottiglia = scaffaleAttivo[posizione];
+        scaffaleAttivo[posizione] = nomeBottiglia;
+        Debug.Log("Scambio fatto");
+    }
 }
 
