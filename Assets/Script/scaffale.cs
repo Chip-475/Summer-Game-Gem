@@ -7,6 +7,9 @@ public class scaffale : MonoBehaviour
     [SerializeField] private TMP_Text[] textLivello=new TMP_Text[10];
     [SerializeField] private Button[] bottoniBottoglia = new Button[10];
     [SerializeField] private Image[] immaginiBottiglie = new Image[10]; // da allegare i bottoni
+    [SerializeField] private Button[] bottiniMagaz=new Button[9];
+    [SerializeField] private GameObject panelMagazzino;
+    private int posSelezionata=-1; //quale pos sta cambiando
 
     private string[] nomiBottiglie = new string[14]
     {
@@ -40,6 +43,14 @@ public class scaffale : MonoBehaviour
             else if (livello <= 30) textLivello[i].color = new Color(1, 0.8f, 0.3f);  //arancione
             else textLivello[i].color = new Color(0.3f, 1, 0.3f); //verde
         }
+    }
+
+    void apriMagazzino(int posizione)
+    {
+        posSelezionata = posizione;
+        panelMagazzino.SetActive(true);
+        //con le bottiglie disponibili
+        GetComponentInParent<Canvas>().GetComponentInChildren<magazzino>().caricaMagazzino(posizione);  // dallo script del magazino
     }
 
     private void apriNegozio(int indice)
