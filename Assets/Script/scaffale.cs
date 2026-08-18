@@ -14,7 +14,7 @@ public class scaffale : MonoBehaviour
 
     private string[] nomiBottiglie = new string[14]
     {
-        "RUM","Vodka","Gin","Tonica","Limone","Cola","Jack Daniel's",
+        "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
         "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
         "Triple sec","Whiskey"
     };
