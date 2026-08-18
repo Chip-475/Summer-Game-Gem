@@ -1,3 +1,4 @@
+//16:10
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -45,7 +46,7 @@ public class scaffale : MonoBehaviour
         }
     }
 
-    void apriMagazzino(int posizione)
+    public void apriMagazzino(int posizione)
     {
         posSelezionata = posizione;
         panelMagazzino.SetActive(true);
