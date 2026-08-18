@@ -12,15 +12,15 @@ public class gameData : MonoBehaviour
         "Jägermeister","Jack Daniel's","Disaronno"
     };
 
-    [Header("Inventario Bottiglie")]
+    [Header("Inventario bottiglie")]
     public static Dictionary<string, int> bottiglie = new Dictionary<string, int>
     {
         {"Gin",100},
         {"Vodka",100},
         {"RUM",100},
         {"Tonica",100},
-        {"Cola",100},
-        {"Limone",100},
+        {"Coca Cola",100},
+        {"Lemon Soda",100},
         {"Jägermeister",100},
         {"Jack Daniel's",100},
         {"Disaronno",100}   
@@ -32,8 +32,8 @@ public class gameData : MonoBehaviour
         {"Vodka",8f},
         {"RUM",11.50f},
         {"Tonica",1.50f},
-        {"Cola",2f},
-        {"Limone",2f},
+        {"Coca Cola",2f},
+        {"Lemon Soda",2f},
         {"Jägermeister",16.50f},
         {"Jack Daniel's",15f},
         {"Disaronno",17f}
@@ -44,11 +44,11 @@ public class gameData : MonoBehaviour
         {"Vodka",7},
         {"RUM",4},
         {"Tonica",15},
-        {"Cola",17},
+        {"Coca Cola",17},
         {"Jägermeister",8},
         {"Jack Daniel's",7},
         {"Disaronno",7},
-        {"Limone",13}
+        {"Lemon Soda",13}
     };
 
     //scambio della bottiglia dello scaffale

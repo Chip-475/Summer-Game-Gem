@@ -21,19 +21,19 @@
     },
     {
       "nome": "Vodka Lemon",
-      "ingredienti": [ "Vodka", "Limone" ]
+      "ingredienti": [ "Vodka", "Lemon Soda" ]
     },
     {
       "nome": "RUM & Cola",
-      "ingredienti": [ "RUM", "Cola" ]
+      "ingredienti": [ "RUM", "Coca Cola" ]
     },
     {
       "nome": "Long Island",
-      "ingredienti": [ "RUM", "Vodka", "Gin", "Cola" ]
+      "ingredienti": [ "RUM", "Vodka", "Gin", "Coca Cola" ]
     },
     {
       "nome": "RUM Sour",
-      "ingredienti": [ "RUM", "Limone" ]
+      "ingredienti": [ "RUM", "Lemon Soda" ]
     },
     {
       "nome": "Vodka tonic",
@@ -46,11 +46,11 @@
     
     {
       "nome": "Jack & cola",
-      "ingredienti": [ "Jack Daniel's", "Cola" ]
+      "ingredienti": [ "Jack Daniel's", "Coca Cola" ]
     },
     {
       "nome": "Tennessee Lemon",
-      "ingredienti": [ "Jack Daniel's", "Lemon" ]
+      "ingredienti": [ "Jack Daniel's", "Lemon Soda" ]
     },
     {
       "nome": "Smoky Jack",
@@ -72,11 +72,11 @@
     
     {
       "nome": "Disaronno sour",
-      "ingredienti": [ "Disaronno", "Limone" ]
+      "ingredienti": [ "Disaronno", "Lemon Soda" ]
     },
     {
       "nome": "Amaretto cola",
-      "ingredienti": [ "Disaronno", "Cola" ]
+      "ingredienti": [ "Disaronno", "Coca Cola" ]
     },
     {
       "nome": "Sweet vodka",
