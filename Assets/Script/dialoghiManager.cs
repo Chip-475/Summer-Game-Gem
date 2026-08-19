@@ -64,6 +64,9 @@ public class dialoghiManager : MonoBehaviour
         mescolaClienti();
         TextAsset fileGenerico = Resources.Load<TextAsset>("battuteGeneriche");
         battGeneriche = JsonUtility.FromJson<genericheJson>(fileGenerico.text);
+        indice = gameData.indiceBattutaAttuale;
+        indiceNPC = gameData.indiceNPCAttuale;
+        inDialogo = gameData.inDialogo;
         caricaNPC();
     }
 
@@ -89,6 +92,9 @@ public class dialoghiManager : MonoBehaviour
             //Debug.Log("ho resettato l'indice");
         }
         StartCoroutine(caricaDelay());
+        gameData.indiceNPCAttuale = indiceNPC;
+        gameData.indiceBattutaAttuale = indice;
+        gameData.inDialogo = inDialogo;
     }
 
     public void caricaLeo()
@@ -121,6 +127,9 @@ public class dialoghiManager : MonoBehaviour
         convAttuale = datiNpc.conversazioni[indiceNPC];
         indice = 0;
         indiceNPC++;
+        gameData.indiceBattutaAttuale = indice;
+        gameData.indiceNPCAttuale = indiceNPC;
+        gameData.inDialogo = inDialogo;
         mostraBattuta();
     }
     private void mostraBattuta()

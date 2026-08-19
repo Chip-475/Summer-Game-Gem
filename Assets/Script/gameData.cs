@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class gameData : MonoBehaviour
 {
+    [Header("stats a runtime")]
+    public static int indiceNPCAttuale=0;
+    public static int indiceBattutaAttuale = 0;
+    public static bool inDialogo = false;
+
     [Header("Soldi")]
     public static int monete = 100;
 
