@@ -1,4 +1,4 @@
-//16:10
+//15:40
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -58,6 +58,6 @@ public class scaffale : MonoBehaviour
     {
         //salvo la bottiglia cosi nn la sovrasrivo
         PlayerPrefs.SetInt("BottigliaDaCambiare", indice);
-        cocktail.apriScena("Negozio");
+        //cocktail.apriScena("Negozio");
     }
 }

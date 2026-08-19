@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Data.SqlTypes;
+using Unity.Android.Types;
 
 public class cocktail : MonoBehaviour
 {
@@ -33,8 +34,9 @@ public class cocktail : MonoBehaviour
     public dialoghiManager dialoghiManager;
 
     public scaffale scaff;
-
     public Button conferma;
+    public GameObject ricettario;
+    private bool sem=false;
     void Awake()
     {
         //Debug.Log("Cartella Asset/Resourse ce ? " + System.IO.Directory.Exists("Assets/Resources"));
@@ -123,14 +125,14 @@ public class cocktail : MonoBehaviour
 
     public void AddIngredienti(string ingre)
     {
-        selected.Add(ingre);
-        aggTextSelect();
         if (gameData.prezziUsati.ContainsKey(ingre))
         {
             int consumo = gameData.prezziUsati[ingre];
             gameData.bottiglie[ingre] -= consumo;
             if (gameData.bottiglie[ingre] < 0) gameData.bottiglie[ingre] = 0;
             Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+            selected.Add(ingre);
+            aggTextSelect();
             scaff.aggLivelli();
         }
     }
@@ -188,14 +190,28 @@ public class cocktail : MonoBehaviour
 
     public static void apriScena(string nome)
     {
-       // if(Time.timeScale==0)Time.timeScale=1;
-        //else Time.timeScale=0;
-        //SceneManager.LoadScene(nome);
+        if(Time.timeScale==0)Time.timeScale=1;
+        else Time.timeScale=0;
+        SceneManager.LoadScene(nome);
     }
 
     public void rifai()
     {
         selected.Clear();
         aggTextSelect();
+    }
+
+    public void apri_chiudiRic()
+    {
+        if (sem)
+        {
+            ricettario.SetActive(false);//chiude
+            sem = false;
+        }
+        else
+        {
+            ricettario.SetActive(true); //apre
+            sem =true;
+        }
     }
 }
