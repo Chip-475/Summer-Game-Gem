@@ -49,6 +49,7 @@ public class magazzino : MonoBehaviour
             {
                 Debug.Log("immagine messa");
                 immagine.sprite = sprite;
+                if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
             }
             else if (sprite == null) Debug.Log("sprite null");
             else Debug.Log("immagine null");

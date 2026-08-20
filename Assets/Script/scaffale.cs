@@ -43,7 +43,15 @@ public class scaffale : MonoBehaviour
             int livello = gameData.bottiglie[nome];
             textLivello[i].text =""+livello;
             Sprite sprite=Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
-            if (sprite != null) immaginiBottiglie[i].sprite = sprite;
+            if (sprite != null)
+            {
+                immaginiBottiglie[i].sprite = sprite;
+                if(gameData.misureSprite.TryGetValue(nome,out Vector2 misura))
+                {
+                    RectTransform rt = immaginiBottiglie[i].rectTransform;
+                    rt.sizeDelta=misura;
+                }
+            }
             else Debug.Log("sprite null dallo scaffale");
             if (livello <= 0) textLivello[i].color = new Color(1, 0.3f, 0.3f); //cioè di rosso
             else if (livello <= 30) textLivello[i].color = new Color(1, 0.8f, 0.3f);  //arancione
