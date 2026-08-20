@@ -11,7 +11,7 @@ public class scaffale : MonoBehaviour
     [SerializeField] private Button[] bottiniMagaz=new Button[9];
     [SerializeField] private GameObject panelMagazzino;
     private int posSelezionata=-1; //quale pos sta cambiando
-
+    public cocktail cock;
     private string[] nomiBottiglie = new string[14]
     {
         "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
@@ -24,7 +24,9 @@ public class scaffale : MonoBehaviour
         for(int i=0;i<9;i++)
         {
             int indice = i;
-            bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
+            //bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
+            bottoniBottoglia[i].onClick.RemoveAllListeners();
+            bottoniBottoglia[i].onClick.AddListener(() => cock.AddIngredienti(gameData.scaffaleAttivo[indice]));
         }
         aggLivelli();
     }

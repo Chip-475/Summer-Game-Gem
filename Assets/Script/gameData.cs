@@ -69,7 +69,11 @@ public class gameData : MonoBehaviour
                 break;
             }
         }
-        if (i != -1) scaffaleAttivo[i] = nomeBottiglia;
+        if (i != -1)
+        {
+            scaffaleAttivo[i] = vecchiaBottiglia;
+            scaffaleAttivo[posizione] = nomeBottiglia;
+        }
         else scaffaleAttivo[posizione] = nomeBottiglia;
         Debug.Log("Scambio fatto");
     }
