@@ -9,9 +9,11 @@ public class magazzino : MonoBehaviour
     [SerializeField] private TMP_Text testoBottiglia;  //quello che si vede nello scaffale
 
     private int posizioneAttuale = -1;
+    public scaffale script;
     void Start()
     {
-        bChiudi.onClick.AddListener(chiudiMagazzino);   
+        bChiudi.onClick.AddListener(chiudiMagazzino);
+        //script = GetComponentInParent<Canvas>().GetComponentInChildren<scaffale>();
     }
 
     private void chiudiMagazzino()
@@ -38,9 +40,18 @@ public class magazzino : MonoBehaviour
             if (nome == bottAtt) continue;//coisi da non metterla due volte
             GameObject item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
+            Image immagine = item.GetComponentInChildren<Image>();
             Button btn = item.GetComponent<Button>();
-            testi[0].text = nome;
+            //testi[0].text = nome;
             testi[1].text = "" + livello;
+            Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
+            if (sprite != null && immagine != null)
+            {
+                Debug.Log("immagine messa");
+                immagine.sprite = sprite;
+            }
+            else if (sprite == null) Debug.Log("sprite null");
+            else Debug.Log("immagine null");
             if (livello <= 0) testi[1].color = new Color(1, 0.3f, 0.3f);
             else if (livello <= 30) testi[1].color = new Color(1, 0.8f, 0.3f);
             else testi[1].color = new Color(0.3f, 1, 0.3f);
@@ -52,6 +63,7 @@ public class magazzino : MonoBehaviour
     {
         gameData.scambiaBottiglia(posizioneAttuale, nome);
         Debug.Log("Bottiglia Scambiata");
+        script.aggLivelli();
         caricaMagazzino(posizioneAttuale);
     }
 }

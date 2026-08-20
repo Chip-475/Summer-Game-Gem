@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Data.SqlTypes;
 using Unity.Android.Types;
+using Unity.VisualScripting;
 
 public class cocktail : MonoBehaviour
 {
@@ -129,7 +130,14 @@ public class cocktail : MonoBehaviour
         {
             int consumo = gameData.prezziUsati[ingre];
             gameData.bottiglie[ingre] -= consumo;
-            if (gameData.bottiglie[ingre] < 0) gameData.bottiglie[ingre] = 0;
+            if (gameData.bottiglie[ingre] < 0)
+            {
+                gameData.bottiglie[ingre] = 0;
+                Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+                aggTextSelect();
+                scaff.aggLivelli();
+                return;
+            }
             Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
             selected.Add(ingre);
             aggTextSelect();

@@ -10,6 +10,7 @@
 		SCRIPT
 -  [ ] implementare il sistema di monete e "rating" dei clienti-
 -  [ ] implementare ricettario e shop(collegato con il sistema di monete)-
+-  [x] implementare ricettario e shop(collegato con il sistema di monete) al 90%  ^^
 -  [x] aumentare le ricette*
 
 
@@ -28,3 +29,4 @@ scritto il 19/07/2026
  scritto le aggiunte il 4/08/2026-
  scritto le aggiunte il 6/08/2026*
  scritto le aggiunte il 14/082026!
+ il 20/08/2026
