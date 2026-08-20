@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e3a55aa1396aec41a955ca6e8b2b9fd
+guid: 9d8b466a2b99bb84e84a94f72e6576d8
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bottiglia jager v1
+  - name: lattina lemon soda v1
     originalName: 
-    pivot: {x: 0.5, y: -0.029850746}
+    pivot: {x: 0.52, y: -0.10526316}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 36
-      height: 67
-    spriteID: 1432c0deb583f4344a491ac6733f971c
+      width: 25
+      height: 57
+    spriteID: e58b866f187d0e641bfabdb62d79570b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 278033495
+      value0: 3892408472
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: bottiglia jager v1
+    name: lattina lemon soda v1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bottiglia jager v1
+    - name: Lemon Soda
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 2
-        y: 2
-        width: 36
-        height: 67
-      spriteId: 1432c0deb583f4344a491ac6733f971c
+        x: 7
+        y: 6
+        width: 25
+        height: 57
+      spriteId: e58b866f187d0e641bfabdb62d79570b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

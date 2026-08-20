@@ -1,4 +1,4 @@
-//15:40
+//
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -37,7 +37,7 @@ public class scaffale : MonoBehaviour
     {
         for(int i=0;i<9;i++)
         {
-            string nome=nomiBottiglie[i];
+            string nome=gameData.scaffaleAttivo[i];
             int livello = gameData.bottiglie[nome];
             textLivello[i].text =""+livello;
             if (livello <= 0) textLivello[i].color = new Color(1, 0.3f, 0.3f); //cioè di rosso

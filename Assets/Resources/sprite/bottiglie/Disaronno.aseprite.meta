@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d8b466a2b99bb84e84a94f72e6576d8
+guid: eab4afacc84d4254c93b8211b3711efd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: lattina lemon soda v1
+  - name: bottiglia diseronno v1
     originalName: 
-    pivot: {x: 0.52, y: -0.10526316}
+    pivot: {x: 0.5, y: -0.061538465}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 25
-      height: 57
-    spriteID: e58b866f187d0e641bfabdb62d79570b
+      width: 38
+      height: 65
+    spriteID: 51a3c010602e6964ba0b9e9e4c655b9f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3892408472
+      value0: 2341953281
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: lattina lemon soda v1
+    name: bottiglia diseronno v1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: lattina lemon soda v1
+    - name: Disaronno
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 7
-        y: 6
-        width: 25
-        height: 57
-      spriteId: e58b866f187d0e641bfabdb62d79570b
+        x: 1
+        y: 4
+        width: 38
+        height: 65
+      spriteId: 51a3c010602e6964ba0b9e9e4c655b9f
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
