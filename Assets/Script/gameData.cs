@@ -77,5 +77,19 @@ public class gameData : MonoBehaviour
         else scaffaleAttivo[posizione] = nomeBottiglia;
         Debug.Log("Scambio fatto");
     }
+
+    [Header("dimensioni per i bottoni")]
+    public static Dictionary<string, Vector2> misureSprite = new Dictionary<string, Vector2>
+    {
+        {"Gin", new Vector2(100,220)},
+        {"Vodka",new Vector2(100,200)},
+        {"RUM",new Vector2(100,200)},
+        {"Tonica",new Vector2(90,220)},
+        {"Coca Cola",new Vector2(70,170)},
+        {"Lemon Soda",new Vector2(70,170)},
+        {"Jägermeister",new Vector2(110,230)},
+        {"Jack Daniel's",new Vector2(100,250)},
+        {"Disaronno",new Vector2(100,210)}
+    };
 }
 
