@@ -2142,19 +2142,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 223909903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Gin
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &223909903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,19 +2585,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 301607117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RUM
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &301607117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,19 +3138,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391333032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Jack Daniel's
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &391333032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,19 +5104,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716013826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Disaronno
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &716013826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,19 +6008,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826879973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Coca Cola
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &826879973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7448,19 +7388,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1078768874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Lemon Soda
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1078768874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9532,19 +9460,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1694177266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Tonica
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1694177266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9935,19 +9851,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847166556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "J\xE4germeister"
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1847166556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10413,19 +10317,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1938642047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 649502214}
-        m_TargetAssemblyTypeName: cocktail, Assembly-CSharp
-        m_MethodName: AddIngredienti
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Vodka
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1938642047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10973,15 +10865,15 @@ MonoBehaviour:
   - {fileID: 1467252081}
   - {fileID: 1549409322}
   bottoniBottoglia:
+  - {fileID: 223909902}
   - {fileID: 1938642046}
   - {fileID: 301607116}
-  - {fileID: 223909902}
   - {fileID: 1694177265}
-  - {fileID: 1078768873}
   - {fileID: 826879972}
+  - {fileID: 1078768873}
   - {fileID: 1847166555}
-  - {fileID: 716013825}
   - {fileID: 391333031}
+  - {fileID: 716013825}
   - {fileID: 9718468}
   immaginiBottiglie:
   - {fileID: 223909903}
@@ -11005,6 +10897,7 @@ MonoBehaviour:
   - {fileID: 2065520954}
   - {fileID: 1836735698}
   panelMagazzino: {fileID: 1663305927}
+  cock: {fileID: 649502214}
 --- !u!1 &2049483447
 GameObject:
   m_ObjectHideFlags: 0
