@@ -1,4 +1,4 @@
-//
+//22:01
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -40,6 +40,9 @@ public class scaffale : MonoBehaviour
             string nome=gameData.scaffaleAttivo[i];
             int livello = gameData.bottiglie[nome];
             textLivello[i].text =""+livello;
+            Sprite sprite=Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
+            if (sprite != null) immaginiBottiglie[i].sprite = sprite;
+            else Debug.Log("sprite null dallo scaffale");
             if (livello <= 0) textLivello[i].color = new Color(1, 0.3f, 0.3f); //cioè di rosso
             else if (livello <= 30) textLivello[i].color = new Color(1, 0.8f, 0.3f);  //arancione
             else textLivello[i].color = new Color(0.3f, 1, 0.3f); //verde

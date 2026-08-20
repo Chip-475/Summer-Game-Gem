@@ -60,7 +60,17 @@ public class gameData : MonoBehaviour
     public static void scambiaBottiglia(int posizione,string nomeBottiglia)
     {
         string vecchiaBottiglia = scaffaleAttivo[posizione];
-        scaffaleAttivo[posizione] = nomeBottiglia;
+        int i = -1;
+        for (int j=0;j<scaffaleAttivo.Length;j++)
+        {
+            if (scaffaleAttivo[j]==nomeBottiglia)
+            {
+                i = j;
+                break;
+            }
+        }
+        if (i != -1) scaffaleAttivo[i] = nomeBottiglia;
+        else scaffaleAttivo[posizione] = nomeBottiglia;
         Debug.Log("Scambio fatto");
     }
 }
