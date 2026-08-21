@@ -11,6 +11,7 @@ public class scaffale : MonoBehaviour
     [SerializeField] private Button[] bottiniMagaz=new Button[9];
     [SerializeField] private GameObject panelMagazzino;
     private int posSelezionata=-1; //quale pos sta cambiando
+    public TMP_Text monete;
     public cocktail cock;
     private string[] nomiBottiglie = new string[14]
     {
@@ -29,6 +30,7 @@ public class scaffale : MonoBehaviour
             bottoniBottoglia[i].onClick.AddListener(() => cock.AddIngredienti(gameData.scaffaleAttivo[indice]));
         }
         aggLivelli();
+        monete.text = "Monete: " + gameData.monete + " €";
     }
     void Update()
     {
@@ -57,6 +59,7 @@ public class scaffale : MonoBehaviour
             else if (livello <= 30) textLivello[i].color = new Color(1, 0.8f, 0.3f);  //arancione
             else textLivello[i].color = new Color(0.3f, 1, 0.3f); //verde
         }
+        monete.text = "Monete: " + gameData.monete + " €";
     }
 
     public void apriMagazzino(int posizione)

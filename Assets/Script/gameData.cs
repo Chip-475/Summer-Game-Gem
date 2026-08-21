@@ -9,7 +9,7 @@ public class gameData : MonoBehaviour
     public static bool inDialogo = false;
 
     [Header("Soldi")]
-    public static int monete = 100;
+    public static float monete = 100;
 
     public static string[] scaffaleAttivo = new string[9]
     {
@@ -91,5 +91,7 @@ public class gameData : MonoBehaviour
         {"Jack Daniel's",new Vector2(100,250)},
         {"Disaronno",new Vector2(100,210)}
     };
+
+
 }
 
