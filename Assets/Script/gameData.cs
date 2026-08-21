@@ -92,6 +92,9 @@ public class gameData : MonoBehaviour
         {"Disaronno",new Vector2(100,210)}
     };
 
+    public static Dictionary<string, int> magazzino = new Dictionary<string, int>
+    {
 
+    };
 }
 

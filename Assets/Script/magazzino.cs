@@ -32,11 +32,36 @@ public class magazzino : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        //carica le bottiglie
+        //carica le bottiglie da scaffale e se ha comprato qualcosa
         foreach (var bottiglia in gameData.bottiglie)
         {
             string nome = bottiglia.Key;
             int livello = bottiglia.Value;
+            if (nome == bottAtt) continue;//coisi da non metterla due volte
+            GameObject item = Instantiate(prefabBottiglia, contenitore);
+            TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
+            Image immagine = item.GetComponentInChildren<Image>();
+            Button btn = item.GetComponent<Button>();
+            //testi[0].text = nome;
+            testi[1].text = "" + livello;
+            Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
+            if (sprite != null && immagine != null)
+            {
+                Debug.Log("immagine messa");
+                immagine.sprite = sprite;
+                if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
+            }
+            else if (sprite == null) Debug.Log("sprite null");
+            else Debug.Log("immagine null");
+            if (livello <= 0) testi[1].color = new Color(1, 0.3f, 0.3f);
+            else if (livello <= 30) testi[1].color = new Color(1, 0.8f, 0.3f);
+            else testi[1].color = new Color(0.3f, 1, 0.3f);
+            btn.onClick.AddListener(() => scambiaBottiglia(nome));
+        }
+        foreach(var bottiglia in gameData.magazzino)
+        {
+            string nome = bottiglia.Key;
+            int livello=bottiglia.Value;
             if (nome == bottAtt) continue;//coisi da non metterla due volte
             GameObject item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();

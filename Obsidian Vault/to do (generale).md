@@ -9,7 +9,7 @@
 -  [ ] ultima parte della grafica con le bottiglie e sfondo con schermata iniziale-
 		SCRIPT
 -  [x] implementare il sistema di monete e "rating" dei clienti- (fatto ma manca il collegamento allo shop)=
--  [ ] shop collegato a monete e magazzino-=
+-  [x] shop collegato a monete e magazzino-=   quasi finito//
 -  [x] implementare ricettario e magazzino (manca solo grafica)^^=
 -  [x] aumentare le ricette*
 
@@ -31,3 +31,4 @@ scritto il 19/07/2026
  scritto le aggiunte il 14/082026!
  il 20/08/2026 ^
  il 21/08/2026 =
+ 21/08/2026 /
