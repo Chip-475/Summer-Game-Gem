@@ -61,7 +61,8 @@ public class negozio : MonoBehaviour
         if (gameData.monete >= prezzo)
         {
             gameData.monete -= prezzo;
-            gameData.bottiglie[nome] = 100;
+            // gameData.bottiglie[nome] = 100;
+            gameData.magazzino[nome] = 100;
             Debug.Log("Comprata bottiglia " + nome);
             caricaBott();
         }
