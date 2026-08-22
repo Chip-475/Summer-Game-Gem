@@ -64,8 +64,9 @@ public class gameData : MonoBehaviour
         int i = -1;
         for (int j=0;j<scaffaleAttivo.Length;j++)
         {
-            if (scaffaleAttivo[j]==nomeBottiglia)
+            if(bottiglie[scaffaleAttivo[j]] <= 0||scaffaleAttivo[j] == nomeBottiglia)//&&!(bottiglie[vecchiaBottiglia]<=0))
             {
+                Debug.Log("dentro primo if");
                 i = j;
                 break;
             }
@@ -75,8 +76,12 @@ public class gameData : MonoBehaviour
             scaffaleAttivo[i] = vecchiaBottiglia;
             scaffaleAttivo[posizione] = nomeBottiglia;
         }
-        else scaffaleAttivo[posizione] = nomeBottiglia;
-        Debug.Log("Scambio fatto");
+        else
+        {
+            scaffaleAttivo[posizione] = nomeBottiglia;
+            Debug.Log("nell'else");
+        }
+        Debug.Log("scambio fatto da gameData");
     }
 
     [Header("dimensioni per i bottoni")]

@@ -39,7 +39,7 @@ public class magazzino : MonoBehaviour
             string nome = bottiglia.Key;
             int livello = bottiglia.Value;
             //if (nome == bottAtt) continue;//coisi da non metterla due volte
-            if (nome == bottAtt) continue;
+           // if (nome == bottAtt) continue;
             GameObject item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
             Image immagine = item.GetComponentInChildren<Image>();
@@ -64,7 +64,7 @@ public class magazzino : MonoBehaviour
         {
             string nome = bottiglia.Key;
             int livello=bottiglia.Value;
-            if (nome == bottAtt) continue;//coisi da non metterla due volte
+            //if (nome == bottAtt) continue;//coisi da non metterla due volte
             GameObject item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
             Image immagine = item.GetComponentInChildren<Image>();
@@ -90,12 +90,12 @@ public class magazzino : MonoBehaviour
    
     private void scambiaBottiglia(string nome)
     {
-        string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
-       /* gameData.magazzino[vecchia] = gameData.bottiglie[vecchia];
+        /*string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
+        gameData.magazzino[vecchia] = gameData.bottiglie[vecchia];
         gameData.bottiglie[nome] = gameData.magazzino[nome];
         gameData.magazzino.Remove(nome);*/
         gameData.scambiaBottiglia(posizioneAttuale, nome);
-        Debug.Log("Bottiglia Scambiata");
+        Debug.Log("Bottiglia Scambiata da magazzino");
         script.aggLivelli();
         caricaMagazzino(posizioneAttuale);
     }
