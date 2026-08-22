@@ -5,12 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 public class scaffale : MonoBehaviour
 {
-    [SerializeField] private TMP_Text[] textLivello=new TMP_Text[10];
-    [SerializeField] private Button[] bottoniBottoglia = new Button[10];
-    [SerializeField] private Image[] immaginiBottiglie = new Image[10]; // da allegare i bottoni
-    [SerializeField] private Button[] bottiniMagaz=new Button[9];
-    [SerializeField] private GameObject panelMagazzino;
-    private int posSelezionata=-1; //quale pos sta cambiando
+    public TMP_Text[] textLivello=new TMP_Text[10];
+    public Button[] bottoniBottoglia = new Button[10];
+    public Image[] immaginiBottiglie = new Image[10]; // da allegare i bottoni
+    public Button[] bottiniMagaz=new Button[9];
+    public GameObject panelMagazzino;
     public TMP_Text monete;
     public cocktail cock;
     private string[] nomiBottiglie = new string[14]
@@ -27,7 +26,7 @@ public class scaffale : MonoBehaviour
             int indice = i;
             //bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
             bottoniBottoglia[i].onClick.RemoveAllListeners();
-            bottoniBottoglia[i].onClick.AddListener(() => cock.AddIngredienti(gameData.scaffaleAttivo[indice]));
+            bottoniBottoglia[i].onClick.AddListener(() => cock.AddIngredienti(gameData.scaffaleAttivo[indice],indice));
         }
         aggLivelli();
         monete.text = "Monete: " + gameData.monete + " €";
@@ -64,10 +63,9 @@ public class scaffale : MonoBehaviour
 
     public void apriMagazzino(int posizione)
     {
-        posSelezionata = posizione;
         panelMagazzino.SetActive(true);
         //con le bottiglie disponibili
-        GetComponentInParent<Canvas>().GetComponentInChildren<magazzino>().caricaMagazzino(posizione);  // dallo script del magazino
+        GetComponentInParent<Canvas>().GetComponentInChildren<magazzino>().caricaMagazzino(posizione);  // dallo script del magazino della pos che cambia
     }
 
     private void apriNegozio(int indice)

@@ -1,11 +1,12 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine.SceneManagement;
 using System.Data.SqlTypes;
+using TMPro;
 using Unity.Android.Types;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class cocktail : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class cocktail : MonoBehaviour
     public Button conferma;
     public GameObject ricettario;
     private bool sem=false;
+    public GameObject[] banc=new GameObject[4];
+
     void Awake()
     {
         //Debug.Log("Cartella Asset/Resourse ce ? " + System.IO.Directory.Exists("Assets/Resources"));
@@ -124,28 +127,13 @@ public class cocktail : MonoBehaviour
         conferma.interactable = true;
     }
 
-    public void AddIngredienti(string ingre)
+    public void AddIngredienti(string ingre,int posizione)
     {
         if (gameData.prezziUsati.ContainsKey(ingre))
         {
             int consumo = gameData.prezziUsati[ingre];
-            gameData.bottiglie[ingre] -= consumo;
-            int pos = -1;
-            for (int i = 0; i < gameData.scaffaleAttivo.Length; i++)
-            {
-                if (gameData.scaffaleAttivo[i] == ingre)
-                {
-                    pos = i;
-                    break;
-                }
-            }
-                if (pos == -1)
-                {
-                    Debug.Log("ingre non trovato");
-                    return;
-                }
-            gameData.livelliScaffale[pos] -= consumo;
-            if (gameData.livelliScaffale[pos]<=0) gameData.livelliScaffale[pos] = 0;
+            gameData.livelliScaffale[posizione] -= consumo;
+            if(gameData.livelliScaffale[posizione]<=0) gameData.livelliScaffale[posizione] = 0;
                 /*
                 if (gameData.bottiglie[ingre] < 0)
                 {
@@ -155,10 +143,40 @@ public class cocktail : MonoBehaviour
                     scaff.aggLivelli();
                     return;
                 }*/
-                Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
-                selected.Add(ingre);
-                aggTextSelect();
-                scaff.aggLivelli();    
+            Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+            selected.Add(ingre);
+            aggTextSelect();
+            scaff.aggLivelli();    
+            foreach(GameObject bott in banc)
+            {
+
+                Image img = bott.GetComponentInChildren<Image>();
+                if (img.sprite == null)
+                {
+                    Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{ingre}");
+                    img.sprite = sprite;
+                    if (gameData.misureSprite.TryGetValue(ingre, out Vector2 misura)) img.rectTransform.sizeDelta = misura;
+                    scaff.bottoniBottoglia[posizione].gameObject.SetActive(false);
+                    bott.gameObject.SetActive(true);
+                    Debug.Log("bancone");
+                    break;
+                }
+                else Debug.Log("bancone no");
+            } 
+        }
+    }
+
+    private void bottBancone()
+    {
+        foreach(Button bott in scaff.bottoniBottoglia)
+        {
+            bott.gameObject.SetActive(true);
+        }
+        foreach(GameObject bott in banc)
+        {
+            Image img = bott.GetComponentInChildren<Image>();
+            img.sprite = null;
+            bott.gameObject.SetActive(false);
         }
     }
 
@@ -177,6 +195,7 @@ public class cocktail : MonoBehaviour
         {
             Debug.Log("nessun ordine");
             //dialoghiManager.prossBattuta();
+            bottBancone();
             return;
         }
         List<string> copiaSel = new List<string>(selected);
@@ -186,6 +205,7 @@ public class cocktail : MonoBehaviour
             Debug.Log("male");
             //nuovoOrdine();
             dialoghiManager.prossBattuta(false);
+            bottBancone();
             return;
         }
         copiaOra.Sort();
@@ -199,6 +219,7 @@ public class cocktail : MonoBehaviour
                 dialoghiManager.prossBattuta(false);
                 gameData.monete += 2;
                 monete.text = "Monete " + gameData.monete + "€";
+                bottBancone();
                 return; 
             }
         }
@@ -210,6 +231,7 @@ public class cocktail : MonoBehaviour
         selected.Clear();
         aggTextSelect();
         ordineNow= null;
+        bottBancone();
         //Debug.Log("fine");
     }
 
@@ -224,6 +246,7 @@ public class cocktail : MonoBehaviour
     {
         selected.Clear();
         aggTextSelect();
+        bottBancone();
     }
 
     public void apri_chiudiRic()

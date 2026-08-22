@@ -5,10 +5,10 @@ using System.Net.Http.Headers;
 using System;
 public class magazzino : MonoBehaviour
 {
-    [SerializeField] private Transform contenitore; // quello dello scroll view
-    [SerializeField] private GameObject prefabBottiglia;
-    [SerializeField] private Button bChiudi;
-    [SerializeField] private TMP_Text testoBottiglia;  //quello che si vede nello scaffale
+    public Transform contenitore; // quello dello scroll view
+    public GameObject prefabBottiglia;
+    public Button bChiudi;
+    public TMP_Text testoBottiglia;  //quello che si vede nello scaffale
 
     private int posizioneAttuale = -1;
     public scaffale script;

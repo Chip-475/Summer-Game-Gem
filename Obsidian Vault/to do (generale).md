@@ -8,9 +8,9 @@
 -  [ ] scena iniziale con l'incidente (studiare come fare)-
 -  [ ] ultima parte della grafica con le bottiglie e sfondo con schermata iniziale-
 		SCRIPT
--  [x] implementare il sistema di monete e "rating" dei clienti- (fatto ma manca il collegamento allo shop)=
--  [x] shop collegato a monete e magazzino-=   quasi finito//
--  [x] implementare ricettario e magazzino (manca solo grafica)^^=
+-  [x] implementare il sistema di monete e "rating" dei clienti- (fatto ma manca il collegamento allo shop)= FATTO ""
+-  [x] shop collegato a monete e magazzino-=   quasi finito//    FATTO ""
+-  [x] implementare ricettario e magazzino (manca solo grafica)^^=  
 -  [x] aumentare le ricette*
 
 
@@ -32,3 +32,4 @@ scritto il 19/07/2026
  il 20/08/2026 ^
  il 21/08/2026 =
  21/08/2026 /
+ 23/08/2026   ""
