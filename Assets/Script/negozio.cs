@@ -62,11 +62,15 @@ public class negozio : MonoBehaviour
         {
             gameData.monete -= prezzo;
             // gameData.bottiglie[nome] = 100;
-            gameData.magazzino[nome] = 100;
+            gameData.magazzino.Add(new gameData.bottMagaz
+            {
+                nome = nome,
+                livello = 100
+            });
             Debug.Log("Comprata bottiglia " + nome);
             foreach (var i in gameData.magazzino)
             {
-                Debug.Log(i.Key+" "+ i.Value);
+                Debug.Log(i.nome+" "+ i.livello);
             }
             caricaBott();
         }
