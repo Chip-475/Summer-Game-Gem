@@ -42,7 +42,7 @@ public class scaffale : MonoBehaviour
         for(int i=0;i<9;i++)
         {
             string nome=gameData.scaffaleAttivo[i];
-            int livello = gameData.bottiglie[nome];
+            int livello = gameData.livelliScaffale[i];
             textLivello[i].text =""+livello;
             Sprite sprite=Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null)

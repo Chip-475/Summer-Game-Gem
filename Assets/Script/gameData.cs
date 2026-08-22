@@ -68,7 +68,7 @@ public class gameData : MonoBehaviour
 
     //scambio della bottiglia dello scaffale
     public static void scambiaBottiglia(int posizione,string nomeBottiglia) //pos è il numero che mi da il bottone quindi il riferimento alla bottgilia di scaffale attivo
-    {
+    {/*
         string vecchiaBottiglia = scaffaleAttivo[posizione];
         int i = -1;
         for (int j=0;j<scaffaleAttivo.Length;j++)
@@ -89,7 +89,8 @@ public class gameData : MonoBehaviour
         {
             scaffaleAttivo[posizione] = nomeBottiglia;
             Debug.Log("nell'else");
-        }
+        }*/
+        scaffaleAttivo[posizione]=nomeBottiglia;
         Debug.Log("scambio fatto da gameData");
     }
 
@@ -111,6 +112,11 @@ public class gameData : MonoBehaviour
     {
 
     };*/
+
+    public static int[] livelliScaffale = new int[9]
+    {
+        100,100,100,100,100,100,100,100,100
+    };
 
 }
 

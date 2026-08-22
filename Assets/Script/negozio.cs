@@ -7,6 +7,7 @@ public class negozio : MonoBehaviour
     [SerializeField] private GameObject prefabBott;
     [SerializeField] private TMP_Text testoMonete;
     [SerializeField] private Button chiudi;
+    [SerializeField] private TMP_Text monete;
     private bool sem=false;
 
     void Start()
@@ -31,6 +32,7 @@ public class negozio : MonoBehaviour
             sem = true;
             caricaBott();
         }
+        monete.text = "Monete: " + gameData.monete + " €";
     }
 
     private void caricaBott()
