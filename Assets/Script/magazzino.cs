@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Net.Http.Headers;
 public class magazzino : MonoBehaviour
 {
     [SerializeField] private Transform contenitore; // quello dello scroll view
@@ -37,7 +38,8 @@ public class magazzino : MonoBehaviour
         {
             string nome = bottiglia.Key;
             int livello = bottiglia.Value;
-            if (nome == bottAtt) continue;//coisi da non metterla due volte
+            //if (nome == bottAtt) continue;//coisi da non metterla due volte
+            if (nome == bottAtt) continue;
             GameObject item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
             Image immagine = item.GetComponentInChildren<Image>();
@@ -47,7 +49,7 @@ public class magazzino : MonoBehaviour
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null)
             {
-                Debug.Log("immagine messa");
+                //Debug.Log("immagine messa");
                 immagine.sprite = sprite;
                 if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
             }
@@ -72,8 +74,8 @@ public class magazzino : MonoBehaviour
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null)
             {
-                Debug.Log("immagine messa");
-                immagine.sprite = sprite;
+               //Debug.Log("immagine messa");
+               immagine.sprite = sprite;
                 if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
             }
             else if (sprite == null) Debug.Log("sprite null");
@@ -85,8 +87,13 @@ public class magazzino : MonoBehaviour
         }
     }
 
+   
     private void scambiaBottiglia(string nome)
     {
+        string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
+       /* gameData.magazzino[vecchia] = gameData.bottiglie[vecchia];
+        gameData.bottiglie[nome] = gameData.magazzino[nome];
+        gameData.magazzino.Remove(nome);*/
         gameData.scambiaBottiglia(posizioneAttuale, nome);
         Debug.Log("Bottiglia Scambiata");
         script.aggLivelli();

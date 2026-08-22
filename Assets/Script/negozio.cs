@@ -64,6 +64,10 @@ public class negozio : MonoBehaviour
             // gameData.bottiglie[nome] = 100;
             gameData.magazzino[nome] = 100;
             Debug.Log("Comprata bottiglia " + nome);
+            foreach (var i in gameData.magazzino)
+            {
+                Debug.Log(i.Key+" "+ i.Value);
+            }
             caricaBott();
         }
         else Debug.Log("non comparata bottglia " + nome);
