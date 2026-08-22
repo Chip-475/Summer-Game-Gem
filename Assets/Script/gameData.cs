@@ -1,9 +1,18 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class gameData : MonoBehaviour
 {
+    [System.Serializable]
+    public struct bottMagaz
+    {
+        public string nome;
+        public int livello;
+    }
+
+    public static List<bottMagaz> magazzino=new List<bottMagaz>();
     [Header("stats a runtime")]
     public static int indiceNPCAttuale=0;
     public static int indiceBattutaAttuale = 0;
@@ -51,14 +60,14 @@ public class gameData : MonoBehaviour
         {"RUM",4},
         {"Tonica",15},
         {"Coca Cola",17},
+        {"Lemon Soda",13},
         {"Jägermeister",8},
         {"Jack Daniel's",7},
-        {"Disaronno",7},
-        {"Lemon Soda",13}
+        {"Disaronno",7}
     };
 
     //scambio della bottiglia dello scaffale
-    public static void scambiaBottiglia(int posizione,string nomeBottiglia)
+    public static void scambiaBottiglia(int posizione,string nomeBottiglia) //pos è il numero che mi da il bottone quindi il riferimento alla bottgilia di scaffale attivo
     {
         string vecchiaBottiglia = scaffaleAttivo[posizione];
         int i = -1;
@@ -97,11 +106,11 @@ public class gameData : MonoBehaviour
         {"Jack Daniel's",new Vector2(100,250)},
         {"Disaronno",new Vector2(100,210)}
     };
-    
+    /*
     public static Dictionary<string, int> magazzino = new Dictionary<string, int>
     {
 
-    };
+    };*/
 
 }
 
