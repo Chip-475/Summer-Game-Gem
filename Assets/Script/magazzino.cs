@@ -9,7 +9,7 @@ public class magazzino : MonoBehaviour
     public GameObject prefabBottiglia;
     public Button bChiudi;
     public TMP_Text testoBottiglia;  //quello che si vede nello scaffale
-
+    public TMP_FontAsset font;
     private int posizioneAttuale = -1;
     public scaffale script;
     void Start()
@@ -74,6 +74,7 @@ public class magazzino : MonoBehaviour
             Button btn = item.GetComponent<Button>();
             //testi[0].text = nome;
             testi[1].text = "" + livello;
+            testi[1].font = font;
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null)
             {
