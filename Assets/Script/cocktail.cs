@@ -130,18 +130,35 @@ public class cocktail : MonoBehaviour
         {
             int consumo = gameData.prezziUsati[ingre];
             gameData.bottiglie[ingre] -= consumo;
-            if (gameData.bottiglie[ingre] < 0)
+            int pos = -1;
+            for (int i = 0; i < gameData.scaffaleAttivo.Length; i++)
             {
-                gameData.bottiglie[ingre] = 0;
-                Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
-                aggTextSelect();
-                scaff.aggLivelli();
-                return;
+                if (gameData.scaffaleAttivo[i] == ingre)
+                {
+                    pos = i;
+                    break;
+                }
             }
-            Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
-            selected.Add(ingre);
-            aggTextSelect();
-            scaff.aggLivelli();
+                if (pos == -1)
+                {
+                    Debug.Log("ingre non trovato");
+                    return;
+                }
+            gameData.livelliScaffale[pos] -= consumo;
+            if (gameData.livelliScaffale[pos]<=0) gameData.livelliScaffale[pos] = 0;
+                /*
+                if (gameData.bottiglie[ingre] < 0)
+                {
+                    gameData.bottiglie[ingre] = 0;
+                    Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+                    aggTextSelect();
+                    scaff.aggLivelli();
+                    return;
+                }*/
+                Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+                selected.Add(ingre);
+                aggTextSelect();
+                scaff.aggLivelli();    
         }
     }
 

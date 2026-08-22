@@ -115,11 +115,15 @@ public class magazzino : MonoBehaviour
         gameData.bottiglie[nome] = gameData.magazzino[nome];
         gameData.magazzino.Remove(nome);*/
         string nome = bottgliaMag.nome;
+        int livelloMag=bottgliaMag.livello;
         string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
+        int livelloVecchia = gameData.livelliScaffale[posizioneAttuale];
+        //gameData.bottiglie[nome] = livelloMag;
+        gameData.livelliScaffale[posizioneAttuale] = livelloMag;
         gameData.magazzino.Add(new gameData.bottMagaz
         {
             nome = vecchia,
-            livello = gameData.bottiglie[vecchia]
+            livello = livelloVecchia
         });
         gameData.bottiglie[nome] = bottgliaMag.livello;
         gameData.magazzino.RemoveAt(indice);

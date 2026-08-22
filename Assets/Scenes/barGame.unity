@@ -1629,6 +1629,7 @@ MonoBehaviour:
   prefabBott: {fileID: 8682520605069530545, guid: 6f3763415399d6340a8544b06a20588c, type: 3}
   testoMonete: {fileID: 1357241723}
   chiudi: {fileID: 1518242004}
+  monete: {fileID: 2122664734}
 --- !u!114 &117343128
 MonoBehaviour:
   m_ObjectHideFlags: 0
