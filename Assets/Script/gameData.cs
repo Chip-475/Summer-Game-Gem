@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class gameData : MonoBehaviour
@@ -91,10 +92,11 @@ public class gameData : MonoBehaviour
         {"Jack Daniel's",new Vector2(100,250)},
         {"Disaronno",new Vector2(100,210)}
     };
-
+    
     public static Dictionary<string, int> magazzino = new Dictionary<string, int>
     {
 
     };
+
 }
 
