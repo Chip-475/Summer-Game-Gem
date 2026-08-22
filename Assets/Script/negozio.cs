@@ -8,6 +8,7 @@ public class negozio : MonoBehaviour
     [SerializeField] private TMP_Text testoMonete;
     [SerializeField] private Button chiudi;
     [SerializeField] private TMP_Text monete;
+    public TMP_FontAsset font;
     private bool sem=false;
 
     void Start()
@@ -51,6 +52,7 @@ public class negozio : MonoBehaviour
             Button btn = item.GetComponent<Button>();
             //testi[0].text = nome;
             testi[1].text = prezzo + " €";
+            testi[1].font = font;
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if(sprite!=null&&immagine!=null) immagine.sprite = sprite;
             testi[1].color = new Color(0,0,0);
