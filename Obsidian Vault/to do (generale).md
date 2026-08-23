@@ -10,7 +10,7 @@
 		SCRIPT
 -  [x] implementare il sistema di monete e "rating" dei clienti- (fatto ma manca il collegamento allo shop)= FATTO ""
 -  [x] shop collegato a monete e magazzino-=   quasi finito//    FATTO ""
--  [x] implementare ricettario e magazzino (manca solo grafica)^^=  
+-  [x] implementare ricettario e magazzino e shop (manca solo grafica)^^=  
 -  [x] aumentare le ricette*
 
 
