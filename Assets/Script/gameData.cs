@@ -82,7 +82,7 @@ public class gameData : MonoBehaviour
         {"Jack Daniel's",7},
         {"Disaronno",7},
         {"Energy drink",15},
-        {"Arancia",25},
+        {"Arancia",1},
         {"Tequila",7},
         {"Triple sec",10},
         {"Whiskey",5},

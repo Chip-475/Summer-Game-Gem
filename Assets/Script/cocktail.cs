@@ -192,6 +192,8 @@ public class cocktail : MonoBehaviour
             Debug.Log("nessun ordine");
             //dialoghiManager.prossBattuta();
             bottBancone();
+            aggTextSelect();
+            selected.Clear();
             return;
         }
         List<string> copiaSel = new List<string>(selected);
@@ -212,6 +214,8 @@ public class cocktail : MonoBehaviour
             dialoghiManager.prossBattuta(false);
             gameData.monete += 1;
             bottBancone();
+            aggTextSelect();
+            selected.Clear();
             return;
         }
         copiaOra.Sort();
