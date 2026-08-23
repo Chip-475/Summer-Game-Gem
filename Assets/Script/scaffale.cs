@@ -21,7 +21,7 @@ public class scaffale : MonoBehaviour
 
     void Start()
     {
-        for(int i=0;i<9;i++)
+        for(int i=0;i<=9;i++)
         {
             int indice = i;
             //bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
@@ -43,6 +43,7 @@ public class scaffale : MonoBehaviour
             string nome=gameData.scaffaleAttivo[i];
             int livello = gameData.livelliScaffale[i];
             textLivello[i].text =""+livello;
+            if (nome == "Arancia") textLivello[i].text=""+15;
             Sprite sprite=Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null)
             {
@@ -56,6 +57,9 @@ public class scaffale : MonoBehaviour
             else Debug.Log("sprite null dallo scaffale");
             if (livello <= 0) textLivello[i].color = new Color(1, 0.3f, 0.3f); //cioè di rosso
             else if (livello <= 30) textLivello[i].color = new Color(1, 0.8f, 0.3f);  //arancione
+            else if (nome == "Arancia"&&livello>=10) textLivello[i].color = new Color(0.3f, 1, 0.3f);
+            else if(nome=="Arancia"&&livello>=5&&livello<10) textLivello[i].color = new Color(1, 0.8f, 0.3f);
+            else if(nome=="Arancione"&&livello<5) textLivello[i].color = new Color(1, 0.3f, 0.3f);
             else textLivello[i].color = new Color(0.3f, 1, 0.3f); //verde
         }
         monete.text = "Monete: " + gameData.monete + " €";

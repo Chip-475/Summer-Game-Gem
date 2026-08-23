@@ -43,6 +43,8 @@ public class dialoghiManager : MonoBehaviour
     public class dialogoLeoJson
     {
         public List<battuta> battuta;
+        public List<battuta> battuteNuove;
+        public List<battuta> battuteSbagliato;
     }
 
     [System.Serializable]
@@ -70,6 +72,7 @@ public class dialoghiManager : MonoBehaviour
     public float delayNPC;
     public float delay;
     private bool feed=false;
+    private List<battuta> attualiLeo;
     private ricettaJson datiRicette;
     void Start()
     { 
@@ -124,7 +127,10 @@ public class dialoghiManager : MonoBehaviour
         TextAsset file = Resources.Load<TextAsset>("dialoghiLeo");
         datiLeo = JsonUtility.FromJson<dialogoLeoJson>(file.text);
         inDialogo = true;
+        //indice = Random.Range(0, datiLeo.battuta.Count);
         indice = 0;
+        if (gameData.clientiPassati == 0) attualiLeo = datiLeo.battuta;
+        else attualiLeo = datiLeo.battuteNuove;
         StartCoroutine(caricaLeoDelay());
     }
     private  IEnumerator caricaLeoDelay()
@@ -174,7 +180,7 @@ public class dialoghiManager : MonoBehaviour
         if (b.comando == "ordina")
         {
             //ne riprendo una casuale
-            ricetta ricettaCas = datiRicette.ricette[Random.RandomRange(0, datiRicette.ricette.Count)];
+            ricetta ricettaCas = datiRicette.ricette[Random.Range(0, datiRicette.ricette.Count)];
             barScript.impostaOrdine(ricettaCas.nome, b.personaggio + "\n" + testoFin);
             bottoneAvanti.interactable = false;
             Debug.Log("ricetta casuale "+ricettaCas.nome);
@@ -206,7 +212,7 @@ public class dialoghiManager : MonoBehaviour
 
     private void mostraBattutaLeo() 
     {
-        battuta b = datiLeo.battuta[indice];
+        battuta b = attualiLeo[indice];
         testoBattuta.text = b.personaggio + "\n" + b.testo;
         if (b.comando == "ordina")
         {
@@ -221,6 +227,8 @@ public class dialoghiManager : MonoBehaviour
             //scena di fine gioco
         }
         else bottoneAvanti.interactable = true;
+        if (gameData.clientiPassati != 0) attualiLeo = datiLeo.battuteNuove; 
+        else attualiLeo = datiLeo.battuta;
     }
 
     public void prossBattuta(bool? drinkCorretto=null)
@@ -243,8 +251,14 @@ public class dialoghiManager : MonoBehaviour
         else cont = convAttuale.battuta.Count;
         if (indice >= cont)
         {
-            if(!inDialogo)caricaNPC();
-            return;
+            if (inDialogo)
+            {
+                inDialogo = false;
+                indiceNPC = 0;
+                gameData.clientiPassati = 0;
+                caricaNPC();
+            }
+            else caricaNPC();
         }
         StartCoroutine(prossimaBattutaDelay());
     }
