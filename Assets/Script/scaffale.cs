@@ -12,11 +12,11 @@ public class scaffale : MonoBehaviour
     public GameObject panelMagazzino;
     public TMP_Text monete;
     public cocktail cock;
-    private string[] nomiBottiglie = new string[14]
+    private string[] nomiBottiglie = new string[15]
     {
         "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
         "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
-        "Triple sec","Whiskey"
+        "Triple sec","Whiskey","Ginger ale"
     };
 
     void Start()

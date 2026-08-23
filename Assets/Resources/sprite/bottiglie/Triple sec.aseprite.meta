@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e8872acde75c71459d4bc6d48a82073
+guid: 71fa412f4918fb5458bdbe18223cb9f7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bottiglia ginger ale v2
+  - name: bottiglia triple sec v2
     originalName: 
-    pivot: {x: 0.51724136, y: -0.11904762}
+    pivot: {x: 0.54999995, y: -0.23529413}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 29
-      height: 84
-    spriteID: 89ec6ec20b356fa46a7bd7a2fe89c7b2
+      width: 40
+      height: 119
+    spriteID: f05028c4478b5cc408e4aed9a3a987cf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 58088059
+      value0: 697292358
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: bottiglia ginger ale v2
+    name: bottiglia triple sec v2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bottiglia ginger ale v2
+    - name: Triple sec
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 5
-        y: 10
-        width: 29
-        height: 84
-      spriteId: 89ec6ec20b356fa46a7bd7a2fe89c7b2
+        x: 13
+        y: 28
+        width: 40
+        height: 119
+      spriteId: f05028c4478b5cc408e4aed9a3a987cf
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 40, y: 100}
+  canvasSize: {x: 70, y: 150}
   previousTextureSize: {x: 64, y: 128}

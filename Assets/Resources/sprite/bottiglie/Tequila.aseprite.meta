@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37e2214ff87b5a44c82990a8f98bcb02
+guid: cd48e1b366fb53b4bbb06e953b4c364f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: lattina di energy drinj v1
+  - name: bottiglia tequila v1
     originalName: 
-    pivot: {x: 0.52, y: -0.10526316}
+    pivot: {x: 0.48571432, y: -0.09090909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 25
-      height: 57
-    spriteID: 353a00874a3865543ada6761697c6343
+      width: 35
+      height: 99
+    spriteID: 06c925493a5695e4c92eb77db2121c13
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 4224086998
+      value0: 2014624221
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: lattina di energy drinj v1
+    name: bottiglia tequila v1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: lattina di energy drinj v1
+    - name: Tequila
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 7
-        y: 6
-        width: 25
-        height: 57
-      spriteId: 353a00874a3865543ada6761697c6343
+        x: 3
+        y: 9
+        width: 35
+        height: 99
+      spriteId: 06c925493a5695e4c92eb77db2121c13
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 40, y: 70}
+  canvasSize: {x: 40, y: 110}
   previousTextureSize: {x: 64, y: 128}
