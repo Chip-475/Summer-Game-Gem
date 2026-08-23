@@ -33,7 +33,7 @@ public class negozio : MonoBehaviour
             sem = true;
             caricaBott();
         }
-        monete.text = "Monete: " + gameData.monete + " €";
+        monete.text = "Monete: " + gameData.monete;
     }
 
     private void caricaBott()
