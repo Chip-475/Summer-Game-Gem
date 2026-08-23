@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1bc6a704f8ecfc47b0eff9275d37c93
+guid: 2da32f6d23f3e5549835c43ec8de30c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2104942049265382206
-    second: character-spritesheet_0
+      213: 9036178211723648218
+    second: giulia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character-spritesheet_0
+      name: giulia_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 7
-        width: 33
-        height: 53
+        y: 4
+        width: 30
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cc01c0db5eb9c2e0800000000000000
-      internalID: -2104942049265382206
+      spriteID: adc99e43534f66d70800000000000000
+      internalID: 9036178211723648218
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ec0df2e91f1fa224db37d918fe5a4c2a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      character-spritesheet_0: -2104942049265382206
+      giulia_0: 9036178211723648218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
