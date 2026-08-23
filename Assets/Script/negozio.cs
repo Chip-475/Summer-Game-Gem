@@ -54,7 +54,13 @@ public class negozio : MonoBehaviour
             testi[1].text = prezzo + " €";
             testi[1].font = font;
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
-            if(sprite!=null&&immagine!=null) immagine.sprite = sprite;
+            if (sprite != null && immagine != null) immagine.sprite = sprite;
+            else Debug.Log("immagine no dal negozio");
+            if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
+            {
+                RectTransform rt = immagine.rectTransform;
+                rt.sizeDelta = misura;
+            }
             testi[1].color = new Color(0,0,0);
             btn.onClick.AddListener(() => compraBott(nome, prezzo));
         }

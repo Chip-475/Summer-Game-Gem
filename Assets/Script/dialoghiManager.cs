@@ -43,6 +43,18 @@ public class dialoghiManager : MonoBehaviour
     {
         public List<battuta> battuta;
     }
+
+    [System.Serializable]
+    public class ricetta
+    {
+        public string nome;
+        public List<string> ingredienti;
+    }
+    [System.Serializable]
+    public class ricettaJson
+    {
+        public List<ricetta> ricette;
+    }
     private dialogoLeoJson datiLeo;
     private bool inDialogo = false;  //scena speciale o no
     private genericheJson battGeneriche;
@@ -57,16 +69,25 @@ public class dialoghiManager : MonoBehaviour
     public float delayNPC;
     public float delay;
     private bool feed=false;
+    private ricettaJson datiRicette;
     void Start()
+    { 
+        indice = gameData.indiceBattutaAttuale;
+        indiceNPC = gameData.indiceNPCAttuale;
+        inDialogo = gameData.inDialogo;
+    }
+
+    void Awake()
     {
         TextAsset file = Resources.Load<TextAsset>("dialoghiNPC");
         datiNpc = JsonUtility.FromJson<npc>(file.text);
         mescolaClienti();
+
         TextAsset fileGenerico = Resources.Load<TextAsset>("battuteGeneriche");
         battGeneriche = JsonUtility.FromJson<genericheJson>(fileGenerico.text);
-        indice = gameData.indiceBattutaAttuale;
-        indiceNPC = gameData.indiceNPCAttuale;
-        inDialogo = gameData.inDialogo;
+
+        TextAsset fileRicette = Resources.Load<TextAsset>("ricette");
+        datiRicette = JsonUtility.FromJson<ricettaJson>(fileRicette.text);
         caricaNPC();
     }
 

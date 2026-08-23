@@ -51,8 +51,19 @@ public class gameData : MonoBehaviour
         {"Lemon Soda",2f},
         {"Jägermeister",16.50f},
         {"Jack Daniel's",15f},
-        {"Disaronno",17f}
+        {"Disaronno",17f},
+        {"Energy drink",1f},
+        {"Arancia",5f},
+        {"Tequila",13.50f},
+        {"Triple sec",21.50f},
+        {"Whiskey",10.50f},
+        {"Ginger ale",10.50f}
     };
+    /*
+     * "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
+        "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
+        "Triple sec","Whiskey","Ginger ale"
+     */
     public static Dictionary<string, int> prezziUsati = new Dictionary<string, int>
     {
         {"Gin",5},
@@ -63,7 +74,13 @@ public class gameData : MonoBehaviour
         {"Lemon Soda",13},
         {"Jägermeister",8},
         {"Jack Daniel's",7},
-        {"Disaronno",7}
+        {"Disaronno",7},
+        {"Energy drink",15},
+        {"Arancia",25},
+        {"Tequila",7},
+        {"Triple sec",10},
+        {"Whiskey",5},
+        {"Ginger ale",9}
     };
 
     //scambio della bottiglia dello scaffale
@@ -105,7 +122,13 @@ public class gameData : MonoBehaviour
         {"Lemon Soda",new Vector2(70,170)},
         {"Jägermeister",new Vector2(110,230)},
         {"Jack Daniel's",new Vector2(100,250)},
-        {"Disaronno",new Vector2(100,210)}
+        {"Disaronno",new Vector2(100,210)},
+        {"Tequila", new Vector2(95,210)},
+        {"Energy drink",new Vector2(60,160)},
+        {"Triple sec",new Vector2(85,200)},
+        {"Ginger ale",new Vector2(70,200)},
+        {"Whiskey",new Vector2(95,220)},
+        {"Arancia",new Vector2(80,150)}
     };
 
     public static int[] livelliScaffale = new int[9]
