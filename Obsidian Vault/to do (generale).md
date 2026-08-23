@@ -6,8 +6,8 @@
 -  [ ] npc-
 -  [ ] Leo-
 -  [ ] scena iniziale con l'incidente (studiare come fare)-
--  [ ] ultima parte della grafica con le bottiglie e sfondo con schermata iniziale-
-		SCRIPT
+-  [x] ultima parte della grafica con le bottiglie e sfondo con schermata iniziale-
+		SCRIPT   (da fare l'incidente e sfondo bar) +sfondo bar fatto +
 -  [x] implementare il sistema di monete e "rating" dei clienti- (fatto ma manca il collegamento allo shop)= FATTO ""
 -  [x] shop collegato a monete e magazzino-=   quasi finito//    FATTO ""
 -  [x] implementare ricettario e magazzino e shop (manca solo grafica)^^=  
@@ -17,7 +17,7 @@
 bottiglie nuove 
 -  [x] tequila
 -  [x] whisky
--  [ ] triple sec
+-  [x] triple sec +
 -  [x] ginger ale
 -  [x] arancia
 -  [x] energy drink
@@ -33,3 +33,4 @@ scritto il 19/07/2026
  il 21/08/2026 =
  21/08/2026 /
  23/08/2026   ""
+ 23/08/2026 ++
