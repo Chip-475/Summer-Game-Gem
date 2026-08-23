@@ -14,7 +14,7 @@
     },
     {
       "personaggio": "Leo",
-      "testo": "Lo so cosa sono Mara. Ma sono ancora io. Dai il drink e lo sai che voglio il RUM",
+      "testo": "Lo so cosa sono Mara. Ma sono ancora io. Dai il drink e lo sai che voglio ",
       "comando": "ordina",
       "parametroComando": "Solo RUM"
     },
@@ -27,6 +27,82 @@
     {
       "personaggio": "Leo",
       "testo": "Fatti un favore: vivi un pò. Per me",
+      "comando": "nessuno",
+      "parametroComando": ""
+    }
+  ],
+  "battuteNuove": [
+    {
+      "personaggio": "Leo",
+      "testo": "Come stai Mara? Pensi ancora a quella notte? ",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Il solito, grazie. Mi manchi sai e puoi darmi ",
+      "comando": "ordina",
+      "parametroComando": "Solo RUM"
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Leo... perchè continui a tormentarmi? ",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Sai, io non soffro piu, tu si. Lascia andare",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Guarda questo bar... l'ho sempre sognato insieme",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Puoi farmi questo ",
+      "comando": "ordina",
+      "parametroComando": "Solo RUM"
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Mi stai dicendo che dovrò viverti con questo per sempre? ",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Finchè non imparerai a perdonarti. Allora scomparirò",
+      "comando": "nessuno",
+      "parametroComando": ""
+    }
+  ],
+  "battuteSbagliato":[
+    {
+      "personaggio": "Leo",
+      "testo": "Non è quello che ho chiesto, Mara.",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Come puoi preparare drink agli altri se non riesco neanche a darti il mio ordine giusto?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Scusa... scusa Leo.",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "La distrazione è peccato quando il tempo è prezioso.",
       "comando": "nessuno",
       "parametroComando": ""
     }

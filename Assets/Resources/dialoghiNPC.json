@@ -19,7 +19,7 @@
         },
         {
           "personaggio": "Pippo",
-          "testo": "Comunque, la solita se non ti dispiace, ovvero solo RUM",
+          "testo": "Però bel locale, posso avere ",
           "usaGenerica": "",
           "comando": "ordina",
           "parametroComando": "Solo RUM"
@@ -45,7 +45,7 @@
         },
         {
           "personaggio": "Sara",
-          "testo": "Scusa ho pochissimo tempo me lo fai un shottino di vodka?",
+          "testo": "Scusa ho pochissimo tempo me lo fai un ",
           "comando": "ordina",
           "parametroComando": "Solo Vodka"
         }
@@ -70,7 +70,7 @@
         },
         {
           "personaggio": "Marco",
-          "testo": "Mi fai un Gin tonic? Ho voglia di qualcosa di fresco",
+          "testo": "Ho voglia di qualcosa di fresco tipo ",
           "comando": "ordina",
           "parametroComando": "Gin Tonic"
         }
@@ -95,7 +95,7 @@
         },
         {
           "personaggio": "Giulia",
-          "testo": "Un vodka lemon per favore, mi serve qualcosa di dolce sta sera",
+          "testo": "Va bene ma adesso vorrei qualcosa tipo un ",
           "comando": "ordina",
           "parametroComando": "Vodka Lemon"
         }

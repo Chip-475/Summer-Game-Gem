@@ -12,14 +12,20 @@ public class gameData : MonoBehaviour
         public int livello;
     }
 
+    [Header("sistema leo")]
+    public static int clientiPassati = 0;
+    public static int frequenzaLeo = 5;
+    public static int drinkSbagliato = 0;
+    public static bool inDialogo = false;
+
     public static List<bottMagaz> magazzino=new List<bottMagaz>();
     [Header("stats a runtime")]
     public static int indiceNPCAttuale=0;
     public static int indiceBattutaAttuale = 0;
-    public static bool inDialogo = false;
+   
 
     [Header("Soldi")]
-    public static float monete = 100;
+    public static float monete = 50;
 
     public static string[] scaffaleAttivo = new string[9]
     {

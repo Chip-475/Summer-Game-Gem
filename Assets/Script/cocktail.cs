@@ -64,7 +64,7 @@ public class cocktail : MonoBehaviour
         {
             Debug.LogError("ERRORE nel parsing JSON: " + e.Message);
         }
-        monete.text = "Monete " + gameData.monete + "€";
+        monete.text = "Monete " + gameData.monete;
     }
 
 
@@ -119,7 +119,7 @@ public class cocktail : MonoBehaviour
         }
         Debug.Log(ricTrovata.nome);
         ordineNow = ricTrovata;
-        testOrdine.text = testo;
+        testOrdine.text = testo+ordineNow.nome;
         conferma.interactable = true;
     }
 
@@ -200,7 +200,17 @@ public class cocktail : MonoBehaviour
         {
             Debug.Log("male");
             //nuovoOrdine();
+            if(gameData.inDialogo)
+            {
+                gameData.drinkSbagliato++;
+                if(gameData.drinkSbagliato>=2)
+                {
+                    gameData.frequenzaLeo = Mathf.Max(5, gameData.frequenzaLeo - 2);
+                    gameData.drinkSbagliato = 0;
+                }
+            }    
             dialoghiManager.prossBattuta(false);
+            gameData.monete += 1;
             bottBancone();
             return;
         }
@@ -213,16 +223,17 @@ public class cocktail : MonoBehaviour
                 Debug.Log("Hai fatto male il drink cazzo");
                 //nuovoOrdine();
                 dialoghiManager.prossBattuta(false);
-                gameData.monete += 2;
+                gameData.monete += 1;
                 monete.text = "Monete " + gameData.monete + "€";
                 bottBancone();
                 return; 
             }
         }
         Debug.Log("bravo lo hai fatto giusto");
+        if (gameData.inDialogo) gameData.drinkSbagliato = 0;
         //nuovoOrdine();
-        gameData.monete += 5;
-        monete.text="Monete "+gameData.monete+"€";
+        gameData.monete += 2.5f;
+        monete.text="Monete "+gameData.monete;
         dialoghiManager.prossBattuta(true);
         selected.Clear();
         aggTextSelect();

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using NUnit.Framework;
+using Unity.VisualScripting;
 public class dialoghiManager : MonoBehaviour
 {
     [System.Serializable] 
@@ -142,6 +143,14 @@ public class dialoghiManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (indiceNPC >= datiNpc.conversazioni.Count)
         {
+            gameData.clientiPassati++;
+            if(gameData.clientiPassati>=gameData.frequenzaLeo)
+            {
+                gameData.clientiPassati = 0;
+                caricaLeo();
+                if (gameData.frequenzaLeo == 5) gameData.frequenzaLeo = 10;
+                yield break;
+            }
             Debug.Log("indiceNpc troppo grande");
             indiceNPC = 0;
         }
@@ -164,8 +173,11 @@ public class dialoghiManager : MonoBehaviour
         //Debug.Log(testoFin);
         if (b.comando == "ordina")
         {
-            barScript.impostaOrdine(b.parametroComando, b.personaggio + "\n" + testoFin);
+            //ne riprendo una casuale
+            ricetta ricettaCas = datiRicette.ricette[Random.RandomRange(0, datiRicette.ricette.Count)];
+            barScript.impostaOrdine(ricettaCas.nome, b.personaggio + "\n" + testoFin);
             bottoneAvanti.interactable = false;
+            Debug.Log("ricetta casuale "+ricettaCas.nome);
            //Debug.Log(testoFin);
         }
         else
