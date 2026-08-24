@@ -188,7 +188,7 @@ public class gameData : MonoBehaviour
     // riporta tutto ai valori di default, per una Nuova Partita
     public static void ResetDati()
     {
-        monete = 100;
+        monete = 50;
 
         bottiglie["Gin"] = 100;
         bottiglie["Vodka"] = 100;
@@ -199,11 +199,12 @@ public class gameData : MonoBehaviour
         bottiglie["Jägermeister"] = 100;
         bottiglie["Jack Daniel's"] = 100;
         bottiglie["Disaronno"] = 100;
+        bottiglie["Arancia"] = 15;
 
-        scaffaleAttivo = new string[9]
+        scaffaleAttivo = new string[10]
         {
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
-        "Jägermeister","Jack Daniel's","Disaronno"
+        "Jägermeister","Jack Daniel's","Disaronno","Arancia"
         };
 
         indiceNPCAttuale = 0;
