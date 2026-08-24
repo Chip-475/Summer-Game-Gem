@@ -27,10 +27,10 @@ public class gameData : MonoBehaviour
     [Header("Soldi")]
     public static float monete = 50;
 
-    public static string[] scaffaleAttivo = new string[9]
+    public static string[] scaffaleAttivo = new string[10]
     {
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
-        "Jägermeister","Jack Daniel's","Disaronno"
+        "Jägermeister","Jack Daniel's","Disaronno","Arancia"
     };
 
     [Header("Inventario bottiglie")]
@@ -44,7 +44,8 @@ public class gameData : MonoBehaviour
         {"Lemon Soda",100},
         {"Jägermeister",100},
         {"Jack Daniel's",100},
-        {"Disaronno",100}   
+        {"Disaronno",100},
+        {"Arancia",15}
     };
     public static string bottigliaAttiva = "Gin";
     public static Dictionary<string, float> prezziBottiglie = new Dictionary<string, float>
@@ -137,10 +138,84 @@ public class gameData : MonoBehaviour
         {"Arancia",new Vector2(80,150)}
     };
 
-    public static int[] livelliScaffale = new int[9]
+    public static int[] livelliScaffale = new int[10]
     {
-        100,100,100,100,100,100,100,100,100
+        100,100,100,100,100,100,100,100,100,100
     };
 
+    // crea uno snapshot dello stato attuale, pronto per essere salvato su file
+    public static SaveData CreaSnapshot()
+    {
+        SaveData dati = new SaveData();
+        dati.monete = monete;
+
+        dati.bottiglieNomi.Clear();
+        dati.bottiglieValori.Clear();
+        foreach (var kv in bottiglie)
+        {
+            dati.bottiglieNomi.Add(kv.Key);
+            dati.bottiglieValori.Add(kv.Value);
+        }
+
+        dati.scaffaleAttivo = (string[])scaffaleAttivo.Clone();
+        dati.indiceNPCAttuale = indiceNPCAttuale;
+        dati.indiceBattutaAttuale = indiceBattutaAttuale;
+        dati.inDialogo = inDialogo;
+        dati.clientiPassati = clientiPassati;
+        dati.frequenzaLeo = frequenzaLeo;
+
+        return dati;
+    }
+
+    // applica uno snapshot caricato da file allo stato di gioco attuale
+    public static void CaricaSnapshot(SaveData dati)
+    {
+        monete = dati.monete;
+
+        for (int i = 0; i < dati.bottiglieNomi.Count; i++)
+        {
+            bottiglie[dati.bottiglieNomi[i]] = dati.bottiglieValori[i];
+        }
+
+        scaffaleAttivo = (string[])dati.scaffaleAttivo.Clone();
+        indiceNPCAttuale = dati.indiceNPCAttuale;
+        indiceBattutaAttuale = dati.indiceBattutaAttuale;
+        inDialogo = dati.inDialogo;
+        clientiPassati = dati.clientiPassati;
+        frequenzaLeo = dati.frequenzaLeo;
+    }
+
+    // riporta tutto ai valori di default, per una Nuova Partita
+    public static void ResetDati()
+    {
+        monete = 100;
+
+        bottiglie["Gin"] = 100;
+        bottiglie["Vodka"] = 100;
+        bottiglie["RUM"] = 100;
+        bottiglie["Tonica"] = 100;
+        bottiglie["Coca Cola"] = 100;
+        bottiglie["Lemon Soda"] = 100;
+        bottiglie["Jägermeister"] = 100;
+        bottiglie["Jack Daniel's"] = 100;
+        bottiglie["Disaronno"] = 100;
+
+        scaffaleAttivo = new string[9]
+        {
+        "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
+        "Jägermeister","Jack Daniel's","Disaronno"
+        };
+
+        indiceNPCAttuale = 0;
+        indiceBattutaAttuale = 0;
+        inDialogo = false;
+        clientiPassati = 0;
+        frequenzaLeo = 5;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveManager.Salva();
+    }
 }
 
