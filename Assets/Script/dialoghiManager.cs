@@ -58,6 +58,22 @@ public class dialoghiManager : MonoBehaviour
     {
         public List<ricetta> ricette;
     }
+
+    [System.Serializable]
+    public class npcSprite
+    {
+        public string nome;
+        public Sprite sprite;
+    }
+
+    [Header("NPC")]
+    public TMP_Text testoBattuta;
+    public Button bottoneAvanti;
+    public Image imageNpc;
+    public GameObject pannello;
+    public npcSprite[] spriteNpc=new npcSprite[5];
+    private Dictionary<string, Sprite> spriteDic;
+
     private dialogoLeoJson datiLeo;
     private bool inDialogo = false;  //scena speciale o no
     private genericheJson battGeneriche;
@@ -66,9 +82,7 @@ public class dialoghiManager : MonoBehaviour
     private int indice = 0; // a che battuta della conv attuale
     private int indiceNPC = 0;//per capire a quale npc st0 guardando
     //public TMP_Text testoPers;
-    public TMP_Text testoBattuta;
     public cocktail barScript;
-    public Button bottoneAvanti;
     public float delayNPC;
     public float delay;
     private bool feed=false;
@@ -76,6 +90,11 @@ public class dialoghiManager : MonoBehaviour
     private ricettaJson datiRicette;
     void Start()
     { 
+        spriteDic=new Dictionary<string, Sprite>();
+        foreach(var s in spriteNpc)
+        {
+            spriteDic[s.nome] = s.sprite;
+        }
         indice = gameData.indiceBattutaAttuale;
         indiceNPC = gameData.indiceNPCAttuale;
         inDialogo = gameData.inDialogo;
@@ -135,15 +154,16 @@ public class dialoghiManager : MonoBehaviour
     }
     private  IEnumerator caricaLeoDelay()
     {
+        nascondiPers();
         yield return new WaitForSeconds(delayNPC);
         testoBattuta.text = "";
         yield return new WaitForSeconds(delay);
         mostraBattutaLeo();
-        
     }
 
     private IEnumerator caricaDelay()
     {
+        nascondiPers();
         yield return new WaitForSeconds(delayNPC);
         testoBattuta.text="";
         yield return new WaitForSeconds(delay);
@@ -172,6 +192,7 @@ public class dialoghiManager : MonoBehaviour
     {
         battuta b = convAttuale.battuta[indice];
         string testoFin = b.testo;
+        mostraPersonaggio(b.personaggio);
         //Debug.Log(testoFin);
         //testoPers.text = b.personaggio;
         if (!string.IsNullOrEmpty(b.usaGenerica)) testoFin = pescaBattGenerica(b.usaGenerica);
@@ -213,6 +234,7 @@ public class dialoghiManager : MonoBehaviour
     private void mostraBattutaLeo() 
     {
         battuta b = attualiLeo[indice];
+        mostraPersonaggio(b.personaggio);
         testoBattuta.text = b.personaggio + "\n" + b.testo;
         if (b.comando == "ordina")
         {
@@ -285,6 +307,23 @@ public class dialoghiManager : MonoBehaviour
     public void battutaBottone()
     {
         prossBattuta();
+    }
+
+    private void mostraPersonaggio(string nome)
+    {
+        pannello.SetActive(true);
+        if (spriteDic.TryGetValue(nome, out Sprite spr))
+        {
+            imageNpc.sprite = spr;
+            imageNpc.enabled = true;
+        }
+        else Debug.Log("Sprite non trovato");
+    }
+
+    private void nascondiPers()
+    {
+        pannello.SetActive(false);
+        imageNpc.enabled = false;
     }
 
 }

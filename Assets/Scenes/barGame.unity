@@ -4707,7 +4707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &592273786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8728,8 +8728,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dialoghiManager
   testoBattuta: {fileID: 13172878}
-  barScript: {fileID: 649502214}
   bottoneAvanti: {fileID: 1878003808}
+  imageNpc: {fileID: 1863323627}
+  pannello: {fileID: 592273785}
+  spriteNpc:
+  - nome: Leo
+    sprite: {fileID: -8521781415073789312, guid: c49ae7eaff1bd65409691d1ab08588dc, type: 3}
+  - nome: Marco
+    sprite: {fileID: 7192595903740303596, guid: 10bd7cbc68c036d4d990ad2e5c944a96, type: 3}
+  - nome: Sara
+    sprite: {fileID: 7253127098789691410, guid: deb5b272448edc7429469ed73f12ad5b, type: 3}
+  - nome: Giulia
+    sprite: {fileID: 9036178211723648218, guid: 2da32f6d23f3e5549835c43ec8de30c1, type: 3}
+  - nome: Pippo
+    sprite: {fileID: -2104942049265382206, guid: f1bc6a704f8ecfc47b0eff9275d37c93, type: 3}
+  barScript: {fileID: 649502214}
   delayNPC: 1
   delay: 5
 --- !u!1 &1310236210

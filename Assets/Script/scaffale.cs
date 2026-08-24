@@ -21,7 +21,7 @@ public class scaffale : MonoBehaviour
 
     void Start()
     {
-        for(int i=0;i<=9;i++)
+        for(int i=0;i<10;i++)
         {
             int indice = i;
             //bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
