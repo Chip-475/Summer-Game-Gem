@@ -61,7 +61,7 @@ public class scaffale : MonoBehaviour
             else if(nome=="Arancione"&&livello<5) textLivello[i].color = new Color(1, 0.3f, 0.3f);
             else textLivello[i].color = new Color(0.3f, 1, 0.3f); //verde
         }
-        monete.text = "Monete: " + gameData.monete + " €";
+        monete.text = "Monete: " + gameData.monete;
     }
 
     public void apriMagazzino(int posizione)

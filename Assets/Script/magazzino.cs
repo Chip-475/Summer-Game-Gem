@@ -7,11 +7,13 @@ public class magazzino : MonoBehaviour
 {
     public Transform contenitore; // quello dello scroll view
     public GameObject prefabBottiglia;
+    public GameObject prefabArancia;
     public Button bChiudi;
     public TMP_Text testoBottiglia;  //quello che si vede nello scaffale
     public TMP_FontAsset font;
     private int posizioneAttuale = -1;
     public scaffale script;
+    private GameObject item;
     void Start()
     {
         bChiudi.onClick.AddListener(chiudiMagazzino);
@@ -27,7 +29,7 @@ public class magazzino : MonoBehaviour
     {
         posizioneAttuale = pos;
         string bottAtt = gameData.scaffaleAttivo[pos];
-        int livelloBott = gameData.bottiglie[bottAtt];
+        int livelloBott = gameData.livelliScaffale[pos];
         testoBottiglia.text = "Sullo Scaffale c'è " + bottAtt + " con " + livelloBott;
         //toglie le bott precedenti
         foreach(Transform child in contenitore)
@@ -65,10 +67,11 @@ public class magazzino : MonoBehaviour
         for(int i=0;i<gameData.magazzino.Count;i++)
         {
             gameData.bottMagaz bottiglia = gameData.magazzino[i];
-            string nome = bottiglia.nome;
+            string nome=bottiglia.nome;
             int livello=bottiglia.livello;
             //if (nome == bottAtt) continue;//coisi da non metterla due volte
-            GameObject item = Instantiate(prefabBottiglia, contenitore);
+            if (nome == "Arancia") item = Instantiate(prefabArancia, contenitore);
+            else item = Instantiate(prefabBottiglia, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
             Image immagine = item.GetComponentInChildren<Image>();
             Button btn = item.GetComponent<Button>();

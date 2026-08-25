@@ -10,6 +10,13 @@ public class gameData : MonoBehaviour
         public int livello;
     }
 
+    private static readonly string[] nomiBottiglie = new string[15]
+    {
+        "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
+        "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
+        "Triple sec","Whiskey","Ginger ale"
+    };
+
     [Header("sistema leo")]
     public static int clientiPassati = 0;
     public static int frequenzaLeo = 5;
@@ -29,6 +36,19 @@ public class gameData : MonoBehaviour
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
         "Jägermeister","Jack Daniel's","Disaronno","Arancia"
     };
+
+    public static void iniziaMag()
+    {
+        magazzino.Clear();
+        foreach(string nome in scaffaleAttivo)
+        {
+            bool sem;
+            if (System.Array.IndexOf(scaffaleAttivo, nome) >= 0) sem = true;
+            else sem= false;
+            int livello = 100;
+            magazzino.Add(new bottMagaz {nome=nome, livello=livello});
+        }
+    }
 
     [Header("Inventario bottiglie")]
     public static Dictionary<string, int> bottiglie = new Dictionary<string, int>

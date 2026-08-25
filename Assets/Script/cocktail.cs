@@ -229,6 +229,8 @@ public class cocktail : MonoBehaviour
                 dialoghiManager.prossBattuta(false);
                 gameData.monete += 1;
                 monete.text = "Monete " + gameData.monete;
+                selected.Clear();
+                aggTextSelect();
                 bottBancone();
                 return; 
             }

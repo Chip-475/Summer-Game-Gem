@@ -8,7 +8,6 @@ public class negozio : MonoBehaviour
     [SerializeField] private GameObject prefabArancia;
     [SerializeField] private TMP_Text testoMonete;
     [SerializeField] private Button chiudi;
-    [SerializeField] private TMP_Text monete;
     public TMP_FontAsset font;
     private bool sem=false;
     private GameObject item;
@@ -32,7 +31,7 @@ public class negozio : MonoBehaviour
             sem = true;
             caricaBott();
         }
-        monete.text = "Monete: " + gameData.monete;
+        testoMonete.text = "Monete: " + gameData.monete;
     }
 
     private void caricaBott()

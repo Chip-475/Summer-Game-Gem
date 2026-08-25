@@ -1623,7 +1623,6 @@ MonoBehaviour:
   prefabArancia: {fileID: 7689786597282652263, guid: 7987455ca49599741bbd06160bf87d07, type: 3}
   testoMonete: {fileID: 1357241723}
   chiudi: {fileID: 1518242004}
-  monete: {fileID: 2122664734}
   font: {fileID: 11400000, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
 --- !u!114 &117343128
 MonoBehaviour:
@@ -10829,6 +10828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::magazzino
   contenitore: {fileID: 356868407}
   prefabBottiglia: {fileID: 8682520605069530545, guid: 6f3763415399d6340a8544b06a20588c, type: 3}
+  prefabArancia: {fileID: 7689786597282652263, guid: 7987455ca49599741bbd06160bf87d07, type: 3}
   bChiudi: {fileID: 331026672}
   testoBottiglia: {fileID: 140273834}
   font: {fileID: 11400000, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
