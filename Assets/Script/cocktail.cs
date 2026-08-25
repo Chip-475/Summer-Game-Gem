@@ -178,7 +178,7 @@ public class cocktail : MonoBehaviour
 
     private void aggTextSelect()
     {
-        if (selected.Count == 0) testoSelect.text = "Selezionati: nessuno";
+        if (selected.Count == 0) testoSelect.text = "Selezionati: ";
         else testoSelect.text ="Selezionati "+string.Join(",", selected);
     }
 
@@ -228,7 +228,7 @@ public class cocktail : MonoBehaviour
                 //nuovoOrdine();
                 dialoghiManager.prossBattuta(false);
                 gameData.monete += 1;
-                monete.text = "Monete " + gameData.monete + "€";
+                monete.text = "Monete " + gameData.monete;
                 bottBancone();
                 return; 
             }

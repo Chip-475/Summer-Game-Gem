@@ -73,20 +73,23 @@ public class magazzino : MonoBehaviour
             Image immagine = item.GetComponentInChildren<Image>();
             Button btn = item.GetComponent<Button>();
             //testi[0].text = nome;
-            testi[1].text = "" + livello;
-            testi[1].font = font;
+            testi[0].text = "" + livello;
+            testi[0].font = font;
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null)
             {
                //Debug.Log("immagine messa");
                immagine.sprite = sprite;
-                if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
+               if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
             }
             else if (sprite == null) Debug.Log("sprite null");
             else Debug.Log("immagine null");
-            if (livello <= 0) testi[1].color = new Color(1, 0.3f, 0.3f);
-            else if (livello <= 30) testi[1].color = new Color(1, 0.8f, 0.3f);
-            else testi[1].color = new Color(0.3f, 1, 0.3f);
+            if (livello <= 0) testi[0].color = new Color(1, 0.3f, 0.3f); //cioè di rosso
+            else if (livello <= 30) testi[0].color = new Color(1, 0.8f, 0.3f);  //arancione
+            else if (nome == "Arancia" && livello >= 10) testi[0].color = new Color(0.3f, 1, 0.3f);
+            else if (nome == "Arancia" && livello >= 5 && livello < 10) testi[0].color = new Color(1, 0.8f, 0.3f);
+            else if (nome == "Arancione" && livello < 5) testi[0].color = new Color(1, 0.3f, 0.3f);
+            else testi[0].color = new Color(0.3f, 1, 0.3f); //verde
             int indice = i;
             btn.onClick.AddListener(() => scambiaBottiglia(indice));
         }

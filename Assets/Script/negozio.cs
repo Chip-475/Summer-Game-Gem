@@ -5,21 +5,20 @@ public class negozio : MonoBehaviour
 {
     [SerializeField] private Transform contenitore;
     [SerializeField] private GameObject prefabBott;
+    [SerializeField] private GameObject prefabArancia;
     [SerializeField] private TMP_Text testoMonete;
     [SerializeField] private Button chiudi;
     [SerializeField] private TMP_Text monete;
     public TMP_FontAsset font;
     private bool sem=false;
+    private GameObject item;
 
     void Start()
     {
         chiudi.onClick.AddListener(apriChiudiNeg);    
     }
 
-    void Update()
-    {
-        testoMonete.text = "Monete: " + gameData.monete;    
-    }
+   
     public void apriChiudiNeg()
     {
         if(sem)
@@ -46,13 +45,14 @@ public class negozio : MonoBehaviour
         {
             string nome = bottiglia.Key;
             float prezzo = bottiglia.Value;
-            GameObject item = Instantiate(prefabBott, contenitore);
+            if(nome=="Arancia") item = Instantiate(prefabArancia, contenitore);
+            else item = Instantiate(prefabBott, contenitore);
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
             Image immagine = item.GetComponent<Image>();
             Button btn = item.GetComponent<Button>();
             //testi[0].text = nome;
-            testi[1].text = prezzo + " €";
-            testi[1].font = font;
+            testi[0].text = prezzo + " €";
+            testi[0].font = font;
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null) immagine.sprite = sprite;
             else Debug.Log("immagine no dal negozio");
@@ -61,7 +61,7 @@ public class negozio : MonoBehaviour
                 RectTransform rt = immagine.rectTransform;
                 rt.sizeDelta = misura;
             }
-            testi[1].color = new Color(0,0,0);
+            testi[0].color = new Color(0,0,0);
             btn.onClick.AddListener(() => compraBott(nome, prezzo));
         }
     }

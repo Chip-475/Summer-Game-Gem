@@ -22,7 +22,6 @@ public class gameData : MonoBehaviour
     public static int indiceBattutaAttuale = 0;
    
 
-    [Header("Soldi")]
     public static float monete = 50;
 
     public static string[] scaffaleAttivo = new string[10]
@@ -129,16 +128,16 @@ public class gameData : MonoBehaviour
         {"Jack Daniel's",new Vector2(100,250)},
         {"Disaronno",new Vector2(100,210)},
         {"Tequila", new Vector2(95,210)},
-        {"Energy drink",new Vector2(60,160)},
+        {"Energy drink",new Vector2(65,165)},
         {"Triple sec",new Vector2(85,200)},
         {"Ginger ale",new Vector2(70,200)},
         {"Whiskey",new Vector2(95,220)},
-        {"Arancia",new Vector2(80,150)}
+        {"Arancia",new Vector2(120,120)}
     };
 
     public static int[] livelliScaffale = new int[10]
     {
-        100,100,100,100,100,100,100,100,100,100
+        100,100,100,100,100,100,100,100,100,15
     };
 
     // crea uno snapshot dello stato attuale, pronto per essere salvato su file
