@@ -21,7 +21,7 @@ public class scaffale : MonoBehaviour
 
     void Start()
     {
-        for(int i=0;i<10;i++)
+        for(int i=0;i<immaginiBottiglie.Length;i++)
         {
             int indice = i;
             //bottoniBottoglia[i].onClick.AddListener(() => apriNegozio(indice));
@@ -38,12 +38,11 @@ public class scaffale : MonoBehaviour
 
     public void aggLivelli()
     {
-        for(int i=0;i<9;i++)
+        for(int i=0;i<immaginiBottiglie.Length;i++)
         {
             string nome=gameData.scaffaleAttivo[i];
             int livello = gameData.livelliScaffale[i];
             textLivello[i].text =""+livello;
-            if (nome == "Arancia") textLivello[i].text=""+15;
             Sprite sprite=Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null)
             {

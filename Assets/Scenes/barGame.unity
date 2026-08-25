@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::negozio
   contenitore: {fileID: 1915436635}
   prefabBott: {fileID: 8682520605069530545, guid: 6f3763415399d6340a8544b06a20588c, type: 3}
+  prefabArancia: {fileID: 7689786597282652263, guid: 7987455ca49599741bbd06160bf87d07, type: 3}
   testoMonete: {fileID: 1357241723}
   chiudi: {fileID: 1518242004}
   monete: {fileID: 2122664734}
@@ -8530,7 +8531,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -300.98914, w: 0}
+  m_margin: {x: 0, y: 0, z: -146.70374, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12057,7 +12058,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1896657226
@@ -12679,12 +12680,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
