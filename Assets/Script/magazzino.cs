@@ -78,12 +78,17 @@ public class magazzino : MonoBehaviour
             //testi[0].text = nome;
             testi[0].text = "" + livello;
             testi[0].font = font;
+            LayoutElement layout= item.GetComponent<LayoutElement>();
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null)
             {
                //Debug.Log("immagine messa");
                immagine.sprite = sprite;
-               if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
+                if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
+                {
+                    layout.preferredHeight=misura.y;
+                    layout.preferredWidth=misura.x;
+                }
             }
             else if (sprite == null) Debug.Log("sprite null");
             else Debug.Log("immagine null");

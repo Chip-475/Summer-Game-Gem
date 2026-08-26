@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(dati, true);
         File.WriteAllText(PercorsoFile, json);
         Debug.Log("Partita salvata in: " + PercorsoFile);
+        cocktail.apriScena("menu");
     }
 
     public static bool EsisteSalvataggio()

@@ -17,7 +17,6 @@ public class negozio : MonoBehaviour
         chiudi.onClick.AddListener(apriChiudiNeg);    
     }
 
-   
     public void apriChiudiNeg()
     {
         if(sem)
@@ -55,10 +54,11 @@ public class negozio : MonoBehaviour
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null) immagine.sprite = sprite;
             else Debug.Log("immagine no dal negozio");
+            LayoutElement layout = item.GetComponent<LayoutElement>();
             if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
             {
-                RectTransform rt = immagine.rectTransform;
-                rt.sizeDelta = misura;
+                layout.preferredHeight = misura.y;
+                layout.preferredWidth = misura.x;
             }
             testi[0].color = new Color(0,0,0);
             btn.onClick.AddListener(() => compraBott(nome, prezzo));
