@@ -233,7 +233,7 @@ public class gameData : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveManager.Salva();
+        SaveManager.salva();
     }
 }
 

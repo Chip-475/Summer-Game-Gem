@@ -16,13 +16,13 @@ public class menuIniziale : MonoBehaviour
     public void NuovaPartita()
     {
         gameData.ResetDati();
-        SaveManager.CancellaSalvataggio(); 
+        SaveManager.cancellaSalvataggio(); 
         SceneManager.LoadScene(nomeSceneGioco);
     }
 
     public void Continua()
     {
-        if (SaveManager.Carica())
+        if (SaveManager.carica())
         {
             SceneManager.LoadScene("barGame");
         }

@@ -2,7 +2,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Rendering;
 public class scaffale : MonoBehaviour
 {
     public TMP_Text[] textLivello=new TMP_Text[10];

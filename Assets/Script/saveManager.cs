@@ -1,11 +1,11 @@
 using System.IO;
 using UnityEngine;
 
-public static class SaveManager
+public class SaveManager : MonoBehaviour
 {
     private static string PercorsoFile => Path.Combine(Application.persistentDataPath, "salvataggio.json");
 
-    public static void Salva()
+    public static void salva()
     {
         SaveData dati = gameData.CreaSnapshot();
         string json = JsonUtility.ToJson(dati, true);
@@ -18,7 +18,7 @@ public static class SaveManager
         return File.Exists(PercorsoFile);
     }
 
-    public static bool Carica()
+    public static bool carica()
     {
         if (!EsisteSalvataggio())
         {
@@ -31,7 +31,7 @@ public static class SaveManager
         return true;
     }
 
-    public static void CancellaSalvataggio()
+    public static void cancellaSalvataggio()
     {
         if (EsisteSalvataggio()) File.Delete(PercorsoFile);
     }
