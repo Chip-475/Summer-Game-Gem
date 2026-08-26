@@ -81,7 +81,7 @@ public class cocktail : MonoBehaviour
     // ricettaJson ric = JsonUtility.FromJson<ricettaJson>(ricette.json); 
 
     //da completare...
-    
+
     public void nuovoOrdine()
     {
         //funzione vecchia

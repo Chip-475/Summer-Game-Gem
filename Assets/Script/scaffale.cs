@@ -28,7 +28,7 @@ public class scaffale : MonoBehaviour
             bottoniBottoglia[i].onClick.AddListener(() => cock.AddIngredienti(gameData.scaffaleAttivo[indice],indice));
         }
         aggLivelli();
-        monete.text = "Monete: " + gameData.monete + " €";
+        monete.text = "Monete: " + gameData.monete;
     }
     void Update()
     {
