@@ -275,4 +275,9 @@ public class cocktail : MonoBehaviour
             sem =true;
         }
     }
+    public void chiudi()
+    {
+        
+        gameObject.SetActive(false);
+    }
 }
