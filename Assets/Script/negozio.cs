@@ -6,7 +6,7 @@ public class negozio : MonoBehaviour
 {
     public Transform cont1;
     public Transform cont2;
-    [SerializeField] private Transform contenitore;
+    [SerializeField] private GameObject contenitore;
     [SerializeField] private GameObject prefabBott;
     [SerializeField] private GameObject prefabArancia;
     [SerializeField] private TMP_Text testoMonete;
@@ -17,7 +17,6 @@ public class negozio : MonoBehaviour
 
     void Start()
     {
-        chiudi.onClick.AddListener(apriChiudiNeg);
         RectTransform rt=prefabArancia.GetComponent<RectTransform>();
         rt.sizeDelta=gameData.misureSprite["Arancia"];
     }
@@ -26,16 +25,22 @@ public class negozio : MonoBehaviour
     {
         if(sem)
         {
-            gameObject.SetActive(false);
+            contenitore.SetActive(false);
             sem = false;
+            Debug.Log("Dentro chiudi");
+   
+            Time.timeScale = 1f;
         }
         else
         {
-            gameObject.SetActive(true);
+            contenitore.SetActive(true);
             sem = true;
             caricaBott();
+            Debug.Log("Dentro Apri");
+            Time.timeScale = 1f;
         }
         testoMonete.text = "Monete: " + gameData.monete;
+        
     }
 
     private void caricaBott()
@@ -58,6 +63,7 @@ public class negozio : MonoBehaviour
         {
             if (gameData.prezziBottiglie.ContainsKey(nome)) caricaBottone(nome, cont2);
         }
+        Debug.Log("fine funzione");
     }
 
     private void caricaBottone(string nome, Transform parent)
@@ -75,6 +81,7 @@ public class negozio : MonoBehaviour
             Button btn = item.GetComponent<Button>();
             testi[0].text = prezzo + " €";
             testi[0].font = font;
+            testi[0].rectTransform.anchoredPosition = gameData.misureText[nome];
             Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
             if (sprite != null && immagine != null) immagine.sprite = sprite;
             testi[0].color = new Color(0, 0, 0);

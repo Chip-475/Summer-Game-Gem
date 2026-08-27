@@ -151,9 +151,29 @@ public class gameData : MonoBehaviour
         {"Energy drink",new Vector2(65,165)},
         {"Triple sec",new Vector2(85,200)},
         {"Ginger ale",new Vector2(70,200)},
-        {"Whiskey",new Vector2(95,220)},
+        {"Whiskey",new Vector2(95,180)},
         {"Arancia",new Vector2(120,120)}
     };
+
+    public static Dictionary<string, Vector2> misureText = new Dictionary<string, Vector2>
+    {
+        {"Gin",new Vector2(0,-152)},
+        {"Vodka",new Vector2(0,-141)},
+        {"RUM",new Vector2(0,-145)},
+        {"Tonica",new Vector2(0,-150)},
+        {"Coca Cola",new Vector2(0,-122)},
+        {"Lemon Soda",new Vector2(0,-124)},
+        {"Jägermeister",new Vector2(0,-157)},
+        {"Jack Daniel's",new Vector2(0,-162)},
+        {"Disaronno",new Vector2(0,-145)},
+        {"Tequila", new Vector2(0,-140)},
+        {"Energy drink",new Vector2(0,-129)},
+        {"Triple sec",new Vector2(0,-143)},
+        {"Ginger ale",new Vector2(0,-146)},
+        {"Whiskey",new Vector2(0,-155)},
+        {"Arancia",new Vector2(0,-107.2f)}
+    };
+
 
     public static int[] livelliScaffale = new int[10]
     {
