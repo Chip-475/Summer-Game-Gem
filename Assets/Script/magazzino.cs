@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Net.Http.Headers;
 using System;
+using JetBrains.Annotations;
 public class magazzino : MonoBehaviour
 {
     public Transform contenitore; // quello dello scroll view
@@ -86,8 +87,8 @@ public class magazzino : MonoBehaviour
                immagine.sprite = sprite;
                 if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
                 {
-                    layout.preferredHeight=misura.y;
-                    layout.preferredWidth=misura.x;
+                    RectTransform rt=item.GetComponent<RectTransform>();
+                    rt.sizeDelta = misura;
                 }
             }
             else if (sprite == null) Debug.Log("sprite null");
