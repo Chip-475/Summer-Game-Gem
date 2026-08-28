@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72059f83f5a5cd74b992f3671f1f943a
+guid: 6a1e8f3b724e4e94b885660d8d4a9e71
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: sfondoScaffale
+  - name: scaffale v2
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 192
-      height: 108
-    spriteID: 5250fcd3db4f9be4eb93b42b6139fed9
+      width: 110
+      height: 130
+    spriteID: 7b52a907425ac3945b6e04bf2f579bf7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1315925012
+      value0: 255657449
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: sfondoScaffale
+    name: scaffale v2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: sfondoScaffale
+    - name: scaffale v2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 192
-        height: 108
-      spriteId: 5250fcd3db4f9be4eb93b42b6139fed9
+        width: 110
+        height: 130
+      spriteId: 7b52a907425ac3945b6e04bf2f579bf7
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 192, y: 108}
-  previousTextureSize: {x: 256, y: 128}
+  canvasSize: {x: 110, y: 130}
+  previousTextureSize: {x: 128, y: 256}
