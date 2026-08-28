@@ -11,6 +11,7 @@ public class scaffale : MonoBehaviour
     public GameObject panelMagazzino;
     public TMP_Text monete;
     public cocktail cock;
+    public magazzino script;
     private string[] nomiBottiglie = new string[15]
     {
         "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
@@ -67,7 +68,8 @@ public class scaffale : MonoBehaviour
     {
         panelMagazzino.SetActive(true);
         //con le bottiglie disponibili
-        GetComponentInParent<Canvas>().GetComponentInChildren<magazzino>().caricaMagazzino(posizione);  // dallo script del magazino della pos che cambia
+        //GetComponentInParent<Canvas>().GetComponentInChildren<magazzino>().caricaMagazzino(posizione);  // dallo script del magazino della pos che cambia
+        script.caricaMagazzino(posizione);
     }
 
     private void apriNegozio(int indice)

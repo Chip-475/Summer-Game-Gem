@@ -168,9 +168,9 @@ public class gameData : MonoBehaviour
         {"Disaronno",new Vector2(0,-145)},
         {"Tequila", new Vector2(0,-140)},
         {"Energy drink",new Vector2(0,-129)},
-        {"Triple sec",new Vector2(0,-143)},
+        {"Triple sec",new Vector2(0,-138)},
         {"Ginger ale",new Vector2(0,-146)},
-        {"Whiskey",new Vector2(0,-155)},
+        {"Whiskey",new Vector2(0,-128)},
         {"Arancia",new Vector2(0,-107.2f)}
     };
 
