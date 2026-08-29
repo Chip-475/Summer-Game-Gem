@@ -95,6 +95,7 @@ public class negozio : MonoBehaviour
         if (gameData.monete >= prezzo)
         {
             gameData.monete -= prezzo;
+            dayManager.aggSpesa(prezzo);
             // gameData.bottiglie[nome] = 100;
             gameData.magazzino.Add(new gameData.bottMagaz
             {

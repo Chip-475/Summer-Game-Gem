@@ -228,6 +228,8 @@ public class cocktail : MonoBehaviour
                 //nuovoOrdine();
                 dialoghiManager.prossBattuta(false);
                 gameData.monete += 1;
+                dayManager.aggGuad(1);
+                dayManager.aggCli();
                 monete.text = "Monete " + gameData.monete;
                 selected.Clear();
                 aggTextSelect();
@@ -239,6 +241,8 @@ public class cocktail : MonoBehaviour
         if (gameData.inDialogo) gameData.drinkSbagliato = 0;
         //nuovoOrdine();
         gameData.monete += 2.5f;
+        dayManager.aggGuad(2.5f);
+        dayManager.aggCli();
         monete.text="Monete "+gameData.monete;
         dialoghiManager.prossBattuta(true);
         selected.Clear();
