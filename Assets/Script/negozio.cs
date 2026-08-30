@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor.Tilemaps;
 public class negozio : MonoBehaviour
 {
     public Transform cont1;

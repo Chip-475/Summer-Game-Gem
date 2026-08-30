@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.MPE;
 public class resocontoUI : MonoBehaviour
 {
     public TMP_Text testoGiorno;

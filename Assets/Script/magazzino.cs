@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Rendering.Universal.Internal;
 public class magazzino : MonoBehaviour
 {
     public Transform contenitore; // il content dello scroll view

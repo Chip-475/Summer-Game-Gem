@@ -1,7 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 public class dayManager : MonoBehaviour
 {
     public static int giornoAttuale = 1;

@@ -13,6 +13,167 @@
     {
       "nome": "RUM e Vodka",
       "ingredienti": [ "RUM", "Vodka" ]
+    },
+
+
+    {
+
+      "nome": "Gin Tonic",
+
+      "ingredienti": [ "Gin", "Tonica" ]
+
+    },
+
+    {
+
+      "nome": "Vodka Lemon",
+
+      "ingredienti": [ "Vodka", "Lemon Soda" ]
+
+    },
+
+    {
+
+      "nome": "RUM & Cola",
+
+      "ingredienti": [ "RUM", "Coca Cola" ]
+
+    },
+
+    {
+
+      "nome": "Long Island",
+
+      "ingredienti": [ "RUM", "Vodka", "Gin", "Coca Cola" ]
+
+    },
+
+    {
+
+      "nome": "RUM Sour",
+
+      "ingredienti": [ "RUM", "Lemon Soda" ]
+
+    },
+
+    {
+
+      "nome": "Vodka tonic",
+
+      "ingredienti": [ "Vodka", "Tonica" ]
+
+    },
+
+    {
+
+      "nome": "Triple Mix",
+
+      "ingredienti": [ "RUM", "Vodka", "Gin" ]
+
+    },
+
+
+
+    {
+
+      "nome": "Jack & cola",
+
+      "ingredienti": [ "Jack Daniel's", "Coca Cola" ]
+
+    },
+
+    {
+
+      "nome": "Tennessee Lemon",
+
+      "ingredienti": [ "Jack Daniel's", "Lemon Soda" ]
+
+    },
+
+    {
+
+      "nome": "Smoky Jack",
+
+      "ingredienti": [ "Jack Daniel's", "RUM" ]
+
+    },
+
+
+
+    {
+
+      "nome": "jager tonic",
+
+      "ingredienti": [ "Jagermeister", "Tonica" ]
+
+    },
+
+    {
+
+      "nome": "jager bomb",
+
+      "ingredienti": [ "Jagermeister", "Energy drink" ]
+
+    },
+
+    {
+
+      "nome": "Herbal mix",
+
+      "ingredienti": [ "Jagermeister", "RUM" ]
+
+    },
+
+
+
+    {
+
+      "nome": "Disaronno sour",
+
+      "ingredienti": [ "Disaronno", "Lemon Soda" ]
+
+    },
+
+    {
+
+      "nome": "Amaretto cola",
+
+      "ingredienti": [ "Disaronno", "Coca Cola" ]
+
+    },
+
+    {
+
+      "nome": "Sweet vodka",
+
+      "ingredienti": [ "Disaronno", "Vodka" ]
+
+    },
+
+
+
+    {
+
+      "nome": "Tequila Sunrise",
+
+      "ingredienti": [ "Tequila", "Arancia" ]
+
+    },
+
+    {
+
+      "nome": "Margarita",
+
+      "ingredienti": [ "Tequila", "Triple sec" ]
+
+    },
+
+    {
+
+      "nome": "Whiskey ginger",
+
+      "ingredienti": [ "Whiskey", "Ginger ale" ]
+
     }
   ]
 }
