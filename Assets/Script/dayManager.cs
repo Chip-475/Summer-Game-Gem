@@ -8,8 +8,10 @@ public class dayManager : MonoBehaviour
     public static float guadagno;
     public static float spesa;
     public static int clientiServ;
-    private float tempo = 60f; //10min
+    private float tempo = 600f; //10min =600s
     private float tempoRimasto;
+    private float oraInizio = 20f;
+    private float oraFine = 6f;
 
     public TMP_Text testoTempo;
     public GameObject panel;
@@ -21,9 +23,14 @@ public class dayManager : MonoBehaviour
     void Update()
     {
         tempoRimasto -= Time.deltaTime;
-        int min = (int)(tempoRimasto / 60);
-        int sec = (int)(tempoRimasto % 60);
-        testoTempo.text = "Giorno " + giornoAttuale + " - " + min + ":" + sec.ToString("00");
+        float perc=1f-(tempoRimasto/tempo);
+        float oraPass = (oraFine - oraInizio + 24f) * perc;
+        float oraAtt = oraInizio + oraPass;
+        if (oraAtt >= 24f) oraAtt -= 24f;
+        int ore = (int)oraAtt;
+        int min = (int)((oraAtt - ore) * 60);
+        int sec = (int)tempoRimasto;
+        testoTempo.text = "Giorno " + giornoAttuale + "  " +ore.ToString("00")+ ":" + min.ToString("00");
         if (tempoRimasto <= 0) fineGiorno();
     }
     private void fineGiorno()

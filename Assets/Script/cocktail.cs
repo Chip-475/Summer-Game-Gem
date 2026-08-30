@@ -139,7 +139,7 @@ public class cocktail : MonoBehaviour
                     scaff.aggLivelli();
                     return;
                 }*/
-            Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
+            //Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
             selected.Add(ingre);
             aggTextSelect();
             scaff.aggLivelli();    

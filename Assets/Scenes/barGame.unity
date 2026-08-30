@@ -4537,6 +4537,7 @@ MonoBehaviour:
   testoMonete: {fileID: 1357241723}
   chiudi: {fileID: 1518242004}
   font: {fileID: 11400000, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
+  script: {fileID: 2031641307}
 --- !u!1 &552563283
 GameObject:
   m_ObjectHideFlags: 0
@@ -15036,13 +15037,14 @@ RectTransform:
   - {fileID: 593020959}
   - {fileID: 858557098}
   - {fileID: 1087244818}
-  - {fileID: 382442002}
+  - {fileID: 2106787556}
   - {fileID: 985914347}
   - {fileID: 2122664733}
   - {fileID: 1069289054}
   - {fileID: 204292133}
   - {fileID: 1659161584}
   - {fileID: 9718467}
+  - {fileID: 382442002}
   - {fileID: 1607707242}
   - {fileID: 937836764}
   - {fileID: 1676098259}
@@ -15054,7 +15056,6 @@ RectTransform:
   - {fileID: 117343126}
   - {fileID: 723360662}
   - {fileID: 1921415325}
-  - {fileID: 2106787556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15610,8 +15611,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
+  m_sharedMaterial: {fileID: 5671358497635328437, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

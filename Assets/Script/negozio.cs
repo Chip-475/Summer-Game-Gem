@@ -14,6 +14,7 @@ public class negozio : MonoBehaviour
     public TMP_FontAsset font;
     private bool sem=false;
     private GameObject item;
+    public scaffale script;
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class negozio : MonoBehaviour
         {
             Destroy(itm.gameObject);
         }
-        string[] primiNove={"Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda","Jägermeister","Jack Daniel's","Disaronno"};
+        string[] primiNove={"Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda","Jagermeister","Jack Daniel's","Disaronno"};
         string[] nuoviBottoni={"Energy drink","Arancia","Tequila","Triple sec","Whiskey","Ginger ale"};
         foreach(string nome in primiNove)
         {
@@ -63,13 +64,14 @@ public class negozio : MonoBehaviour
         {
             if (gameData.prezziBottiglie.ContainsKey(nome)) caricaBottone(nome, cont2);
         }
+        script.aggLivelli();
         Debug.Log("fine funzione");
     }
 
     private void caricaBottone(string nome, Transform parent)
     {
         float prezzo = gameData.prezziBottiglie[nome];
-
+        Debug.Log("negozio " + nome);
         if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
         {
             if (nome == "Arancia")item = Instantiate(prefabArancia, parent);

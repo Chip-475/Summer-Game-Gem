@@ -1,10 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.Net.Http.Headers;
-using System;
-using JetBrains.Annotations;
-using UnityEditor.Tilemaps;
+using UnityEngine.Rendering.Universal.Internal;
 public class magazzino : MonoBehaviour
 {
     public Transform contenitore; // il content dello scroll view
@@ -17,6 +14,7 @@ public class magazzino : MonoBehaviour
     public scaffale script;
     private GameObject item;
     public GameObject panel;
+    public const int MAX= 19;
     public void chiudiMagazzino()
     {
         panel.SetActive(false);
@@ -24,6 +22,7 @@ public class magazzino : MonoBehaviour
     
     public void caricaMagazzino(int pos)
     {
+        if (gameData.magazzino.Count > MAX) return;
         posizioneAttuale = pos;
         string bottAtt = gameData.scaffaleAttivo[pos];
         int livelloBott = gameData.livelliScaffale[pos];
@@ -37,7 +36,7 @@ public class magazzino : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        string[] primiNove = { "Gin", "Vodka", "RUM", "Tonica", "Coca Cola", "Lemon Soda", "Jägermeister", "Jack Daniel's", "Disaronno" };
+        string[] primiNove = { "Gin", "Vodka", "RUM", "Tonica", "Coca Cola", "Lemon Soda", "Jagermeister", "Jack Daniel's", "Disaronno" };
         string[] nuoviBottoni = { "Energy drink", "Arancia", "Tequila", "Triple sec", "Whiskey", "Ginger ale" };
         foreach(string nome in primiNove)
         {
@@ -80,6 +79,7 @@ public class magazzino : MonoBehaviour
         Button btn = item.GetComponent<Button>();
         testi[0].text = "" + livello;
         testi[0].font = font;
+        testi[0].rectTransform.anchoredPosition = new Vector2(0, -150);
         LayoutElement layout = item.GetComponent<LayoutElement>();
         Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
         if (sprite != null && immagine != null)

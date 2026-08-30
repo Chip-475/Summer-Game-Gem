@@ -13,7 +13,7 @@ public class gameData : MonoBehaviour
     private static readonly string[] nomiBottiglie = new string[15]
     {
         "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
-        "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
+        "Jagermeister","Disaronno","Energy drink","Arancia","Tequila",
         "Triple sec","Whiskey","Ginger ale"
     };
 
@@ -34,9 +34,9 @@ public class gameData : MonoBehaviour
     public static string[] scaffaleAttivo = new string[10]
     {
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
-        "Jägermeister","Jack Daniel's","Disaronno","Arancia"
+        "Jagermeister","Jack Daniel's","Disaronno","Arancia"
     };
-
+    
     public static void iniziaMag()
     {
         magazzino.Clear();
@@ -59,7 +59,7 @@ public class gameData : MonoBehaviour
         {"Tonica",100},
         {"Coca Cola",100},
         {"Lemon Soda",100},
-        {"Jägermeister",100},
+        {"Jagermeister",100},
         {"Jack Daniel's",100},
         {"Disaronno",100},
         {"Arancia",15}
@@ -73,7 +73,7 @@ public class gameData : MonoBehaviour
         {"Tonica",1.50f},
         {"Coca Cola",2f},
         {"Lemon Soda",2f},
-        {"Jägermeister",16.50f},
+        {"Jagermeister",16.50f},
         {"Jack Daniel's",15f},
         {"Disaronno",17f},
         {"Energy drink",1f},
@@ -85,7 +85,7 @@ public class gameData : MonoBehaviour
     };
     /*
      * "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
-        "Jägermeister","Disaronno","Energy drink","Arancia","Tequila",
+        "Jagermeister","Disaronno","Energy drink","Arancia","Tequila",
         "Triple sec","Whiskey","Ginger ale"
      */
     public static Dictionary<string, int> prezziUsati = new Dictionary<string, int>
@@ -96,7 +96,7 @@ public class gameData : MonoBehaviour
         {"Tonica",15},
         {"Coca Cola",17},
         {"Lemon Soda",13},
-        {"Jägermeister",8},
+        {"Jagermeister",8},
         {"Jack Daniel's",7},
         {"Disaronno",7},
         {"Energy drink",15},
@@ -144,14 +144,14 @@ public class gameData : MonoBehaviour
         {"Tonica",new Vector2(90,220)},
         {"Coca Cola",new Vector2(70,170)},
         {"Lemon Soda",new Vector2(70,170)},
-        {"Jägermeister",new Vector2(110,230)},
+        {"Jagermeister",new Vector2(110,230)},
         {"Jack Daniel's",new Vector2(100,250)},
         {"Disaronno",new Vector2(100,210)},
-        {"Tequila", new Vector2(95,210)},
-        {"Energy drink",new Vector2(65,165)},
-        {"Triple sec",new Vector2(85,200)},
-        {"Ginger ale",new Vector2(70,200)},
-        {"Whiskey",new Vector2(95,180)},
+        {"Tequila", new Vector2(95,240)},
+        {"Energy drink",new Vector2(70,170)},
+        {"Triple sec",new Vector2(85,225)},
+        {"Ginger ale",new Vector2(70,240)},
+        {"Whiskey",new Vector2(95,175)},
         {"Arancia",new Vector2(120,120)}
     };
 
@@ -163,12 +163,12 @@ public class gameData : MonoBehaviour
         {"Tonica",new Vector2(0,-150)},
         {"Coca Cola",new Vector2(0,-122)},
         {"Lemon Soda",new Vector2(0,-124)},
-        {"Jägermeister",new Vector2(0,-157)},
+        {"Jagermeister",new Vector2(0,-157)},
         {"Jack Daniel's",new Vector2(0,-162)},
         {"Disaronno",new Vector2(0,-145)},
-        {"Tequila", new Vector2(0,-140)},
+        {"Tequila", new Vector2(0,-163)},
         {"Energy drink",new Vector2(0,-129)},
-        {"Triple sec",new Vector2(0,-138)},
+        {"Triple sec",new Vector2(0,-157)},
         {"Ginger ale",new Vector2(0,-146)},
         {"Whiskey",new Vector2(0,-128)},
         {"Arancia",new Vector2(0,-107.2f)}
@@ -233,7 +233,7 @@ public class gameData : MonoBehaviour
         bottiglie["Tonica"] = 100;
         bottiglie["Coca Cola"] = 100;
         bottiglie["Lemon Soda"] = 100;
-        bottiglie["Jägermeister"] = 100;
+        bottiglie["Jagermeister"] = 100;
         bottiglie["Jack Daniel's"] = 100;
         bottiglie["Disaronno"] = 100;
         bottiglie["Arancia"] = 15;
@@ -241,7 +241,7 @@ public class gameData : MonoBehaviour
         scaffaleAttivo = new string[10]
         {
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
-        "Jägermeister","Jack Daniel's","Disaronno","Arancia"
+        "Jagermeister","Jack Daniel's","Disaronno","Arancia"
         };
 
         indiceNPCAttuale = 0;
