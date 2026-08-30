@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,7 +36,7 @@ public class cocktail : MonoBehaviour
     public Button conferma;
     public GameObject ricettario;
     private bool sem=false;
-    public GameObject[] banc=new GameObject[4];
+    public Button[] banc=new Button[4];
 
     void Awake()
     {
@@ -122,44 +123,57 @@ public class cocktail : MonoBehaviour
         testOrdine.text = testo+ordineNow.nome;
         conferma.interactable = true;
     }
-
+    /*
+    public void capisciBottone(Button b)
+    {
+        Image img = b.GetComponent<Image>();
+        Sprite sprite = img.sprite;
+        foreach(string s in gameData.nomiBottiglie)
+        {
+            if (s == sprite.name)
+            {
+                sprite = Resources.Load<Sprite>($"sprite/bottiglie/{s}");
+                img.sprite = sprite;
+                AddIngredienti();
+            }
+        }
+    }*/
     public void AddIngredienti(string ingre,int posizione)
     {
-        if (gameData.prezziUsati.ContainsKey(ingre))
-        {
-            int consumo = gameData.prezziUsati[ingre];
-            gameData.livelliScaffale[posizione] -= consumo;
-            if(gameData.livelliScaffale[posizione]<=0) gameData.livelliScaffale[posizione] = 0;
-                /*
-                if (gameData.bottiglie[ingre] < 0)
-                {
-                    gameData.bottiglie[ingre] = 0;
-                    Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
-                    aggTextSelect();
-                    scaff.aggLivelli();
-                    return;
-                }*/
-            //Debug.Log("Consumato: " + ingre + "rimane " + gameData.bottiglie[ingre]);
-            selected.Add(ingre);
-            aggTextSelect();
-            scaff.aggLivelli();    
-            foreach(GameObject bott in banc)
-            {
+        if (!gameData.prezziUsati.ContainsKey(ingre)) return;
 
-                Image img = bott.GetComponentInChildren<Image>();
-                if (img.sprite == null)
-                {
-                    Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{ingre}");
-                    img.sprite = sprite;
-                    if (gameData.misureSprite.TryGetValue(ingre, out Vector2 misura)) img.rectTransform.sizeDelta = misura;
-                    scaff.bottoniBottoglia[posizione].gameObject.SetActive(false);
-                    bott.gameObject.SetActive(true);
-                    Debug.Log("bancone");
-                    break;
-                }
-                else Debug.Log("bancone no");
-            } 
+        int consumo = gameData.prezziUsati[ingre];
+        gameData.livelliScaffale[posizione] -= consumo;
+        if (gameData.livelliScaffale[posizione] <= 0) gameData.livelliScaffale[posizione] = 0;
+
+        selected.Add(ingre);
+        aggTextSelect();
+        scaff.aggLivelli();
+        int indiceLibero = -1;
+        for (int i = 0; i < banc.Length; i++)
+        {
+            Image imgCheck = banc[i].GetComponentInChildren<Image>();
+            if (imgCheck.sprite == null)
+            {
+                indiceLibero = i;
+                break;
+            }
         }
+        if (indiceLibero == -1)
+        {
+            Debug.Log("Nessuno slot libero nel bancone");
+            return;
+        }
+        Button bottoneTarget = banc[indiceLibero];
+        Image img = bottoneTarget.GetComponentInChildren<Image>();
+        Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{ingre}");
+        img.sprite = sprite;
+        if (gameData.misureSprite.TryGetValue(ingre, out Vector2 misura))img.rectTransform.sizeDelta = misura;
+        scaff.bottoniBottoglia[posizione].gameObject.SetActive(false);
+        bottoneTarget.gameObject.SetActive(true);
+        bottoneTarget.onClick.RemoveAllListeners();
+        bottoneTarget.onClick.AddListener(() => AddIngredienti(ingre, posizione));
+        Debug.Log("bancone: assegnato slot " + indiceLibero);
     }
 
     private void bottBancone()
@@ -168,7 +182,7 @@ public class cocktail : MonoBehaviour
         {
             bott.gameObject.SetActive(true);
         }
-        foreach(GameObject bott in banc)
+        foreach(Button bott in banc)
         {
             Image img = bott.GetComponentInChildren<Image>();
             img.sprite = null;
@@ -198,6 +212,58 @@ public class cocktail : MonoBehaviour
         }
         List<string> copiaSel = new List<string>(selected);
         List<string> copiaOra = new List<string>(ordineNow.ingredienti);
+        if(ordineNow.nome == "Solo RUM" || ordineNow.nome == "Solo Vodka")
+        {
+            if(copiaSel.Count>3||copiaSel.Count==1)
+            {
+                Debug.Log("male");
+                if (gameData.inDialogo)
+                {
+                    gameData.drinkSbagliato++;
+                    if (gameData.drinkSbagliato >= 2)
+                    {
+                        gameData.frequenzaLeo = Mathf.Max(5, gameData.frequenzaLeo - 2);
+                        gameData.drinkSbagliato = 0;
+                    }
+                }
+                dialoghiManager.prossBattuta(false);
+                gameData.monete += 1;
+                bottBancone();
+                aggTextSelect();
+                selected.Clear();
+                return;
+            }
+            int min;
+            if (copiaOra.Count < copiaSel.Count) min = copiaOra.Count;
+            else min = copiaSel.Count;
+            for (int i = 0; i<min; i++)
+            {
+                if (copiaSel[i] != ordineNow.ingredienti[0])
+                {
+                    Debug.Log("Hai fatto male il drink cazzo");
+                    //nuovoOrdine();
+                    dialoghiManager.prossBattuta(false);
+                    gameData.monete += 1;
+                    dayManager.aggGuad(1);
+                    dayManager.aggCli();
+                    monete.text = "Monete " + gameData.monete;
+                    selected.Clear();
+                    aggTextSelect();
+                    bottBancone();
+                    return;
+                }
+            }
+            gameData.monete += 2.5f;
+            dayManager.aggGuad(2.5f);
+            dayManager.aggCli();
+            monete.text = "Monete " + gameData.monete;
+            dialoghiManager.prossBattuta(true);
+            selected.Clear();
+            aggTextSelect();
+            ordineNow = null;
+            bottBancone();
+            return;
+        }
         if (copiaOra.Count != copiaSel.Count)
         {
             Debug.Log("male");

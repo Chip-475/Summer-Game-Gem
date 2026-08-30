@@ -79,8 +79,8 @@ public class magazzino : MonoBehaviour
         Button btn = item.GetComponent<Button>();
         testi[0].text = "" + livello;
         testi[0].font = font;
-        testi[0].rectTransform.anchoredPosition = new Vector2(0, -150);
-        LayoutElement layout = item.GetComponent<LayoutElement>();
+        if (nome != "Arancia") testi[0].rectTransform.anchoredPosition = new Vector2(0, -150);
+        else testi[0].rectTransform.anchoredPosition = new Vector2(0, -107);
         Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
         if (sprite != null && immagine != null)
         {

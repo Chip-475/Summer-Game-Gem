@@ -99,11 +99,22 @@ public class negozio : MonoBehaviour
             gameData.monete -= prezzo;
             dayManager.aggSpesa(prezzo);
             // gameData.bottiglie[nome] = 100;
-            gameData.magazzino.Add(new gameData.bottMagaz
+            if (nome != "Arancia")
             {
-                nome = nome,
-                livello = 100
-            });
+                gameData.magazzino.Add(new gameData.bottMagaz
+                {
+                    nome = nome,
+                    livello = 100
+                });
+            }
+            else
+            {
+                gameData.magazzino.Add(new gameData.bottMagaz
+                {
+                    nome = nome,
+                    livello = 15
+                });
+            }
             Debug.Log("Comprata bottiglia " + nome);
             foreach (var i in gameData.magazzino)
             {

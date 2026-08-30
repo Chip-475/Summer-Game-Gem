@@ -9,8 +9,7 @@ public class gameData : MonoBehaviour
         public string nome;
         public int livello;
     }
-
-    private static readonly string[] nomiBottiglie = new string[15]
+    public static string[] nomiBottiglie = new string[15]
     {
         "RUM","Vodka","Gin","Tonica","Lemon Soda","Coca Cola","Jack Daniel's",
         "Jagermeister","Disaronno","Energy drink","Arancia","Tequila",
