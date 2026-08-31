@@ -43,7 +43,9 @@ public class dialoghiManager : MonoBehaviour
     public class dialogoLeoJson
     {
         public List<battuta> battuta;
+        public List<battuta> battute2;
         public List<battuta> battuteNuove;
+        public List<battuta> battute3;
         public List<battuta> battuteSbagliato;
     }
 
@@ -144,18 +146,38 @@ public class dialoghiManager : MonoBehaviour
         TextAsset file = Resources.Load<TextAsset>("dialoghiLeo");
         datiLeo = JsonUtility.FromJson<dialogoLeoJson>(file.text);
         inDialogo = true;
-        //indice = Random.Range(0, datiLeo.battuta.Count);
-        if (gameData.clientiPassati == 0)
+        List<List<battuta>> sequenzaLeo = new List<List<battuta>>
         {
-            attualiLeo = datiLeo.battuta;
-            indice = Random.Range(0, datiLeo.battuta.Count);
-        }
-        else
-        {
-            attualiLeo = datiLeo.battuteNuove;
-            indice = Random.Range(0, datiLeo.battuteNuove.Count);
-        }
+            datiLeo.battuta,
+            datiLeo.battute2,
+            datiLeo.battuteNuove,
+            datiLeo.battute3
+        };
+        if (gameData.leoIndice < sequenzaLeo.Count) attualiLeo = sequenzaLeo[gameData.leoIndice];
+        else attualiLeo=pescaCas(sequenzaLeo);
+        indice=Random.Range(0, attualiLeo.Count);
         StartCoroutine(caricaLeoDelay());
+    }
+    private List<battuta> pescaCas(List<List<battuta>> tutte)
+    {
+        List<battuta> p=new List<battuta>(); 
+        foreach(var seq in tutte)
+        {
+            foreach(var b in seq)
+            {
+                if(b.comando!="ordina")p.Add(b);
+            }
+        }
+        for(int i=p.Count-1; i>=0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            battuta temp = p[i];
+            p[i]=p[j];
+            p[j]=temp;
+        }
+        int numero = Random.Range(2, 4); //2 o tre battute
+        numero = Mathf.Min(numero, p.Count);
+        return p.GetRange(0, numero);
     }
     private  IEnumerator caricaLeoDelay()
     {
@@ -283,6 +305,7 @@ public class dialoghiManager : MonoBehaviour
                 inDialogo = false;
                 indiceNPC = 0;
                 gameData.clientiPassati = 0;
+                gameData.leoIndice++;
                 caricaNPC();
             }
             else caricaNPC();
@@ -296,7 +319,16 @@ public class dialoghiManager : MonoBehaviour
         int cont;
         if (inDialogo) cont = datiLeo.battuta.Count;
         else cont = convAttuale.battuta.Count;
-        if (indice >= cont) caricaNPC();
+        if (indice >= cont)
+        {   if(inDialogo)
+            {
+                inDialogo = false;
+                indiceNPC = 0;
+                gameData.clientiPassati = 0;
+                gameData.leoIndice++;
+            }
+            caricaNPC();
+        }
         else
         {
             if (inDialogo) mostraBattutaLeo();

@@ -30,6 +30,7 @@ public class gameData : MonoBehaviour
 
     public static float monete = 50;
 
+    public static int leoIndice = 0;
     public static string[] scaffaleAttivo = new string[10]
     {
         "Gin","Vodka","RUM","Tonica","Coca Cola","Lemon Soda",
