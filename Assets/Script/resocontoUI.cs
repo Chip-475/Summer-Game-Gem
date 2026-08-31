@@ -25,12 +25,14 @@ public class resocontoUI : MonoBehaviour
 }
 
 /*
+ * >> risolto    >>? per meta
 bug fix:
--leo con la stessa battuta,
+-leo con la stessa battuta,   >>?
 -grafica del giorno, 
 -vedere se la meccanica di almeno una selezione va bene
 -music manager e suoni =(back ground, compr oggetto e din del nuovo cliente, boom dell'incidente)
 -sistemare quando compro delle stesse bottiglie che si bugga con che non crea dei doppioni?!?!!
+-icona
 ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index controllare questa eccezione
 battuta b = convAttuale.battuta[indice]; in mostra battuta
