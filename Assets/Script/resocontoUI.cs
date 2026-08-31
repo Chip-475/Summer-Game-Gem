@@ -23,3 +23,11 @@ public class resocontoUI : MonoBehaviour
     }
     
 }
+
+/*
+bug fix:
+-leo con la stessa battuta,
+-grafica del giorno, 
+-vedere se la meccanica di almeno una selezione va bene
+-music manager e suoni =(back ground, compr oggetto e din del nuovo cliente, boom dell'incidente)
+ */

@@ -73,7 +73,6 @@ public class dialoghiManager : MonoBehaviour
     public GameObject pannello;
     public npcSprite[] spriteNpc=new npcSprite[5];
     private Dictionary<string, Sprite> spriteDic;
-
     private dialogoLeoJson datiLeo;
     private bool inDialogo = false;  //scena speciale o no
     private genericheJson battGeneriche;
@@ -140,16 +139,22 @@ public class dialoghiManager : MonoBehaviour
         gameData.indiceBattutaAttuale = indice;
         gameData.inDialogo = inDialogo;
     }
-
     public void caricaLeo()
     {
         TextAsset file = Resources.Load<TextAsset>("dialoghiLeo");
         datiLeo = JsonUtility.FromJson<dialogoLeoJson>(file.text);
         inDialogo = true;
         //indice = Random.Range(0, datiLeo.battuta.Count);
-        indice = 0;
-        if (gameData.clientiPassati == 0) attualiLeo = datiLeo.battuta;
-        else attualiLeo = datiLeo.battuteNuove;
+        if (gameData.clientiPassati == 0)
+        {
+            attualiLeo = datiLeo.battuta;
+            indice = Random.Range(0, datiLeo.battuta.Count);
+        }
+        else
+        {
+            attualiLeo = datiLeo.battuteNuove;
+            indice = Random.Range(0, datiLeo.battuteNuove.Count);
+        }
         StartCoroutine(caricaLeoDelay());
     }
     private  IEnumerator caricaLeoDelay()

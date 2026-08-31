@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class cocktail : MonoBehaviour
 {
     //serve solamente a scrivere come è fatto il file json

@@ -8,7 +8,7 @@
     },
     {
       "personaggio": "Mara",
-      "testo": "Non... non pu� essere qui.. Tu sei morto.",
+      "testo": "Non... non puo' essere qui.. Tu sei morto.",
       "comando": "nessuno",
       "parametroComando": ""
     },
@@ -20,13 +20,39 @@
     },
     {
       "personaggio": "Leo",
-      "testo": "Buono come sempre. Non è stata colpa tua, Mara. Basta portartelo dietro",
+      "testo": "Buono come sempre. Non e' stata colpa tua, Mara. Basta portartelo dietro",
       "comando": "nessuno",
       "parametroComando": ""
     },
     {
       "personaggio": "Leo",
-      "testo": "Fatti un favore: vivi un pò. Per me",
+      "testo": "Fatti un favore: vivi un po'. Per me",
+      "comando": "nessuno",
+      "parametroComando": ""
+    }
+  ],
+  "battute2": [
+    {
+      "personaggio": "Mara",
+      "testo": "Leo... come posso perdonarmi se tu nons sei piu' qui?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Sono ancora qui. Solo in un modo diverso. Dammi un RUM",
+      "comando": "ordina",
+      "parametroComando": "Solo RUM"
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Ricordi quando dicevano che questo bar sarebbe stato nostro rifugio?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Si... lo ricordo benissimo",
       "comando": "nessuno",
       "parametroComando": ""
     }
@@ -46,7 +72,7 @@
     },
     {
       "personaggio": "Mara",
-      "testo": "Leo... perchè continui a tormentarmi? ",
+      "testo": "Leo... perche' continui a tormentarmi? ",
       "comando": "nessuno",
       "parametroComando": ""
     },
@@ -70,18 +96,68 @@
     },
     {
       "personaggio": "Mara",
-      "testo": "Mi stai dicendo che dovrò viverti con questo per sempre? ",
+      "testo": "Mi stai dicendo che dovro' viverti con questo per sempre? ",
       "comando": "nessuno",
       "parametroComando": ""
     },
     {
       "personaggio": "Leo",
-      "testo": "Finchè non imparerai a perdonarti. Allora scomparirò",
+      "testo": "Finchè non imparerai a perdonarti. Allora scompariro'",
       "comando": "nessuno",
       "parametroComando": ""
     }
   ],
-  "battuteSbagliato":[
+  "battute3": [
+    {
+      "personaggio": "Leo",
+      "testo": "Non eravamo destinati a morire insieme, ma neanche seperati come questo",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Dammi un altro RUM, forse oggi capirai finalmente",
+      "comando": "ordina",
+      "parametroComando": "Solo RUM"
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Capire cosa,Leo? Che non potrei fare nulla per salvarti?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Che il destino non si cambia. Solo si accetta",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Questo bar e' il nostro ricordo. Mantienilo vivo.",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Puoi servirmi il solito? Una volta ancora",
+      "comando": "ordina",
+      "parametroComando": "RUM"
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "Questo e' l'ultimo, Leom, poi devo lasciarti andare",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Lo so, e va bene cosi'. Vivrai bene, Mara te lo prometto",
+      "comando": "nessuno",
+      "parametroComando": ""
+    }
+  ],
+  "battuteSbagliato": [
     {
       "personaggio": "Leo",
       "testo": "Non è quello che ho chiesto, Mara.",
@@ -103,6 +179,24 @@
     {
       "personaggio": "Leo",
       "testo": "La distrazione è peccato quando il tempo è prezioso.",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Stai ancora cercando di scappare, vero?",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Mara",
+      "testo": "No... io...",
+      "comando": "nessuno",
+      "parametroComando": ""
+    },
+    {
+      "personaggio": "Leo",
+      "testo": "Riprova. Concentrati questa volta.",
       "comando": "nessuno",
       "parametroComando": ""
     }
