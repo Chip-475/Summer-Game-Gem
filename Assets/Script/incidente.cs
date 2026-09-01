@@ -3,12 +3,14 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.InputSystem;
+
 public class incidente : MonoBehaviour
 {
     public TMP_Text testoPanel;
     public float velocita = 0.05f;
-    public float delay = 1f;
+    public float delay = 2f;  
     public AudioClip suono;
+
     private string[] scena = new string[]
     {
         "Era una notte come tante altre...",
@@ -20,8 +22,9 @@ public class incidente : MonoBehaviour
         "Ora lavora al suo bar, cercando di andare avanti",
         "Ma Leo continua a tormentarla..."
     };
-    private int indice=0;
-    private bool click=false;
+
+    private int indice = 0;
+    private bool click = false;
 
     void Start()
     {
@@ -31,23 +34,29 @@ public class incidente : MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame&& click)prosBattuta();
+        if (Mouse.current.leftButton.wasPressedThisFrame && click)
+        {
+            prosBattuta();
+        }
     }
 
     private void mostraBattuta()
     {
-        if(indice<scena.Length)
+        if (indice < scena.Length)
         {
-            click = false;
+            click = false;  
             StartCoroutine(TypewriterEffect(scena[indice]));
         }
-        else SceneManager.LoadScene("barGame");
+        else
+        {
+            SceneManager.LoadScene("barGame");
+        }
     }
-    
+
     IEnumerator TypewriterEffect(string testo)
     {
         testoPanel.text = "";
-        foreach(char lettera in testo)
+        foreach (char lettera in testo)
         {
             testoPanel.text += lettera;
             yield return new WaitForSeconds(velocita);
@@ -56,7 +65,7 @@ public class incidente : MonoBehaviour
         click = true;
     }
 
-    private void prosBattuta()
+    public void prosBattuta()
     {
         indice++;
         mostraBattuta();

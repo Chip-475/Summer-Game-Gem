@@ -147,18 +147,41 @@ public class dialoghiManager : MonoBehaviour
         TextAsset file = Resources.Load<TextAsset>("dialoghiLeo");
         datiLeo = JsonUtility.FromJson<dialogoLeoJson>(file.text);
         inDialogo = true;
-        List<List<battuta>> sequenzaLeo = new List<List<battuta>>
+        if(gameData.leoIndice==0)
         {
-            datiLeo.battuta,
-            datiLeo.battute2,
-            datiLeo.battuteNuove,
-            datiLeo.battute3
-        };
-        if (gameData.leoIndice < sequenzaLeo.Count) attualiLeo = sequenzaLeo[gameData.leoIndice];
-        else attualiLeo=pescaCas(sequenzaLeo);
-        indice=Random.Range(0, attualiLeo.Count);
+            attualiLeo = datiLeo.battuta;
+            indice = 0;
+        }
+        else if(gameData.leoIndice==1)
+        {
+            attualiLeo = datiLeo.battute2;
+            indice = 0;
+        }
+        else if(gameData.leoIndice==2)
+        {
+            attualiLeo = datiLeo.battuteNuove;
+            indice = 0;
+        }
+        else if(gameData.leoIndice==3)
+        {
+            attualiLeo = datiLeo.battute3;
+            indice = 0;
+        }
+        else
+        {
+            List<List<battuta>> sequenzaLeo = new List<List<battuta>>
+            {
+                datiLeo.battuta,
+                datiLeo.battute2,
+                datiLeo.battuteNuove,
+                datiLeo.battute3
+            };
+            attualiLeo = pescaCas(sequenzaLeo);
+            indice =0;
+        }
         StartCoroutine(caricaLeoDelay());
     }
+   
     private List<battuta> pescaCas(List<List<battuta>> tutte)
     {
         List<battuta> p=new List<battuta>(); 
@@ -278,8 +301,8 @@ public class dialoghiManager : MonoBehaviour
             //scena di fine gioco
         }
         else bottoneAvanti.interactable = true;
-        if (gameData.clientiPassati != 0) attualiLeo = datiLeo.battuteNuove; 
-        else attualiLeo = datiLeo.battuta;
+       /* if (gameData.clientiPassati != 0) attualiLeo = datiLeo.battuteNuove; 
+        else attualiLeo = datiLeo.battuta;*/
     }
 
     public void prossBattuta(bool? drinkCorretto=null)
@@ -327,7 +350,6 @@ public class dialoghiManager : MonoBehaviour
                 inDialogo = false;
                 indiceNPC = 0;
                 gameData.clientiPassati = 0;
-                gameData.leoIndice++;
             }
             caricaNPC();
         }

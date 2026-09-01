@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 public class magazzino : MonoBehaviour
@@ -18,45 +18,45 @@ public class magazzino : MonoBehaviour
     {
         panel.SetActive(false);
     }
-    
+
     public void caricaMagazzino(int pos)
     {
         if (gameData.magazzino.Count > MAX) return;
         posizioneAttuale = pos;
         string bottAtt = gameData.scaffaleAttivo[pos];
         int livelloBott = gameData.livelliScaffale[pos];
-        testoBottiglia.text = "Sullo Scaffale c'è " + bottAtt + " con " + livelloBott;
+        testoBottiglia.text = "Sullo Scaffale c'Ã¨ " + bottAtt + " con " + livelloBott;
         //toglie le bott precedenti
-        foreach(Transform child in contenitore)
+        foreach (Transform child in contenitore)
         {
             Destroy(child.gameObject);
         }
-        foreach(Transform child in cont2)
-        {
+        foreach (Transform child in cont2)
+        { 
             Destroy(child.gameObject);
         }
         string[] primiNove = { "Gin", "Vodka", "RUM", "Tonica", "Coca Cola", "Lemon Soda", "Jagermeister", "Jack Daniel's", "Disaronno" };
         string[] nuoviBottoni = { "Energy drink", "Arancia", "Tequila", "Triple sec", "Whiskey", "Ginger ale" };
-        foreach(string nome in primiNove)
+        foreach (string nome in primiNove)
         {
             bool trov = false;
-            foreach(gameData.bottMagaz bott in gameData.magazzino)
+            foreach (gameData.bottMagaz bott in gameData.magazzino)
             {
-                if(bott.nome==nome)
+                if (bott.nome == nome)
                 {
                     caricaBottone(bott, contenitore);
                     trov = true;
                     break;
                 }
             }
-            if (!trov) Debug.Log("no ce "+nome);
+            if (!trov) Debug.Log("no ce " + nome);
         }
-        foreach(string nome in nuoviBottoni)
+        foreach (string nome in nuoviBottoni)
         {
             bool trov = false;
-            foreach(gameData.bottMagaz bott in gameData.magazzino)
+            foreach (gameData.bottMagaz bott in gameData.magazzino)
             {
-                if(bott.nome==nome)
+                if (bott.nome == nome)
                 {
                     caricaBottone(bott, cont2);
                     trov = true;
@@ -66,13 +66,13 @@ public class magazzino : MonoBehaviour
             if (!trov) Debug.Log("non ce " + nome);
         }
     }
-   
-    private void caricaBottone(gameData.bottMagaz bott,Transform parent)
+
+    private void caricaBottone(gameData.bottMagaz bott, Transform parent)
     {
         string nome = bott.nome;
         int livello = bott.livello;
-        if (nome == "Arancia") item = Instantiate(prefabArancia, contenitore);
-        else item = Instantiate(prefabBottiglia, contenitore);
+        if (nome == "Arancia") item = Instantiate(prefabArancia, parent);
+        else item = Instantiate(prefabBottiglia, parent);
         TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
         Image immagine = item.GetComponentInChildren<Image>();
         Button btn = item.GetComponent<Button>();
@@ -89,11 +89,13 @@ public class magazzino : MonoBehaviour
             {
                 RectTransform rt = item.GetComponent<RectTransform>();
                 rt.sizeDelta = misura;
+                RectTransform reImg = immagine.rectTransform;
+                reImg.sizeDelta = misura;
             }
         }
         else if (sprite == null) Debug.Log("sprite null");
         else Debug.Log("immagine null");
-        if (livello <= 0) testi[0].color = new Color(1, 0.3f, 0.3f); //cioè di rosso
+        if (livello <= 0) testi[0].color = new Color(1, 0.3f, 0.3f); //cioÃ¨ di rosso
         else if (livello <= 30) testi[0].color = new Color(1, 0.8f, 0.3f);  //arancione
         else if (nome == "Arancia" && livello >= 10) testi[0].color = new Color(0.3f, 1, 0.3f);
         else if (nome == "Arancia" && livello >= 5 && livello < 10) testi[0].color = new Color(1, 0.8f, 0.3f);
@@ -101,7 +103,7 @@ public class magazzino : MonoBehaviour
         else testi[0].color = new Color(0.3f, 1, 0.3f); //verde
         btn.onClick.AddListener(() => scambiaBottiglia(nome));
     }
-   
+
     private void scambiaBottiglia(string nome)
     {
         string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
@@ -132,73 +134,3 @@ public class magazzino : MonoBehaviour
         caricaMagazzino(posizioneAttuale);
     }
 }
-
-/*
-        //carica le bottiglie da scaffale e se ha comprato qualcosa
-        foreach (var bottiglia in gameData.bottiglie)
-        {
-            string nome = bottiglia.Key;
-            int livello = bottiglia.Value;
-            //if (nome == bottAtt) continue;//coisi da non metterla due volte
-           // if (nome == bottAtt) continue;
-            GameObject item = Instantiate(prefabBottiglia, contenitore);
-            TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
-            Image immagine = item.GetComponentInChildren<Image>();
-            Button btn = item.GetComponent<Button>();
-            //testi[0].text = nome;
-            testi[1].text = "" + livello;
-            Sprite sprite = Resources.Load<Sprite>($"sprite/bottiglie/{nome}");
-            if (sprite != null && immagine != null)
-            {
-                //Debug.Log("immagine messa");
-                immagine.sprite = sprite;
-                if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura)) immagine.rectTransform.sizeDelta = misura;
-            }
-            else if (sprite == null) Debug.Log("sprite null");
-            else Debug.Log("immagine null");
-            if (livello <= 0) testi[1].color = new Color(1, 0.3f, 0.3f);
-            else if (livello <= 30) testi[1].color = new Color(1, 0.8f, 0.3f);
-            else testi[1].color = new Color(0.3f, 1, 0.3f);
-            btn.onClick.AddListener(() => scambiaBottiglia(nome));
-        }*/
-
-/*
-   private void scambiaBottiglia(string nome)
-   {
-       string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
-       gameData.magazzino.Add(new gameData.bottMagaz
-       {
-           nome = vecchia,
-           livello = gameData.bottiglie[vecchia]
-       });
-       gameData.bottiglie[nome] = gameData.magazzino.Find(b => b.nome == nome).livello;
-       gameData.magazzino.RemoveAll(b=>b.nome == nome);
-       gameData.scambiaBottiglia(posizioneAttuale, nome);
-       Debug.Log("bottiglia scambiata dalla seconda funzione");
-       script.aggLivelli();
-       caricaMagazzino(posizioneAttuale);
-   }*/
-/*
- * gameData.bottMagaz bottgliaMag = gameData.magazzino[indice];
-        /*string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
-        gameData.magazzino[vecchia] = gameData.bottiglie[vecchia];
-        gameData.bottiglie[nome] = gameData.magazzino[nome];
-        gameData.magazzino.Remove(nome);///
-string nome = bottgliaMag.nome;
-int livelloMag = bottgliaMag.livello;
-string vecchia = gameData.scaffaleAttivo[posizioneAttuale];
-int livelloVecchia = gameData.livelliScaffale[posizioneAttuale];
-//gameData.bottiglie[nome] = livelloMag;
-gameData.livelliScaffale[posizioneAttuale] = livelloMag;
-gameData.magazzino.Add(new gameData.bottMagaz
-{
-    nome = vecchia,
-    livello = livelloVecchia
-});
-gameData.bottiglie[nome] = bottgliaMag.livello;
-gameData.magazzino.RemoveAt(indice);
-gameData.scambiaBottiglia(posizioneAttuale, nome);
-Debug.Log("Bottiglia Scambiata da magazzino");
-script.aggLivelli();
-caricaMagazzino(posizioneAttuale);
-* */

@@ -30,7 +30,7 @@ public class resocontoUI : MonoBehaviour
 bug fix:
 -leo con la stessa battuta,   >>?
 -vedere se la meccanica di almeno una selezione va bene
--sistemare quando compro delle stesse bottiglie che si bugga con che non crea dei doppioni?!?!
+-sistemare quando compro delle stesse bottiglie che si bugga con che non crea dei doppioni >> come stack di minecraft
 
 ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index controllare questa eccezione

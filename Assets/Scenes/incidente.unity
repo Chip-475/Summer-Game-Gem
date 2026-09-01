@@ -196,8 +196,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 640375394}
   - {fileID: 221565313}
+  - {fileID: 640375394}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535205848
@@ -282,7 +282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 535205851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 221565314}
+        m_TargetAssemblyTypeName: incidente, Assembly-CSharp
+        m_MethodName: prosBattuta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &535205851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: audioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6863034249425088200, guid: a571e40b8a66f974691167cf780eaa67, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e9029f58872a5846b3928f074389b71, type: 3}
     - target: {fileID: 7452015709299576179, guid: a571e40b8a66f974691167cf780eaa67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 828.99927

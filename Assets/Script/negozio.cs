@@ -13,7 +13,7 @@ public class negozio : MonoBehaviour
     [SerializeField] private Button chiudi;
     public TMP_FontAsset font;
     private bool sem=false;
-    private GameObject item;
+    //private GameObject item;
     public scaffale script;
     public AudioClip suono;
 
@@ -73,11 +73,11 @@ public class negozio : MonoBehaviour
     private void caricaBottone(string nome, Transform parent)
     {
         float prezzo = gameData.prezziBottiglie[nome];
-        Debug.Log("negozio " + nome);
+        GameObject item;
+        if (nome == "Arancia") item = Instantiate(prefabArancia, parent);
+        else item = Instantiate(prefabBott, parent);
         if (gameData.misureSprite.TryGetValue(nome, out Vector2 misura))
         {
-            if (nome == "Arancia")item = Instantiate(prefabArancia, parent);
-            else item = Instantiate(prefabBott, parent);
             RectTransform rt = item.GetComponent<RectTransform>();
             rt.sizeDelta = misura;
             TMP_Text[] testi = item.GetComponentsInChildren<TMP_Text>();
