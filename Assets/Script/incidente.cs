@@ -8,7 +8,7 @@ public class incidente : MonoBehaviour
     public TMP_Text testoPanel;
     public float velocita = 0.05f;
     public float delay = 1f;
-
+    public AudioClip suono;
     private string[] scena = new string[]
     {
         "Era una notte come tante altre...",
@@ -25,6 +25,7 @@ public class incidente : MonoBehaviour
 
     void Start()
     {
+        audioManager.Instance.suonaEffetto(suono);
         mostraBattuta();
     }
 

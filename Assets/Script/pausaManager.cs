@@ -15,13 +15,13 @@ public class pausaManager : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (!sem&&!sem2)
+            if (!sem)
             {
                 sem = true;
                 panel.SetActive(true);
                 Time.timeScale = 0f;
             }
-            else continua();
+            else if(!sem2)continua();
             if (sem2)
             {
                 panelImpo.SetActive(false);

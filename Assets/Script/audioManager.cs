@@ -6,12 +6,18 @@ public class audioManager : MonoBehaviour
     [Header("audio mixer")]
     public AudioMixer mixer;
     public AudioSource sorg;
+    public AudioSource clipEffe;
 
     [Header("parametri")]
     public string parmMaster = "MasterVolume";
     public string parmMusica = "MusicVolume";
     public string parmEffetti = "SFXVolume";
 
+    public void suonaEffetto(AudioClip clip)
+    {
+        if (clip == null) return;
+        clipEffe.PlayOneShot(clip);
+    }
     private void Awake()
     {
         if(Instance!=null&&Instance!=this)
@@ -34,7 +40,8 @@ public class audioManager : MonoBehaviour
     {
         valore=Mathf.Clamp(valore,0.0001f, 1f);
         float deci = Mathf.Log10(valore) * 20f;
-        mixer.SetFloat(parm, deci);
+        bool ok=mixer.SetFloat(parm, deci);
+        Debug.Log($"{parm} -> {deci:F1} dB, riuscito: {ok}");
         PlayerPrefs.SetFloat(parm, valore);
     }
        

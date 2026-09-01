@@ -89,6 +89,7 @@ public class dialoghiManager : MonoBehaviour
     private bool feed=false;
     private List<battuta> attualiLeo;
     private ricettaJson datiRicette;
+    public AudioClip suono;
     void Start()
     { 
         spriteDic=new Dictionary<string, Sprite>();
@@ -213,6 +214,7 @@ public class dialoghiManager : MonoBehaviour
         gameData.indiceBattutaAttuale = indice;
         gameData.indiceNPCAttuale = indiceNPC;
         gameData.inDialogo = inDialogo;
+        audioManager.Instance.suonaEffetto(suono);
         mostraBattuta();
     }
     private void mostraBattuta()

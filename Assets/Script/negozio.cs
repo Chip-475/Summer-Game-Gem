@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 public class negozio : MonoBehaviour
 {
     public Transform cont1;
@@ -14,12 +15,14 @@ public class negozio : MonoBehaviour
     private bool sem=false;
     private GameObject item;
     public scaffale script;
+    public AudioClip suono;
 
     void Start()
     {
         RectTransform rt=prefabArancia.GetComponent<RectTransform>();
         rt.sizeDelta=gameData.misureSprite["Arancia"];
     }
+
 
     public void apriChiudiNeg()
     {
@@ -97,7 +100,7 @@ public class negozio : MonoBehaviour
         {
             gameData.monete -= prezzo;
             dayManager.aggSpesa(prezzo);
-            // gameData.bottiglie[nome] = 100;
+            audioManager.Instance.suonaEffetto(suono);
             if (nome != "Arancia")
             {
                 gameData.magazzino.Add(new gameData.bottMagaz
