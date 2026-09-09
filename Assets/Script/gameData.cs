@@ -135,6 +135,25 @@ public class gameData : MonoBehaviour
         Debug.Log("scambio fatto da gameData");
     }
 
+    public static bool bottigliaVuota(int posizione)
+    {
+        string nomeFinita = scaffaleAttivo[posizione];
+        int indiceTrovato = magazzino.FindIndex(b => b.nome == nomeFinita);
+        if (indiceTrovato == -1 && magazzino.Count > 0) indiceTrovato = 0;
+        if (indiceTrovato != -1)
+        {
+            bottMagaz nuova = magazzino[indiceTrovato];
+            magazzino.RemoveAt(indiceTrovato);
+            scaffaleAttivo[posizione] = nuova.nome;
+            livelliScaffale[posizione] = nuova.livello;
+            return true;
+        }
+        scaffaleAttivo[posizione] = "";
+        livelliScaffale[posizione] = 0;
+        return false;
+    }
+
+
     [Header("dimensioni per i bottoni")]
     public static Dictionary<string, Vector2> misureSprite = new Dictionary<string, Vector2>
     {
@@ -183,43 +202,59 @@ public class gameData : MonoBehaviour
     // crea uno snapshot dello stato attuale, pronto per essere salvato su file
     public static SaveData CreaSnapshot()
     {
-        SaveData dati = new SaveData();
-        dati.monete = monete;
+        SaveData data = new SaveData();
+        data.monete = monete;
+        data.scaffaleAttivo = scaffaleAttivo;
+        data.livelliScaffale = livelliScaffale;
 
-        dati.bottiglieNomi.Clear();
-        dati.bottiglieValori.Clear();
-        foreach (var kv in bottiglie)
+        foreach (var bott in magazzino)
         {
-            dati.bottiglieNomi.Add(kv.Key);
-            dati.bottiglieValori.Add(kv.Value);
+            data.magazzzinoNomi.Add(bott.nome);
+            data.magazzinioLivelli.Add(bott.livello);
         }
 
-        dati.scaffaleAttivo = (string[])scaffaleAttivo.Clone();
-        dati.indiceNPCAttuale = indiceNPCAttuale;
-        dati.indiceBattutaAttuale = indiceBattutaAttuale;
-        dati.inDialogo = inDialogo;
-        dati.clientiPassati = clientiPassati;
-        dati.frequenzaLeo = frequenzaLeo;
-
-        return dati;
+        data.indiceNPCAttuale = indiceNPCAttuale;     
+        data.indiceBattutaAttuale = indiceBattutaAttuale; 
+        data.inDialogo = false;
+        data.clientiPassati = clientiPassati;
+        data.frequenzaLeo = frequenzaLeo;
+        data.giornoAttuale = dayManager.giornoAttuale;
+        data.guadagniGiorno = dayManager.guadagno;
+        data.speseGiorno = dayManager.spesa;
+        data.clientiServiti = dayManager.clientiServ; 
+        data.leoIndice = leoIndice;
+        data.drinkSbagliatiLeo = drinkSbagliato;
+        data.tempoRimasto=dayManager.tempoRimasto;
+        return data;
     }
 
-    // applica uno snapshot caricato da file allo stato di gioco attuale
-    public static void CaricaSnapshot(SaveData dati)
+    public static void CaricaSnapshot(SaveData data)
     {
-        monete = dati.monete;
+        monete = data.monete;
+        scaffaleAttivo = data.scaffaleAttivo;
+        livelliScaffale = data.livelliScaffale;
 
-        for (int i = 0; i < dati.bottiglieNomi.Count; i++)
+        magazzino.Clear();
+        for (int i = 0; i < data.magazzzinoNomi.Count; i++)
         {
-            bottiglie[dati.bottiglieNomi[i]] = dati.bottiglieValori[i];
+            magazzino.Add(new bottMagaz
+            {
+                nome = data.magazzzinoNomi[i],
+                livello = data.magazzinioLivelli[i]
+            });
         }
 
-        scaffaleAttivo = (string[])dati.scaffaleAttivo.Clone();
-        indiceNPCAttuale = dati.indiceNPCAttuale;
-        indiceBattutaAttuale = dati.indiceBattutaAttuale;
-        inDialogo = dati.inDialogo;
-        clientiPassati = dati.clientiPassati;
-        frequenzaLeo = dati.frequenzaLeo;
+        indiceNPCAttuale = data.indiceNPCAttuale;
+        indiceBattutaAttuale = data.indiceBattutaAttuale;
+        clientiPassati = data.clientiPassati;
+        frequenzaLeo = data.frequenzaLeo;
+        dayManager.giornoAttuale = data.giornoAttuale;
+        dayManager.guadagno = data.guadagniGiorno;
+        dayManager.spesa = data.speseGiorno;
+        dayManager.clientiServ = data.clientiServiti;
+        dayManager.tempoRimasto= data.tempoRimasto;
+        leoIndice = data.leoIndice;
+        drinkSbagliato = data.drinkSbagliatiLeo;
     }
 
     // riporta tutto ai valori di default, per una Nuova Partita
@@ -249,6 +284,8 @@ public class gameData : MonoBehaviour
         inDialogo = false;
         clientiPassati = 0;
         frequenzaLeo = 5;
+        leoIndice = 0;
+        drinkSbagliato= 0;
     }
 
     private void OnApplicationQuit()

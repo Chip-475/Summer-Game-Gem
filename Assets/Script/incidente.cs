@@ -13,7 +13,6 @@ public class incidente : MonoBehaviour
 
     private string[] scena = new string[]
     {
-        "Era una notte come tante altre...",
         "Mara guidava sulla strada di ritorno dal lavoro",
         "Improvvisamente una macchina sbanda dalla corsia opposta",
         "Lo scontro è violento",
@@ -24,12 +23,12 @@ public class incidente : MonoBehaviour
     };
 
     private int indice = 0;
-    private bool click = false;
+    private bool click = true;
 
     void Start()
     {
         audioManager.Instance.suonaEffetto(suono);
-        mostraBattuta();
+        prosBattuta();
     }
 
     void Update()
@@ -42,7 +41,7 @@ public class incidente : MonoBehaviour
 
     private void mostraBattuta()
     {
-        if (indice < scena.Length)
+        if(indice < scena.Length)
         {
             click = false;  
             StartCoroutine(TypewriterEffect(scena[indice]));
@@ -52,7 +51,7 @@ public class incidente : MonoBehaviour
             SceneManager.LoadScene("barGame");
         }
     }
-
+    
     IEnumerator TypewriterEffect(string testo)
     {
         testoPanel.text = "";
