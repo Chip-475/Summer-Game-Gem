@@ -40,6 +40,7 @@ public class scaffale : MonoBehaviour
     {
         for(int i=0;i<immaginiBottiglie.Length;i++)
         {
+            if (gameData.livelliScaffale[i] <= 0) gameData.bottigliaVuota(i);
             string nome=gameData.scaffaleAttivo[i];
             int livello = gameData.livelliScaffale[i];
             textLivello[i].text =""+livello;

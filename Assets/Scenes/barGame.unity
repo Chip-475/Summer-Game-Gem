@@ -9473,7 +9473,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -146.70374, w: 0}
+  m_margin: {x: 0, y: 0, z: -63.949463, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11889,9 +11889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ESCI
-
-'
+  m_text: MENU PRINCIPALE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
   m_sharedMaterial: {fileID: 5671358497635328437, guid: 5dc169b5de13f8d49b4834c606f134a0, type: 2}
@@ -15917,7 +15915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -481, y: 508}
+  m_AnchoredPosition: {x: -455, y: 508}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2122664732

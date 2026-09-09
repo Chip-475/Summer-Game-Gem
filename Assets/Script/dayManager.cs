@@ -6,8 +6,8 @@ public class dayManager : MonoBehaviour
     public static float guadagno;
     public static float spesa;
     public static int clientiServ;
-    private float tempo = 600f; //10min =600s
-    private float tempoRimasto;
+    private static float tempo = 600f; //10min =600s
+    public static float tempoRimasto;
     private float oraInizio = 20f;
     private float oraFine = 6f;
 
@@ -15,7 +15,7 @@ public class dayManager : MonoBehaviour
     public GameObject panel;
     void Start()
     {
-        tempoRimasto = tempo;
+        if(tempoRimasto<=0f)tempoRimasto = tempo;
     }
 
     void Update()
