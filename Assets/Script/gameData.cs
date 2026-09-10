@@ -286,6 +286,7 @@ public class gameData : MonoBehaviour
         frequenzaLeo = 5;
         leoIndice = 0;
         drinkSbagliato= 0;
+        dayManager.tempoRimasto = 600f;
     }
 
     private void OnApplicationQuit()

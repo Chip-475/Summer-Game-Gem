@@ -7,7 +7,7 @@ public class dayManager : MonoBehaviour
     public static float spesa;
     public static int clientiServ;
     private static float tempo = 600f; //10min =600s
-    public static float tempoRimasto;
+    public static float tempoRimasto=-1f;
     private float oraInizio = 20f;
     private float oraFine = 6f;
 
